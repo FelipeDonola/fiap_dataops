@@ -43,27 +43,7 @@
     "version" : "Latest",
     "type" : "property"
   }, {
-    "id" : "_x2bfAK4FEeyrdM0bpjD8cw - Customer",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_x2bfAK4FEeyrdM0bpjD8cw - CustomerAddress",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_x2bfAK4FEeyrdM0bpjD8cw - Product",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_x2bfAK4FEeyrdM0bpjD8cw - ProductCategory",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
     "id" : "_x2bfAK4FEeyrdM0bpjD8cw - ProductDescription",
-    "version" : "Latest",
-    "type" : "schema"
-  }, {
-    "id" : "_x2bfAK4FEeyrdM0bpjD8cw - ProductModel",
     "version" : "Latest",
     "type" : "schema"
   }, {

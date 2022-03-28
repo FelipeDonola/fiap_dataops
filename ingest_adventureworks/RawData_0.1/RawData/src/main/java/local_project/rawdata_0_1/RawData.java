@@ -385,7 +385,7 @@ private class TalendException extends Exception {
 					tDBInput_5_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tFileOutputDelimited_5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tFileOutputDelimited_12_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -607,7 +607,7 @@ public void tDBConnection_1Process(final java.util.Map<String, Object> globalMap
 	
 	
 		 
-	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:YOGyYkDi1SEeF/0UZ6NjFpmlsjflLWJt8+o1TQHi0IpWc4NICg==");
+	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:g3BMzqkBMFPCsZkMxYOogNn2rrMQY6WgOcPvaQV6p0jMzRDwKw==");
 		String dbPwd_tDBConnection_1 = decryptedPassword_tDBConnection_1;
 	
 	
@@ -1958,10 +1958,34 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 					return this.CustomerID;
 				}
 				
+			    public String NameStyle;
+
+				public String getNameStyle () {
+					return this.NameStyle;
+				}
+				
 			    public String Title;
 
 				public String getTitle () {
 					return this.Title;
+				}
+				
+			    public String FirstName;
+
+				public String getFirstName () {
+					return this.FirstName;
+				}
+				
+			    public String MiddleName;
+
+				public String getMiddleName () {
+					return this.MiddleName;
+				}
+				
+			    public String LastName;
+
+				public String getLastName () {
+					return this.LastName;
 				}
 				
 			    public String Suffix;
@@ -1986,6 +2010,12 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 
 				public String getEmailAddress () {
 					return this.EmailAddress;
+				}
+				
+			    public String Phone;
+
+				public String getPhone () {
+					return this.Phone;
 				}
 				
 			    public String PasswordHash;
@@ -2045,11 +2075,16 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 	public void copyDataTo(CustomerStruct other) {
 
 		other.CustomerID = this.CustomerID;
+	            other.NameStyle = this.NameStyle;
 	            other.Title = this.Title;
+	            other.FirstName = this.FirstName;
+	            other.MiddleName = this.MiddleName;
+	            other.LastName = this.LastName;
 	            other.Suffix = this.Suffix;
 	            other.CompanyName = this.CompanyName;
 	            other.SalesPerson = this.SalesPerson;
 	            other.EmailAddress = this.EmailAddress;
+	            other.Phone = this.Phone;
 	            other.PasswordHash = this.PasswordHash;
 	            other.PasswordSalt = this.PasswordSalt;
 	            other.rowguid = this.rowguid;
@@ -2178,7 +2213,15 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 		
 			        this.CustomerID = dis.readInt();
 					
+					this.NameStyle = readString(dis);
+					
 					this.Title = readString(dis);
+					
+					this.FirstName = readString(dis);
+					
+					this.MiddleName = readString(dis);
+					
+					this.LastName = readString(dis);
 					
 					this.Suffix = readString(dis);
 					
@@ -2187,6 +2230,8 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 					this.SalesPerson = readString(dis);
 					
 					this.EmailAddress = readString(dis);
+					
+					this.Phone = readString(dis);
 					
 					this.PasswordHash = readString(dis);
 					
@@ -2223,7 +2268,15 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 		
 			        this.CustomerID = dis.readInt();
 					
+					this.NameStyle = readString(dis);
+					
 					this.Title = readString(dis);
+					
+					this.FirstName = readString(dis);
+					
+					this.MiddleName = readString(dis);
+					
+					this.LastName = readString(dis);
 					
 					this.Suffix = readString(dis);
 					
@@ -2232,6 +2285,8 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 					this.SalesPerson = readString(dis);
 					
 					this.EmailAddress = readString(dis);
+					
+					this.Phone = readString(dis);
 					
 					this.PasswordHash = readString(dis);
 					
@@ -2268,7 +2323,23 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 					
 					// String
 				
+						writeString(this.NameStyle,dos);
+					
+					// String
+				
 						writeString(this.Title,dos);
+					
+					// String
+				
+						writeString(this.FirstName,dos);
+					
+					// String
+				
+						writeString(this.MiddleName,dos);
+					
+					// String
+				
+						writeString(this.LastName,dos);
 					
 					// String
 				
@@ -2285,6 +2356,10 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 					// String
 				
 						writeString(this.EmailAddress,dos);
+					
+					// String
+				
+						writeString(this.Phone,dos);
 					
 					// String
 				
@@ -2319,7 +2394,23 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 					
 					// String
 				
+						writeString(this.NameStyle,dos);
+					
+					// String
+				
 						writeString(this.Title,dos);
+					
+					// String
+				
+						writeString(this.FirstName,dos);
+					
+					// String
+				
+						writeString(this.MiddleName,dos);
+					
+					// String
+				
+						writeString(this.LastName,dos);
 					
 					// String
 				
@@ -2336,6 +2427,10 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 					// String
 				
 						writeString(this.EmailAddress,dos);
+					
+					// String
+				
+						writeString(this.Phone,dos);
 					
 					// String
 				
@@ -2367,11 +2462,16 @@ public static class CustomerStruct implements routines.system.IPersistableRow<Cu
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("CustomerID="+String.valueOf(CustomerID));
+		sb.append(",NameStyle="+NameStyle);
 		sb.append(",Title="+Title);
+		sb.append(",FirstName="+FirstName);
+		sb.append(",MiddleName="+MiddleName);
+		sb.append(",LastName="+LastName);
 		sb.append(",Suffix="+Suffix);
 		sb.append(",CompanyName="+CompanyName);
 		sb.append(",SalesPerson="+SalesPerson);
 		sb.append(",EmailAddress="+EmailAddress);
+		sb.append(",Phone="+Phone);
 		sb.append(",PasswordHash="+PasswordHash);
 		sb.append(",PasswordSalt="+PasswordSalt);
 		sb.append(",rowguid="+String.valueOf(rowguid));
@@ -2527,7 +2627,15 @@ String fileName_tFileOutputDelimited_2 = "";
                                     if(filetFileOutputDelimited_2.length()==0){
                                         outtFileOutputDelimited_2.write("CustomerID");
                                             outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("NameStyle");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
                                         outtFileOutputDelimited_2.write("Title");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("FirstName");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("MiddleName");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("LastName");
                                             outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
                                         outtFileOutputDelimited_2.write("Suffix");
                                             outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
@@ -2536,6 +2644,8 @@ String fileName_tFileOutputDelimited_2 = "";
                                         outtFileOutputDelimited_2.write("SalesPerson");
                                             outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
                                         outtFileOutputDelimited_2.write("EmailAddress");
+                                            outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
+                                        outtFileOutputDelimited_2.write("Phone");
                                             outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
                                         outtFileOutputDelimited_2.write("PasswordHash");
                                             outtFileOutputDelimited_2.write(OUT_DELIM_tFileOutputDelimited_2);
@@ -2596,9 +2706,11 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
 		    
 			java.sql.Statement stmt_tDBInput_2 = conn_tDBInput_2.createStatement();
 
-		    String dbquery_tDBInput_2 = "SELECT SalesLT.Customer.CustomerID,\n		SalesLT.Customer.Title,\n		SalesLT.Customer.Suffix,\n		SalesLT.Customer.CompanyName"
-+",\n		SalesLT.Customer.SalesPerson,\n		SalesLT.Customer.EmailAddress,\n		SalesLT.Customer.PasswordHash,\n		SalesLT.Customer.P"
-+"asswordSalt,\n		SalesLT.Customer.rowguid,\n		SalesLT.Customer.ModifiedDate\nFROM	SalesLT.Customer";
+		    String dbquery_tDBInput_2 = "SELECT SalesLT.Customer.CustomerID,\n		SalesLT.Customer.NameStyle,\n		SalesLT.Customer.Title,\n		SalesLT.Customer.FirstNam"
++"e,\n		SalesLT.Customer.MiddleName,\n		SalesLT.Customer.LastName,\n		SalesLT.Customer.Suffix,\n		SalesLT.Customer.CompanyName"
++",\n		SalesLT.Customer.SalesPerson,\n		SalesLT.Customer.EmailAddress,\n		SalesLT.Customer.Phone,\n		SalesLT.Customer.Password"
++"Hash,\n		SalesLT.Customer.PasswordSalt,\n		SalesLT.Customer.rowguid,\n		SalesLT.Customer.ModifiedDate\nFROM	SalesLT.Customer"
++"";
 		    
 
             	globalMap.put("tDBInput_2_QUERY",dbquery_tDBInput_2);
@@ -2625,12 +2737,27 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
             }
 		                    }
 							if(colQtyInRs_tDBInput_2 < 2) {
-								Customer.Title = null;
+								Customer.NameStyle = null;
 							} else {
 	                         		
            		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(2);
             if(tmpContent_tDBInput_2 != null) {
             	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(2).toUpperCase(java.util.Locale.ENGLISH))) {
+            		Customer.NameStyle = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
+            	} else {
+                	Customer.NameStyle = tmpContent_tDBInput_2;
+                }
+            } else {
+                Customer.NameStyle = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 3) {
+								Customer.Title = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(3);
+            if(tmpContent_tDBInput_2 != null) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
             		Customer.Title = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
             	} else {
                 	Customer.Title = tmpContent_tDBInput_2;
@@ -2639,13 +2766,58 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                 Customer.Title = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 3) {
+							if(colQtyInRs_tDBInput_2 < 4) {
+								Customer.FirstName = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(4);
+            if(tmpContent_tDBInput_2 != null) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(4).toUpperCase(java.util.Locale.ENGLISH))) {
+            		Customer.FirstName = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
+            	} else {
+                	Customer.FirstName = tmpContent_tDBInput_2;
+                }
+            } else {
+                Customer.FirstName = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 5) {
+								Customer.MiddleName = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(5);
+            if(tmpContent_tDBInput_2 != null) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(5).toUpperCase(java.util.Locale.ENGLISH))) {
+            		Customer.MiddleName = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
+            	} else {
+                	Customer.MiddleName = tmpContent_tDBInput_2;
+                }
+            } else {
+                Customer.MiddleName = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 6) {
+								Customer.LastName = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(6);
+            if(tmpContent_tDBInput_2 != null) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(6).toUpperCase(java.util.Locale.ENGLISH))) {
+            		Customer.LastName = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
+            	} else {
+                	Customer.LastName = tmpContent_tDBInput_2;
+                }
+            } else {
+                Customer.LastName = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 7) {
 								Customer.Suffix = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(3);
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(7);
             if(tmpContent_tDBInput_2 != null) {
-            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(7).toUpperCase(java.util.Locale.ENGLISH))) {
             		Customer.Suffix = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
             	} else {
                 	Customer.Suffix = tmpContent_tDBInput_2;
@@ -2654,13 +2826,13 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                 Customer.Suffix = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 4) {
+							if(colQtyInRs_tDBInput_2 < 8) {
 								Customer.CompanyName = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(4);
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(8);
             if(tmpContent_tDBInput_2 != null) {
-            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(4).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(8).toUpperCase(java.util.Locale.ENGLISH))) {
             		Customer.CompanyName = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
             	} else {
                 	Customer.CompanyName = tmpContent_tDBInput_2;
@@ -2669,13 +2841,13 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                 Customer.CompanyName = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 5) {
+							if(colQtyInRs_tDBInput_2 < 9) {
 								Customer.SalesPerson = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(5);
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(9);
             if(tmpContent_tDBInput_2 != null) {
-            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(5).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(9).toUpperCase(java.util.Locale.ENGLISH))) {
             		Customer.SalesPerson = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
             	} else {
                 	Customer.SalesPerson = tmpContent_tDBInput_2;
@@ -2684,13 +2856,13 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                 Customer.SalesPerson = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 6) {
+							if(colQtyInRs_tDBInput_2 < 10) {
 								Customer.EmailAddress = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(6);
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(10);
             if(tmpContent_tDBInput_2 != null) {
-            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(6).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(10).toUpperCase(java.util.Locale.ENGLISH))) {
             		Customer.EmailAddress = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
             	} else {
                 	Customer.EmailAddress = tmpContent_tDBInput_2;
@@ -2699,13 +2871,28 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                 Customer.EmailAddress = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 7) {
+							if(colQtyInRs_tDBInput_2 < 11) {
+								Customer.Phone = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(11);
+            if(tmpContent_tDBInput_2 != null) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(11).toUpperCase(java.util.Locale.ENGLISH))) {
+            		Customer.Phone = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
+            	} else {
+                	Customer.Phone = tmpContent_tDBInput_2;
+                }
+            } else {
+                Customer.Phone = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_2 < 12) {
 								Customer.PasswordHash = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(7);
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(12);
             if(tmpContent_tDBInput_2 != null) {
-            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(7).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(12).toUpperCase(java.util.Locale.ENGLISH))) {
             		Customer.PasswordHash = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
             	} else {
                 	Customer.PasswordHash = tmpContent_tDBInput_2;
@@ -2714,13 +2901,13 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                 Customer.PasswordHash = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 8) {
+							if(colQtyInRs_tDBInput_2 < 13) {
 								Customer.PasswordSalt = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(8);
+           		tmpContent_tDBInput_2 = rs_tDBInput_2.getString(13);
             if(tmpContent_tDBInput_2 != null) {
-            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(8).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_2 .contains(rsmd_tDBInput_2.getColumnTypeName(13).toUpperCase(java.util.Locale.ENGLISH))) {
             		Customer.PasswordSalt = FormatterUtils.formatUnwithE(tmpContent_tDBInput_2);
             	} else {
                 	Customer.PasswordSalt = tmpContent_tDBInput_2;
@@ -2729,20 +2916,20 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                 Customer.PasswordSalt = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 9) {
+							if(colQtyInRs_tDBInput_2 < 14) {
 								Customer.rowguid = null;
 							} else {
 		                          
-            Customer.rowguid = rs_tDBInput_2.getObject(9);
+            Customer.rowguid = rs_tDBInput_2.getObject(14);
             if(rs_tDBInput_2.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_2 < 10) {
+							if(colQtyInRs_tDBInput_2 < 15) {
 								Customer.ModifiedDate = null;
 							} else {
 										
-			Customer.ModifiedDate = mssqlGTU_tDBInput_2.getDate(rsmd_tDBInput_2, rs_tDBInput_2, 10);
+			Customer.ModifiedDate = mssqlGTU_tDBInput_2.getDate(rsmd_tDBInput_2, rs_tDBInput_2, 15);
 			
 		                    }
 					
@@ -2827,9 +3014,33 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                             Customer.CustomerID
                         );
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(Customer.NameStyle != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            Customer.NameStyle
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
                             if(Customer.Title != null) {
                         sb_tFileOutputDelimited_2.append(
                             Customer.Title
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(Customer.FirstName != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            Customer.FirstName
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(Customer.MiddleName != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            Customer.MiddleName
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(Customer.LastName != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            Customer.LastName
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
@@ -2854,6 +3065,12 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
                             if(Customer.EmailAddress != null) {
                         sb_tFileOutputDelimited_2.append(
                             Customer.EmailAddress
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(Customer.Phone != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            Customer.Phone
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
@@ -3165,6 +3382,12 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 					return this.AddressID;
 				}
 				
+			    public String AddressType;
+
+				public String getAddressType () {
+					return this.AddressType;
+				}
+				
 			    public Object rowguid;
 
 				public Object getRowguid () {
@@ -3216,6 +3439,7 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 
 		other.CustomerID = this.CustomerID;
 	            other.AddressID = this.AddressID;
+	            other.AddressType = this.AddressType;
 	            other.rowguid = this.rowguid;
 	            other.ModifiedDate = this.ModifiedDate;
 	            
@@ -3230,6 +3454,66 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 
 
 
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LOCAL_PROJECT_RawData.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_RawData.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LOCAL_PROJECT_RawData, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_RawData, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+	
+	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = unmarshaller.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LOCAL_PROJECT_RawData.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_RawData.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[2 * length];
+   				}
+			}
+			unmarshaller.readFully(commonByteArray_LOCAL_PROJECT_RawData, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_RawData, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+    
+    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
+		if(str == null) {
+			marshaller.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+            marshaller.writeInt(byteArray.length);
+            marshaller.write(byteArray);
+    	}
+    }
 
 	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
 		java.util.Date dateReturn = null;
@@ -3285,6 +3569,8 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 					
 			        this.AddressID = dis.readInt();
 					
+					this.AddressType = readString(dis);
+					
 						this.rowguid = (Object) dis.readObject();
 					
 					this.ModifiedDate = readDate(dis);
@@ -3317,6 +3603,8 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 			        this.CustomerID = dis.readInt();
 					
 			        this.AddressID = dis.readInt();
+					
+					this.AddressType = readString(dis);
 					
 						this.rowguid = (Object) dis.readObject();
 					
@@ -3351,6 +3639,10 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 				
 		            	dos.writeInt(this.AddressID);
 					
+					// String
+				
+						writeString(this.AddressType,dos);
+					
 					// Object
 				
        			    	dos.writeObject(this.rowguid);
@@ -3378,6 +3670,10 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 				
 		            	dos.writeInt(this.AddressID);
 					
+					// String
+				
+						writeString(this.AddressType,dos);
+					
 					// Object
 				
        			    	dos.writeObject(this.rowguid);
@@ -3401,6 +3697,7 @@ public static class CustomerAddressStruct implements routines.system.IPersistabl
 		sb.append("[");
 		sb.append("CustomerID="+String.valueOf(CustomerID));
 		sb.append(",AddressID="+String.valueOf(AddressID));
+		sb.append(",AddressType="+AddressType);
 		sb.append(",rowguid="+String.valueOf(rowguid));
 		sb.append(",ModifiedDate="+String.valueOf(ModifiedDate));
 	    sb.append("]");
@@ -3562,6 +3859,8 @@ String fileName_tFileOutputDelimited_3 = "";
                                             outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
                                         outtFileOutputDelimited_3.write("AddressID");
                                             outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
+                                        outtFileOutputDelimited_3.write("AddressType");
+                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
                                         outtFileOutputDelimited_3.write("rowguid");
                                             outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
                                         outtFileOutputDelimited_3.write("ModifiedDate");
@@ -3617,8 +3916,8 @@ resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3
 		    
 			java.sql.Statement stmt_tDBInput_3 = conn_tDBInput_3.createStatement();
 
-		    String dbquery_tDBInput_3 = "SELECT SalesLT.CustomerAddress.CustomerID,\n		SalesLT.CustomerAddress.AddressID,\n		SalesLT.CustomerAddress.rowguid,\n		Sa"
-+"lesLT.CustomerAddress.ModifiedDate\nFROM	SalesLT.CustomerAddress";
+		    String dbquery_tDBInput_3 = "SELECT SalesLT.CustomerAddress.CustomerID,\n		SalesLT.CustomerAddress.AddressID,\n		SalesLT.CustomerAddress.AddressType,\n"
++"		SalesLT.CustomerAddress.rowguid,\n		SalesLT.CustomerAddress.ModifiedDate\nFROM	SalesLT.CustomerAddress";
 		    
 
             	globalMap.put("tDBInput_3_QUERY",dbquery_tDBInput_3);
@@ -3654,19 +3953,34 @@ resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3
             }
 		                    }
 							if(colQtyInRs_tDBInput_3 < 3) {
+								CustomerAddress.AddressType = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_3 = rs_tDBInput_3.getString(3);
+            if(tmpContent_tDBInput_3 != null) {
+            	if (talendToDBList_tDBInput_3 .contains(rsmd_tDBInput_3.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
+            		CustomerAddress.AddressType = FormatterUtils.formatUnwithE(tmpContent_tDBInput_3);
+            	} else {
+                	CustomerAddress.AddressType = tmpContent_tDBInput_3;
+                }
+            } else {
+                CustomerAddress.AddressType = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_3 < 4) {
 								CustomerAddress.rowguid = null;
 							} else {
 		                          
-            CustomerAddress.rowguid = rs_tDBInput_3.getObject(3);
+            CustomerAddress.rowguid = rs_tDBInput_3.getObject(4);
             if(rs_tDBInput_3.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_3 < 4) {
+							if(colQtyInRs_tDBInput_3 < 5) {
 								CustomerAddress.ModifiedDate = null;
 							} else {
 										
-			CustomerAddress.ModifiedDate = mssqlGTU_tDBInput_3.getDate(rsmd_tDBInput_3, rs_tDBInput_3, 4);
+			CustomerAddress.ModifiedDate = mssqlGTU_tDBInput_3.getDate(rsmd_tDBInput_3, rs_tDBInput_3, 5);
 			
 		                    }
 					
@@ -3754,6 +4068,12 @@ resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3
                         sb_tFileOutputDelimited_3.append(
                             CustomerAddress.AddressID
                         );
+                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
+                            if(CustomerAddress.AddressType != null) {
+                        sb_tFileOutputDelimited_3.append(
+                            CustomerAddress.AddressType
+                        );
+                            }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
                             if(CustomerAddress.rowguid != null) {
                         sb_tFileOutputDelimited_3.append(
@@ -4045,6 +4365,12 @@ public static class ProductStruct implements routines.system.IPersistableRow<Pro
 					return this.ProductID;
 				}
 				
+			    public String Name;
+
+				public String getName () {
+					return this.Name;
+				}
+				
 			    public String ProductNumber;
 
 				public String getProductNumber () {
@@ -4168,6 +4494,7 @@ public static class ProductStruct implements routines.system.IPersistableRow<Pro
 	public void copyDataTo(ProductStruct other) {
 
 		other.ProductID = this.ProductID;
+	            other.Name = this.Name;
 	            other.ProductNumber = this.ProductNumber;
 	            other.Color = this.Color;
 	            other.StandardCost = this.StandardCost;
@@ -4348,6 +4675,8 @@ public static class ProductStruct implements routines.system.IPersistableRow<Pro
 		
 			        this.ProductID = dis.readInt();
 					
+					this.Name = readString(dis);
+					
 					this.ProductNumber = readString(dis);
 					
 					this.Color = readString(dis);
@@ -4405,6 +4734,8 @@ public static class ProductStruct implements routines.system.IPersistableRow<Pro
 		
 			        this.ProductID = dis.readInt();
 					
+					this.Name = readString(dis);
+					
 					this.ProductNumber = readString(dis);
 					
 					this.Color = readString(dis);
@@ -4459,6 +4790,10 @@ public static class ProductStruct implements routines.system.IPersistableRow<Pro
 					// int
 				
 		            	dos.writeInt(this.ProductID);
+					
+					// String
+				
+						writeString(this.Name,dos);
 					
 					// String
 				
@@ -4537,6 +4872,10 @@ public static class ProductStruct implements routines.system.IPersistableRow<Pro
 					
 					// String
 				
+						writeString(this.Name,dos);
+					
+					// String
+				
 						writeString(this.ProductNumber,dos);
 					
 					// String
@@ -4609,6 +4948,7 @@ public static class ProductStruct implements routines.system.IPersistableRow<Pro
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("ProductID="+String.valueOf(ProductID));
+		sb.append(",Name="+Name);
 		sb.append(",ProductNumber="+ProductNumber);
 		sb.append(",Color="+Color);
 		sb.append(",StandardCost="+String.valueOf(StandardCost));
@@ -4775,6 +5115,8 @@ String fileName_tFileOutputDelimited_4 = "";
                                     if(filetFileOutputDelimited_4.length()==0){
                                         outtFileOutputDelimited_4.write("ProductID");
                                             outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("Name");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
                                         outtFileOutputDelimited_4.write("ProductNumber");
                                             outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
                                         outtFileOutputDelimited_4.write("Color");
@@ -4856,11 +5198,11 @@ resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4
 		    
 			java.sql.Statement stmt_tDBInput_4 = conn_tDBInput_4.createStatement();
 
-		    String dbquery_tDBInput_4 = "SELECT SalesLT.Product.ProductID,\n		SalesLT.Product.ProductNumber,\n		SalesLT.Product.Color,\n		SalesLT.Product.StandardC"
-+"ost,\n		SalesLT.Product.ListPrice,\n		SalesLT.Product.Size,\n		SalesLT.Product.Weight,\n		SalesLT.Product.ProductCategoryID,"
-+"\n		SalesLT.Product.ProductModelID,\n		SalesLT.Product.SellStartDate,\n		SalesLT.Product.SellEndDate,\n		SalesLT.Product.Dis"
-+"continuedDate,\n		SalesLT.Product.ThumbNailPhoto,\n		SalesLT.Product.ThumbnailPhotoFileName,\n		SalesLT.Product.rowguid,\n		"
-+"SalesLT.Product.ModifiedDate\nFROM	SalesLT.Product";
+		    String dbquery_tDBInput_4 = "SELECT SalesLT.Product.ProductID,\n		SalesLT.Product.Name,\n		SalesLT.Product.ProductNumber,\n		SalesLT.Product.Color,\n		S"
++"alesLT.Product.StandardCost,\n		SalesLT.Product.ListPrice,\n		SalesLT.Product.Size,\n		SalesLT.Product.Weight,\n		SalesLT.Pr"
++"oduct.ProductCategoryID,\n		SalesLT.Product.ProductModelID,\n		SalesLT.Product.SellStartDate,\n		SalesLT.Product.SellEndDat"
++"e,\n		SalesLT.Product.DiscontinuedDate,\n		SalesLT.Product.ThumbNailPhoto,\n		SalesLT.Product.ThumbnailPhotoFileName,\n		Sal"
++"esLT.Product.rowguid,\n		SalesLT.Product.ModifiedDate\nFROM	SalesLT.Product";
 		    
 
             	globalMap.put("tDBInput_4_QUERY",dbquery_tDBInput_4);
@@ -4887,12 +5229,27 @@ resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4
             }
 		                    }
 							if(colQtyInRs_tDBInput_4 < 2) {
-								Product.ProductNumber = null;
+								Product.Name = null;
 							} else {
 	                         		
            		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(2);
             if(tmpContent_tDBInput_4 != null) {
             	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(2).toUpperCase(java.util.Locale.ENGLISH))) {
+            		Product.Name = FormatterUtils.formatUnwithE(tmpContent_tDBInput_4);
+            	} else {
+                	Product.Name = tmpContent_tDBInput_4;
+                }
+            } else {
+                Product.Name = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_4 < 3) {
+								Product.ProductNumber = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(3);
+            if(tmpContent_tDBInput_4 != null) {
+            	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
             		Product.ProductNumber = FormatterUtils.formatUnwithE(tmpContent_tDBInput_4);
             	} else {
                 	Product.ProductNumber = tmpContent_tDBInput_4;
@@ -4901,13 +5258,13 @@ resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4
                 Product.ProductNumber = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 3) {
+							if(colQtyInRs_tDBInput_4 < 4) {
 								Product.Color = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(3);
+           		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(4);
             if(tmpContent_tDBInput_4 != null) {
-            	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(4).toUpperCase(java.util.Locale.ENGLISH))) {
             		Product.Color = FormatterUtils.formatUnwithE(tmpContent_tDBInput_4);
             	} else {
                 	Product.Color = tmpContent_tDBInput_4;
@@ -4916,31 +5273,31 @@ resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4
                 Product.Color = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 4) {
+							if(colQtyInRs_tDBInput_4 < 5) {
 								Product.StandardCost = null;
 							} else {
 		                          
-            Product.StandardCost = rs_tDBInput_4.getObject(4);
-            if(rs_tDBInput_4.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_4 < 5) {
-								Product.ListPrice = null;
-							} else {
-		                          
-            Product.ListPrice = rs_tDBInput_4.getObject(5);
+            Product.StandardCost = rs_tDBInput_4.getObject(5);
             if(rs_tDBInput_4.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_4 < 6) {
+								Product.ListPrice = null;
+							} else {
+		                          
+            Product.ListPrice = rs_tDBInput_4.getObject(6);
+            if(rs_tDBInput_4.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_4 < 7) {
 								Product.Size = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(6);
+           		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(7);
             if(tmpContent_tDBInput_4 != null) {
-            	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(6).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(7).toUpperCase(java.util.Locale.ENGLISH))) {
             		Product.Size = FormatterUtils.formatUnwithE(tmpContent_tDBInput_4);
             	} else {
                 	Product.Size = tmpContent_tDBInput_4;
@@ -4949,70 +5306,70 @@ resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4
                 Product.Size = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 7) {
+							if(colQtyInRs_tDBInput_4 < 8) {
 								Product.Weight = null;
 							} else {
 		                          
-            Product.Weight = rs_tDBInput_4.getBigDecimal(7);
+            Product.Weight = rs_tDBInput_4.getBigDecimal(8);
             if(rs_tDBInput_4.wasNull()){
                     Product.Weight = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 8) {
+							if(colQtyInRs_tDBInput_4 < 9) {
 								Product.ProductCategoryID = null;
 							} else {
 		                          
-            Product.ProductCategoryID = rs_tDBInput_4.getInt(8);
+            Product.ProductCategoryID = rs_tDBInput_4.getInt(9);
             if(rs_tDBInput_4.wasNull()){
                     Product.ProductCategoryID = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 9) {
+							if(colQtyInRs_tDBInput_4 < 10) {
 								Product.ProductModelID = null;
 							} else {
 		                          
-            Product.ProductModelID = rs_tDBInput_4.getInt(9);
+            Product.ProductModelID = rs_tDBInput_4.getInt(10);
             if(rs_tDBInput_4.wasNull()){
                     Product.ProductModelID = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 10) {
+							if(colQtyInRs_tDBInput_4 < 11) {
 								Product.SellStartDate = null;
 							} else {
 										
-			Product.SellStartDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 10);
-			
-		                    }
-							if(colQtyInRs_tDBInput_4 < 11) {
-								Product.SellEndDate = null;
-							} else {
-										
-			Product.SellEndDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 11);
+			Product.SellStartDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 11);
 			
 		                    }
 							if(colQtyInRs_tDBInput_4 < 12) {
-								Product.DiscontinuedDate = null;
+								Product.SellEndDate = null;
 							} else {
 										
-			Product.DiscontinuedDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 12);
+			Product.SellEndDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 12);
 			
 		                    }
 							if(colQtyInRs_tDBInput_4 < 13) {
+								Product.DiscontinuedDate = null;
+							} else {
+										
+			Product.DiscontinuedDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 13);
+			
+		                    }
+							if(colQtyInRs_tDBInput_4 < 14) {
 								Product.ThumbNailPhoto = null;
 							} else {
 		                          
-            Product.ThumbNailPhoto = rs_tDBInput_4.getObject(13);
+            Product.ThumbNailPhoto = rs_tDBInput_4.getObject(14);
             if(rs_tDBInput_4.wasNull()){
                     Product.ThumbNailPhoto = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 14) {
+							if(colQtyInRs_tDBInput_4 < 15) {
 								Product.ThumbnailPhotoFileName = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(14);
+           		tmpContent_tDBInput_4 = rs_tDBInput_4.getString(15);
             if(tmpContent_tDBInput_4 != null) {
-            	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(14).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_4 .contains(rsmd_tDBInput_4.getColumnTypeName(15).toUpperCase(java.util.Locale.ENGLISH))) {
             		Product.ThumbnailPhotoFileName = FormatterUtils.formatUnwithE(tmpContent_tDBInput_4);
             	} else {
                 	Product.ThumbnailPhotoFileName = tmpContent_tDBInput_4;
@@ -5021,20 +5378,20 @@ resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4
                 Product.ThumbnailPhotoFileName = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 15) {
+							if(colQtyInRs_tDBInput_4 < 16) {
 								Product.rowguid = null;
 							} else {
 		                          
-            Product.rowguid = rs_tDBInput_4.getObject(15);
+            Product.rowguid = rs_tDBInput_4.getObject(16);
             if(rs_tDBInput_4.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_4 < 16) {
+							if(colQtyInRs_tDBInput_4 < 17) {
 								Product.ModifiedDate = null;
 							} else {
 										
-			Product.ModifiedDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 16);
+			Product.ModifiedDate = mssqlGTU_tDBInput_4.getDate(rsmd_tDBInput_4, rs_tDBInput_4, 17);
 			
 		                    }
 					
@@ -5118,6 +5475,12 @@ resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4
                         sb_tFileOutputDelimited_4.append(
                             Product.ProductID
                         );
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(Product.Name != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            Product.Name
+                        );
+                            }
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
                             if(Product.ProductNumber != null) {
                         sb_tFileOutputDelimited_4.append(
@@ -5493,6 +5856,12 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
 					return this.ParentProductCategoryID;
 				}
 				
+			    public String Name;
+
+				public String getName () {
+					return this.Name;
+				}
+				
 			    public Object rowguid;
 
 				public Object getRowguid () {
@@ -5539,6 +5908,7 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
 
 		other.ProductCategoryID = this.ProductCategoryID;
 	            other.ParentProductCategoryID = this.ParentProductCategoryID;
+	            other.Name = this.Name;
 	            other.rowguid = this.rowguid;
 	            other.ModifiedDate = this.ModifiedDate;
 	            
@@ -5594,6 +5964,66 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
     	}
 	}
 
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LOCAL_PROJECT_RawData.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_RawData.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LOCAL_PROJECT_RawData, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_RawData, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+	
+	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = unmarshaller.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LOCAL_PROJECT_RawData.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_RawData.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_RawData = new byte[2 * length];
+   				}
+			}
+			unmarshaller.readFully(commonByteArray_LOCAL_PROJECT_RawData, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_RawData, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+    
+    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
+		if(str == null) {
+			marshaller.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+            marshaller.writeInt(byteArray.length);
+            marshaller.write(byteArray);
+    	}
+    }
+
 	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
 		java.util.Date dateReturn = null;
         int length = 0;
@@ -5648,6 +6078,8 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
 					
 						this.ParentProductCategoryID = readInteger(dis);
 					
+					this.Name = readString(dis);
+					
 						this.rowguid = (Object) dis.readObject();
 					
 					this.ModifiedDate = readDate(dis);
@@ -5680,6 +6112,8 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
 			        this.ProductCategoryID = dis.readInt();
 					
 						this.ParentProductCategoryID = readInteger(dis);
+					
+					this.Name = readString(dis);
 					
 						this.rowguid = (Object) dis.readObject();
 					
@@ -5714,6 +6148,10 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
 				
 						writeInteger(this.ParentProductCategoryID,dos);
 					
+					// String
+				
+						writeString(this.Name,dos);
+					
 					// Object
 				
        			    	dos.writeObject(this.rowguid);
@@ -5741,6 +6179,10 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
 				
 						writeInteger(this.ParentProductCategoryID,dos);
 					
+					// String
+				
+						writeString(this.Name,dos);
+					
 					// Object
 				
        			    	dos.writeObject(this.rowguid);
@@ -5764,6 +6206,7 @@ public static class ProductCategoryStruct implements routines.system.IPersistabl
 		sb.append("[");
 		sb.append("ProductCategoryID="+String.valueOf(ProductCategoryID));
 		sb.append(",ParentProductCategoryID="+String.valueOf(ParentProductCategoryID));
+		sb.append(",Name="+Name);
 		sb.append(",rowguid="+String.valueOf(rowguid));
 		sb.append(",ModifiedDate="+String.valueOf(ModifiedDate));
 	    sb.append("]");
@@ -5841,101 +6284,90 @@ public void tDBInput_5Process(final java.util.Map<String, Object> globalMap) thr
 
 	
 	/**
-	 * [tFileOutputDelimited_5 begin ] start
+	 * [tFileOutputDelimited_12 begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tFileOutputDelimited_5", false);
-		start_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
+		ok_Hash.put("tFileOutputDelimited_12", false);
+		start_Hash.put("tFileOutputDelimited_12", System.currentTimeMillis());
 		
 	
-	currentComponent="tFileOutputDelimited_5";
+	currentComponent="tFileOutputDelimited_12";
 
 	
 					if(execStat) {
 						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"ProductCategory");
 					}
 				
-		int tos_count_tFileOutputDelimited_5 = 0;
+		int tos_count_tFileOutputDelimited_12 = 0;
 		
 
-String fileName_tFileOutputDelimited_5 = "";
-    fileName_tFileOutputDelimited_5 = (new java.io.File(context.path+"ProductCategory.csv")).getAbsolutePath().replace("\\","/");
-    String fullName_tFileOutputDelimited_5 = null;
-    String extension_tFileOutputDelimited_5 = null;
-    String directory_tFileOutputDelimited_5 = null;
-    if((fileName_tFileOutputDelimited_5.indexOf("/") != -1)) {
-        if(fileName_tFileOutputDelimited_5.lastIndexOf(".") < fileName_tFileOutputDelimited_5.lastIndexOf("/")) {
-            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
-            extension_tFileOutputDelimited_5 = "";
+String fileName_tFileOutputDelimited_12 = "";
+    fileName_tFileOutputDelimited_12 = (new java.io.File(context.path+"ProductCategory.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_12 = null;
+    String extension_tFileOutputDelimited_12 = null;
+    String directory_tFileOutputDelimited_12 = null;
+    if((fileName_tFileOutputDelimited_12.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_12.lastIndexOf(".") < fileName_tFileOutputDelimited_12.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_12 = fileName_tFileOutputDelimited_12;
+            extension_tFileOutputDelimited_12 = "";
         } else {
-            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("."));
-            extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
+            fullName_tFileOutputDelimited_12 = fileName_tFileOutputDelimited_12.substring(0, fileName_tFileOutputDelimited_12.lastIndexOf("."));
+            extension_tFileOutputDelimited_12 = fileName_tFileOutputDelimited_12.substring(fileName_tFileOutputDelimited_12.lastIndexOf("."));
         }
-        directory_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("/"));
+        directory_tFileOutputDelimited_12 = fileName_tFileOutputDelimited_12.substring(0, fileName_tFileOutputDelimited_12.lastIndexOf("/"));
     } else {
-        if(fileName_tFileOutputDelimited_5.lastIndexOf(".") != -1) {
-            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(0, fileName_tFileOutputDelimited_5.lastIndexOf("."));
-            extension_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5.substring(fileName_tFileOutputDelimited_5.lastIndexOf("."));
+        if(fileName_tFileOutputDelimited_12.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_12 = fileName_tFileOutputDelimited_12.substring(0, fileName_tFileOutputDelimited_12.lastIndexOf("."));
+            extension_tFileOutputDelimited_12 = fileName_tFileOutputDelimited_12.substring(fileName_tFileOutputDelimited_12.lastIndexOf("."));
         } else {
-            fullName_tFileOutputDelimited_5 = fileName_tFileOutputDelimited_5;
-            extension_tFileOutputDelimited_5 = "";
+            fullName_tFileOutputDelimited_12 = fileName_tFileOutputDelimited_12;
+            extension_tFileOutputDelimited_12 = "";
         }
-        directory_tFileOutputDelimited_5 = "";
+        directory_tFileOutputDelimited_12 = "";
     }
-    boolean isFileGenerated_tFileOutputDelimited_5 = true;
-    java.io.File filetFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
-    globalMap.put("tFileOutputDelimited_5_FILE_NAME",fileName_tFileOutputDelimited_5);
-            int nb_line_tFileOutputDelimited_5 = 0;
-            int splitedFileNo_tFileOutputDelimited_5 = 0;
-            int currentRow_tFileOutputDelimited_5 = 0;
+    boolean isFileGenerated_tFileOutputDelimited_12 = true;
+    java.io.File filetFileOutputDelimited_12 = new java.io.File(fileName_tFileOutputDelimited_12);
+    globalMap.put("tFileOutputDelimited_12_FILE_NAME",fileName_tFileOutputDelimited_12);
+            int nb_line_tFileOutputDelimited_12 = 0;
+            int splitedFileNo_tFileOutputDelimited_12 = 0;
+            int currentRow_tFileOutputDelimited_12 = 0;
 
-            final String OUT_DELIM_tFileOutputDelimited_5 = /** Start field tFileOutputDelimited_5:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_5:FIELDSEPARATOR */;
+            final String OUT_DELIM_tFileOutputDelimited_12 = /** Start field tFileOutputDelimited_12:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_12:FIELDSEPARATOR */;
 
-            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_5 = /** Start field tFileOutputDelimited_5:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_5:ROWSEPARATOR */;
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_12 = /** Start field tFileOutputDelimited_12:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_12:ROWSEPARATOR */;
 
                     //create directory only if not exists
-                    if(directory_tFileOutputDelimited_5 != null && directory_tFileOutputDelimited_5.trim().length() != 0) {
-                        java.io.File dir_tFileOutputDelimited_5 = new java.io.File(directory_tFileOutputDelimited_5);
-                        if(!dir_tFileOutputDelimited_5.exists()) {
-                            dir_tFileOutputDelimited_5.mkdirs();
+                    if(directory_tFileOutputDelimited_12 != null && directory_tFileOutputDelimited_12.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_12 = new java.io.File(directory_tFileOutputDelimited_12);
+                        if(!dir_tFileOutputDelimited_12.exists()) {
+                            dir_tFileOutputDelimited_12.mkdirs();
                         }
                     }
 
                         //routines.system.Row
-                        java.io.Writer outtFileOutputDelimited_5 = null;
+                        java.io.Writer outtFileOutputDelimited_12 = null;
 
-                        java.io.File fileToDelete_tFileOutputDelimited_5 = new java.io.File(fileName_tFileOutputDelimited_5);
-                        if(fileToDelete_tFileOutputDelimited_5.exists()) {
-                            fileToDelete_tFileOutputDelimited_5.delete();
+                        java.io.File fileToDelete_tFileOutputDelimited_12 = new java.io.File(fileName_tFileOutputDelimited_12);
+                        if(fileToDelete_tFileOutputDelimited_12.exists()) {
+                            fileToDelete_tFileOutputDelimited_12.delete();
                         }
-                        outtFileOutputDelimited_5 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
-                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_5, false),"ISO-8859-15"));
-                                    if(filetFileOutputDelimited_5.length()==0){
-                                        outtFileOutputDelimited_5.write("ProductCategoryID");
-                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
-                                        outtFileOutputDelimited_5.write("ParentProductCategoryID");
-                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
-                                        outtFileOutputDelimited_5.write("rowguid");
-                                            outtFileOutputDelimited_5.write(OUT_DELIM_tFileOutputDelimited_5);
-                                        outtFileOutputDelimited_5.write("ModifiedDate");
-                                        outtFileOutputDelimited_5.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
-                                        outtFileOutputDelimited_5.flush();
-                                    }
+                        outtFileOutputDelimited_12 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_12, false),"ISO-8859-15"));
 
 
-        resourceMap.put("out_tFileOutputDelimited_5", outtFileOutputDelimited_5);
-resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
+        resourceMap.put("out_tFileOutputDelimited_12", outtFileOutputDelimited_12);
+resourceMap.put("nb_line_tFileOutputDelimited_12", nb_line_tFileOutputDelimited_12);
 
  
 
 
 
 /**
- * [tFileOutputDelimited_5 begin ] stop
+ * [tFileOutputDelimited_12 begin ] stop
  */
 
 
@@ -5975,7 +6407,7 @@ resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5
 			java.sql.Statement stmt_tDBInput_5 = conn_tDBInput_5.createStatement();
 
 		    String dbquery_tDBInput_5 = "SELECT SalesLT.ProductCategory.ProductCategoryID,\n		SalesLT.ProductCategory.ParentProductCategoryID,\n		SalesLT.ProductC"
-+"ategory.rowguid,\n		SalesLT.ProductCategory.ModifiedDate\nFROM	SalesLT.ProductCategory";
++"ategory.Name,\n		SalesLT.ProductCategory.rowguid,\n		SalesLT.ProductCategory.ModifiedDate\nFROM	SalesLT.ProductCategory";
 		    
 
             	globalMap.put("tDBInput_5_QUERY",dbquery_tDBInput_5);
@@ -6011,19 +6443,34 @@ resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5
             }
 		                    }
 							if(colQtyInRs_tDBInput_5 < 3) {
+								ProductCategory.Name = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_5 = rs_tDBInput_5.getString(3);
+            if(tmpContent_tDBInput_5 != null) {
+            	if (talendToDBList_tDBInput_5 .contains(rsmd_tDBInput_5.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
+            		ProductCategory.Name = FormatterUtils.formatUnwithE(tmpContent_tDBInput_5);
+            	} else {
+                	ProductCategory.Name = tmpContent_tDBInput_5;
+                }
+            } else {
+                ProductCategory.Name = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_5 < 4) {
 								ProductCategory.rowguid = null;
 							} else {
 		                          
-            ProductCategory.rowguid = rs_tDBInput_5.getObject(3);
+            ProductCategory.rowguid = rs_tDBInput_5.getObject(4);
             if(rs_tDBInput_5.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_5 < 4) {
+							if(colQtyInRs_tDBInput_5 < 5) {
 								ProductCategory.ModifiedDate = null;
 							} else {
 										
-			ProductCategory.ModifiedDate = mssqlGTU_tDBInput_5.getDate(rsmd_tDBInput_5, rs_tDBInput_5, 4);
+			ProductCategory.ModifiedDate = mssqlGTU_tDBInput_5.getDate(rsmd_tDBInput_5, rs_tDBInput_5, 5);
 			
 		                    }
 					
@@ -6083,14 +6530,14 @@ resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5
 
 	
 	/**
-	 * [tFileOutputDelimited_5 main ] start
+	 * [tFileOutputDelimited_12 main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileOutputDelimited_5";
+	currentComponent="tFileOutputDelimited_12";
 
 	
 					if(execStat){
@@ -6103,35 +6550,41 @@ resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5
 					
 
 
-                    StringBuilder sb_tFileOutputDelimited_5 = new StringBuilder();
-                        sb_tFileOutputDelimited_5.append(
+                    StringBuilder sb_tFileOutputDelimited_12 = new StringBuilder();
+                        sb_tFileOutputDelimited_12.append(
                             ProductCategory.ProductCategoryID
                         );
-                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            sb_tFileOutputDelimited_12.append(OUT_DELIM_tFileOutputDelimited_12);
                             if(ProductCategory.ParentProductCategoryID != null) {
-                        sb_tFileOutputDelimited_5.append(
+                        sb_tFileOutputDelimited_12.append(
                             ProductCategory.ParentProductCategoryID
                         );
                             }
-                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            sb_tFileOutputDelimited_12.append(OUT_DELIM_tFileOutputDelimited_12);
+                            if(ProductCategory.Name != null) {
+                        sb_tFileOutputDelimited_12.append(
+                            ProductCategory.Name
+                        );
+                            }
+                            sb_tFileOutputDelimited_12.append(OUT_DELIM_tFileOutputDelimited_12);
                             if(ProductCategory.rowguid != null) {
-                        sb_tFileOutputDelimited_5.append(
+                        sb_tFileOutputDelimited_12.append(
                             ProductCategory.rowguid
                         );
                             }
-                            sb_tFileOutputDelimited_5.append(OUT_DELIM_tFileOutputDelimited_5);
+                            sb_tFileOutputDelimited_12.append(OUT_DELIM_tFileOutputDelimited_12);
                             if(ProductCategory.ModifiedDate != null) {
-                        sb_tFileOutputDelimited_5.append(
+                        sb_tFileOutputDelimited_12.append(
                             FormatterUtils.format_Date(ProductCategory.ModifiedDate, "dd-MM-yyyy")
                         );
                             }
-                    sb_tFileOutputDelimited_5.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_5);
+                    sb_tFileOutputDelimited_12.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_12);
 
 
-                    nb_line_tFileOutputDelimited_5++;
-                    resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5);
+                    nb_line_tFileOutputDelimited_12++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_12", nb_line_tFileOutputDelimited_12);
 
-                        outtFileOutputDelimited_5.write(sb_tFileOutputDelimited_5.toString());
+                        outtFileOutputDelimited_12.write(sb_tFileOutputDelimited_12.toString());
 
 
 
@@ -6139,21 +6592,21 @@ resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5
  
 
 
-	tos_count_tFileOutputDelimited_5++;
+	tos_count_tFileOutputDelimited_12++;
 
 /**
- * [tFileOutputDelimited_5 main ] stop
+ * [tFileOutputDelimited_12 main ] stop
  */
 	
 	/**
-	 * [tFileOutputDelimited_5 process_data_begin ] start
+	 * [tFileOutputDelimited_12 process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileOutputDelimited_5";
+	currentComponent="tFileOutputDelimited_12";
 
 	
 
@@ -6162,18 +6615,18 @@ resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5
 
 
 /**
- * [tFileOutputDelimited_5 process_data_begin ] stop
+ * [tFileOutputDelimited_12 process_data_begin ] stop
  */
 	
 	/**
-	 * [tFileOutputDelimited_5 process_data_end ] start
+	 * [tFileOutputDelimited_12 process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileOutputDelimited_5";
+	currentComponent="tFileOutputDelimited_12";
 
 	
 
@@ -6182,7 +6635,7 @@ resourceMap.put("nb_line_tFileOutputDelimited_5", nb_line_tFileOutputDelimited_5
 
 
 /**
- * [tFileOutputDelimited_5 process_data_end ] stop
+ * [tFileOutputDelimited_12 process_data_end ] stop
  */
 
 
@@ -6245,14 +6698,14 @@ end_Hash.put("tDBInput_5", System.currentTimeMillis());
 
 	
 	/**
-	 * [tFileOutputDelimited_5 end ] start
+	 * [tFileOutputDelimited_12 end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileOutputDelimited_5";
+	currentComponent="tFileOutputDelimited_12";
 
 	
 
@@ -6260,17 +6713,17 @@ end_Hash.put("tDBInput_5", System.currentTimeMillis());
 
 		
 			
-					if(outtFileOutputDelimited_5!=null) {
-						outtFileOutputDelimited_5.flush();
-						outtFileOutputDelimited_5.close();
+					if(outtFileOutputDelimited_12!=null) {
+						outtFileOutputDelimited_12.flush();
+						outtFileOutputDelimited_12.close();
 					}
 				
-				globalMap.put("tFileOutputDelimited_5_NB_LINE",nb_line_tFileOutputDelimited_5);
-				globalMap.put("tFileOutputDelimited_5_FILE_NAME",fileName_tFileOutputDelimited_5);
+				globalMap.put("tFileOutputDelimited_12_NB_LINE",nb_line_tFileOutputDelimited_12);
+				globalMap.put("tFileOutputDelimited_12_FILE_NAME",fileName_tFileOutputDelimited_12);
 			
 		
 		
-		resourceMap.put("finish_tFileOutputDelimited_5", true);
+		resourceMap.put("finish_tFileOutputDelimited_12", true);
 	
 
 				if(execStat){
@@ -6279,14 +6732,14 @@ end_Hash.put("tDBInput_5", System.currentTimeMillis());
 			  	
  
 
-ok_Hash.put("tFileOutputDelimited_5", true);
-end_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
+ok_Hash.put("tFileOutputDelimited_12", true);
+end_Hash.put("tFileOutputDelimited_12", System.currentTimeMillis());
 
 
 
 
 /**
- * [tFileOutputDelimited_5 end ] stop
+ * [tFileOutputDelimited_12 end ] stop
  */
 
 
@@ -6335,25 +6788,25 @@ end_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
 
 	
 	/**
-	 * [tFileOutputDelimited_5 finally ] start
+	 * [tFileOutputDelimited_12 finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileOutputDelimited_5";
+	currentComponent="tFileOutputDelimited_12";
 
 	
 
 
-		if(resourceMap.get("finish_tFileOutputDelimited_5") == null){ 
+		if(resourceMap.get("finish_tFileOutputDelimited_12") == null){ 
 			
 				
-						java.io.Writer outtFileOutputDelimited_5 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_5");
-						if(outtFileOutputDelimited_5!=null) {
-							outtFileOutputDelimited_5.flush();
-							outtFileOutputDelimited_5.close();
+						java.io.Writer outtFileOutputDelimited_12 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_12");
+						if(outtFileOutputDelimited_12!=null) {
+							outtFileOutputDelimited_12.flush();
+							outtFileOutputDelimited_12.close();
 						}
 					
 				
@@ -6366,7 +6819,7 @@ end_Hash.put("tFileOutputDelimited_5", System.currentTimeMillis());
 
 
 /**
- * [tFileOutputDelimited_5 finally ] stop
+ * [tFileOutputDelimited_12 finally ] stop
  */
 
 
@@ -7346,6 +7799,12 @@ public static class ProductModelStruct implements routines.system.IPersistableRo
 					return this.ProductModelID;
 				}
 				
+			    public String Name;
+
+				public String getName () {
+					return this.Name;
+				}
+				
 			    public String CatalogDescription;
 
 				public String getCatalogDescription () {
@@ -7397,6 +7856,7 @@ public static class ProductModelStruct implements routines.system.IPersistableRo
 	public void copyDataTo(ProductModelStruct other) {
 
 		other.ProductModelID = this.ProductModelID;
+	            other.Name = this.Name;
 	            other.CatalogDescription = this.CatalogDescription;
 	            other.rowguid = this.rowguid;
 	            other.ModifiedDate = this.ModifiedDate;
@@ -7524,6 +7984,8 @@ public static class ProductModelStruct implements routines.system.IPersistableRo
 		
 			        this.ProductModelID = dis.readInt();
 					
+					this.Name = readString(dis);
+					
 					this.CatalogDescription = readString(dis);
 					
 						this.rowguid = (Object) dis.readObject();
@@ -7556,6 +8018,8 @@ public static class ProductModelStruct implements routines.system.IPersistableRo
         		int length = 0;
 		
 			        this.ProductModelID = dis.readInt();
+					
+					this.Name = readString(dis);
 					
 					this.CatalogDescription = readString(dis);
 					
@@ -7590,6 +8054,10 @@ public static class ProductModelStruct implements routines.system.IPersistableRo
 					
 					// String
 				
+						writeString(this.Name,dos);
+					
+					// String
+				
 						writeString(this.CatalogDescription,dos);
 					
 					// Object
@@ -7617,6 +8085,10 @@ public static class ProductModelStruct implements routines.system.IPersistableRo
 					
 					// String
 				
+						writeString(this.Name,dos);
+					
+					// String
+				
 						writeString(this.CatalogDescription,dos);
 					
 					// Object
@@ -7641,6 +8113,7 @@ public static class ProductModelStruct implements routines.system.IPersistableRo
 		sb.append(super.toString());
 		sb.append("[");
 		sb.append("ProductModelID="+String.valueOf(ProductModelID));
+		sb.append(",Name="+Name);
 		sb.append(",CatalogDescription="+CatalogDescription);
 		sb.append(",rowguid="+String.valueOf(rowguid));
 		sb.append(",ModifiedDate="+String.valueOf(ModifiedDate));
@@ -7795,6 +8268,8 @@ String fileName_tFileOutputDelimited_7 = "";
                                     if(filetFileOutputDelimited_7.length()==0){
                                         outtFileOutputDelimited_7.write("ProductModelID");
                                             outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
+                                        outtFileOutputDelimited_7.write("Name");
+                                            outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
                                         outtFileOutputDelimited_7.write("CatalogDescription");
                                             outtFileOutputDelimited_7.write(OUT_DELIM_tFileOutputDelimited_7);
                                         outtFileOutputDelimited_7.write("rowguid");
@@ -7852,8 +8327,8 @@ resourceMap.put("nb_line_tFileOutputDelimited_7", nb_line_tFileOutputDelimited_7
 		    
 			java.sql.Statement stmt_tDBInput_7 = conn_tDBInput_7.createStatement();
 
-		    String dbquery_tDBInput_7 = "SELECT SalesLT.ProductModel.ProductModelID,\n		SalesLT.ProductModel.CatalogDescription,\n		SalesLT.ProductModel.rowguid,\n"
-+"		SalesLT.ProductModel.ModifiedDate\nFROM	SalesLT.ProductModel";
+		    String dbquery_tDBInput_7 = "SELECT SalesLT.ProductModel.ProductModelID,\n		SalesLT.ProductModel.Name,\n		SalesLT.ProductModel.CatalogDescription,\n		S"
++"alesLT.ProductModel.rowguid,\n		SalesLT.ProductModel.ModifiedDate\nFROM	SalesLT.ProductModel";
 		    
 
             	globalMap.put("tDBInput_7_QUERY",dbquery_tDBInput_7);
@@ -7880,12 +8355,27 @@ resourceMap.put("nb_line_tFileOutputDelimited_7", nb_line_tFileOutputDelimited_7
             }
 		                    }
 							if(colQtyInRs_tDBInput_7 < 2) {
-								ProductModel.CatalogDescription = null;
+								ProductModel.Name = null;
 							} else {
 	                         		
            		tmpContent_tDBInput_7 = rs_tDBInput_7.getString(2);
             if(tmpContent_tDBInput_7 != null) {
             	if (talendToDBList_tDBInput_7 .contains(rsmd_tDBInput_7.getColumnTypeName(2).toUpperCase(java.util.Locale.ENGLISH))) {
+            		ProductModel.Name = FormatterUtils.formatUnwithE(tmpContent_tDBInput_7);
+            	} else {
+                	ProductModel.Name = tmpContent_tDBInput_7;
+                }
+            } else {
+                ProductModel.Name = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_7 < 3) {
+								ProductModel.CatalogDescription = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_7 = rs_tDBInput_7.getString(3);
+            if(tmpContent_tDBInput_7 != null) {
+            	if (talendToDBList_tDBInput_7 .contains(rsmd_tDBInput_7.getColumnTypeName(3).toUpperCase(java.util.Locale.ENGLISH))) {
             		ProductModel.CatalogDescription = FormatterUtils.formatUnwithE(tmpContent_tDBInput_7);
             	} else {
                 	ProductModel.CatalogDescription = tmpContent_tDBInput_7;
@@ -7894,20 +8384,20 @@ resourceMap.put("nb_line_tFileOutputDelimited_7", nb_line_tFileOutputDelimited_7
                 ProductModel.CatalogDescription = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_7 < 3) {
+							if(colQtyInRs_tDBInput_7 < 4) {
 								ProductModel.rowguid = null;
 							} else {
 		                          
-            ProductModel.rowguid = rs_tDBInput_7.getObject(3);
+            ProductModel.rowguid = rs_tDBInput_7.getObject(4);
             if(rs_tDBInput_7.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_7 < 4) {
+							if(colQtyInRs_tDBInput_7 < 5) {
 								ProductModel.ModifiedDate = null;
 							} else {
 										
-			ProductModel.ModifiedDate = mssqlGTU_tDBInput_7.getDate(rsmd_tDBInput_7, rs_tDBInput_7, 4);
+			ProductModel.ModifiedDate = mssqlGTU_tDBInput_7.getDate(rsmd_tDBInput_7, rs_tDBInput_7, 5);
 			
 		                    }
 					
@@ -7991,6 +8481,12 @@ resourceMap.put("nb_line_tFileOutputDelimited_7", nb_line_tFileOutputDelimited_7
                         sb_tFileOutputDelimited_7.append(
                             ProductModel.ProductModelID
                         );
+                            sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
+                            if(ProductModel.Name != null) {
+                        sb_tFileOutputDelimited_7.append(
+                            ProductModel.Name
+                        );
+                            }
                             sb_tFileOutputDelimited_7.append(OUT_DELIM_tFileOutputDelimited_7);
                             if(ProductModel.CatalogDescription != null) {
                         sb_tFileOutputDelimited_7.append(
@@ -10406,6 +10902,18 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					return this.SalesOrderNumber;
 				}
 				
+			    public String PurchaseOrderNumber;
+
+				public String getPurchaseOrderNumber () {
+					return this.PurchaseOrderNumber;
+				}
+				
+			    public String AccountNumber;
+
+				public String getAccountNumber () {
+					return this.AccountNumber;
+				}
+				
 			    public int CustomerID;
 
 				public int getCustomerID () {
@@ -10518,6 +11026,8 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 	            other.Status = this.Status;
 	            other.OnlineOrderFlag = this.OnlineOrderFlag;
 	            other.SalesOrderNumber = this.SalesOrderNumber;
+	            other.PurchaseOrderNumber = this.PurchaseOrderNumber;
+	            other.AccountNumber = this.AccountNumber;
 	            other.CustomerID = this.CustomerID;
 	            other.ShipToAddressID = this.ShipToAddressID;
 	            other.BillToAddressID = this.BillToAddressID;
@@ -10714,6 +11224,10 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					
 					this.SalesOrderNumber = readString(dis);
 					
+					this.PurchaseOrderNumber = readString(dis);
+					
+					this.AccountNumber = readString(dis);
+					
 			        this.CustomerID = dis.readInt();
 					
 						this.ShipToAddressID = readInteger(dis);
@@ -10783,6 +11297,10 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
            				}
 					
 					this.SalesOrderNumber = readString(dis);
+					
+					this.PurchaseOrderNumber = readString(dis);
+					
+					this.AccountNumber = readString(dis);
 					
 			        this.CustomerID = dis.readInt();
 					
@@ -10865,6 +11383,14 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					// String
 				
 						writeString(this.SalesOrderNumber,dos);
+					
+					// String
+				
+						writeString(this.PurchaseOrderNumber,dos);
+					
+					// String
+				
+						writeString(this.AccountNumber,dos);
 					
 					// int
 				
@@ -10962,6 +11488,14 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 				
 						writeString(this.SalesOrderNumber,dos);
 					
+					// String
+				
+						writeString(this.PurchaseOrderNumber,dos);
+					
+					// String
+				
+						writeString(this.AccountNumber,dos);
+					
 					// int
 				
 		            	dos.writeInt(this.CustomerID);
@@ -11031,6 +11565,8 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 		sb.append(",Status="+String.valueOf(Status));
 		sb.append(",OnlineOrderFlag="+String.valueOf(OnlineOrderFlag));
 		sb.append(",SalesOrderNumber="+SalesOrderNumber);
+		sb.append(",PurchaseOrderNumber="+PurchaseOrderNumber);
+		sb.append(",AccountNumber="+AccountNumber);
 		sb.append(",CustomerID="+String.valueOf(CustomerID));
 		sb.append(",ShipToAddressID="+String.valueOf(ShipToAddressID));
 		sb.append(",BillToAddressID="+String.valueOf(BillToAddressID));
@@ -11208,6 +11744,10 @@ String fileName_tFileOutputDelimited_10 = "";
                                             outtFileOutputDelimited_10.write(OUT_DELIM_tFileOutputDelimited_10);
                                         outtFileOutputDelimited_10.write("SalesOrderNumber");
                                             outtFileOutputDelimited_10.write(OUT_DELIM_tFileOutputDelimited_10);
+                                        outtFileOutputDelimited_10.write("PurchaseOrderNumber");
+                                            outtFileOutputDelimited_10.write(OUT_DELIM_tFileOutputDelimited_10);
+                                        outtFileOutputDelimited_10.write("AccountNumber");
+                                            outtFileOutputDelimited_10.write(OUT_DELIM_tFileOutputDelimited_10);
                                         outtFileOutputDelimited_10.write("CustomerID");
                                             outtFileOutputDelimited_10.write(OUT_DELIM_tFileOutputDelimited_10);
                                         outtFileOutputDelimited_10.write("ShipToAddressID");
@@ -11285,11 +11825,12 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
 
 		    String dbquery_tDBInput_10 = "SELECT SalesLT.SalesOrderHeader.SalesOrderID,\n		SalesLT.SalesOrderHeader.RevisionNumber,\n		SalesLT.SalesOrderHeader.Ord"
 +"erDate,\n		SalesLT.SalesOrderHeader.DueDate,\n		SalesLT.SalesOrderHeader.ShipDate,\n		SalesLT.SalesOrderHeader.Status,\n		Sa"
-+"lesLT.SalesOrderHeader.OnlineOrderFlag,\n		SalesLT.SalesOrderHeader.SalesOrderNumber,\n		SalesLT.SalesOrderHeader.Customer"
-+"ID,\n		SalesLT.SalesOrderHeader.ShipToAddressID,\n		SalesLT.SalesOrderHeader.BillToAddressID,\n		SalesLT.SalesOrderHeader.S"
-+"hipMethod,\n		SalesLT.SalesOrderHeader.CreditCardApprovalCode,\n		SalesLT.SalesOrderHeader.SubTotal,\n		SalesLT.SalesOrderH"
-+"eader.TaxAmt,\n		SalesLT.SalesOrderHeader.Freight,\n		SalesLT.SalesOrderHeader.TotalDue,\n		SalesLT.SalesOrderHeader.Commen"
-+"t,\n		SalesLT.SalesOrderHeader.rowguid,\n		SalesLT.SalesOrderHeader.ModifiedDate\nFROM	SalesLT.SalesOrderHeader";
++"lesLT.SalesOrderHeader.OnlineOrderFlag,\n		SalesLT.SalesOrderHeader.SalesOrderNumber,\n		SalesLT.SalesOrderHeader.Purchase"
++"OrderNumber,\n		SalesLT.SalesOrderHeader.AccountNumber,\n		SalesLT.SalesOrderHeader.CustomerID,\n		SalesLT.SalesOrderHeader"
++".ShipToAddressID,\n		SalesLT.SalesOrderHeader.BillToAddressID,\n		SalesLT.SalesOrderHeader.ShipMethod,\n		SalesLT.SalesOrde"
++"rHeader.CreditCardApprovalCode,\n		SalesLT.SalesOrderHeader.SubTotal,\n		SalesLT.SalesOrderHeader.TaxAmt,\n		SalesLT.SalesO"
++"rderHeader.Freight,\n		SalesLT.SalesOrderHeader.TotalDue,\n		SalesLT.SalesOrderHeader.Comment,\n		SalesLT.SalesOrderHeader."
++"rowguid,\n		SalesLT.SalesOrderHeader.ModifiedDate\nFROM	SalesLT.SalesOrderHeader";
 		    
 
             	globalMap.put("tDBInput_10_QUERY",dbquery_tDBInput_10);
@@ -11379,39 +11920,69 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
             }
 		                    }
 							if(colQtyInRs_tDBInput_10 < 9) {
+								row1.PurchaseOrderNumber = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(9);
+            if(tmpContent_tDBInput_10 != null) {
+            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(9).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.PurchaseOrderNumber = FormatterUtils.formatUnwithE(tmpContent_tDBInput_10);
+            	} else {
+                	row1.PurchaseOrderNumber = tmpContent_tDBInput_10;
+                }
+            } else {
+                row1.PurchaseOrderNumber = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_10 < 10) {
+								row1.AccountNumber = null;
+							} else {
+	                         		
+           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(10);
+            if(tmpContent_tDBInput_10 != null) {
+            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(10).toUpperCase(java.util.Locale.ENGLISH))) {
+            		row1.AccountNumber = FormatterUtils.formatUnwithE(tmpContent_tDBInput_10);
+            	} else {
+                	row1.AccountNumber = tmpContent_tDBInput_10;
+                }
+            } else {
+                row1.AccountNumber = null;
+            }
+		                    }
+							if(colQtyInRs_tDBInput_10 < 11) {
 								row1.CustomerID = 0;
 							} else {
 		                          
-            row1.CustomerID = rs_tDBInput_10.getInt(9);
+            row1.CustomerID = rs_tDBInput_10.getInt(11);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 10) {
+							if(colQtyInRs_tDBInput_10 < 12) {
 								row1.ShipToAddressID = null;
 							} else {
 		                          
-            row1.ShipToAddressID = rs_tDBInput_10.getInt(10);
+            row1.ShipToAddressID = rs_tDBInput_10.getInt(12);
             if(rs_tDBInput_10.wasNull()){
                     row1.ShipToAddressID = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 11) {
+							if(colQtyInRs_tDBInput_10 < 13) {
 								row1.BillToAddressID = null;
 							} else {
 		                          
-            row1.BillToAddressID = rs_tDBInput_10.getInt(11);
+            row1.BillToAddressID = rs_tDBInput_10.getInt(13);
             if(rs_tDBInput_10.wasNull()){
                     row1.BillToAddressID = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 12) {
+							if(colQtyInRs_tDBInput_10 < 14) {
 								row1.ShipMethod = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(12);
+           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(14);
             if(tmpContent_tDBInput_10 != null) {
-            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(12).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(14).toUpperCase(java.util.Locale.ENGLISH))) {
             		row1.ShipMethod = FormatterUtils.formatUnwithE(tmpContent_tDBInput_10);
             	} else {
                 	row1.ShipMethod = tmpContent_tDBInput_10;
@@ -11420,13 +11991,13 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
                 row1.ShipMethod = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 13) {
+							if(colQtyInRs_tDBInput_10 < 15) {
 								row1.CreditCardApprovalCode = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(13);
+           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(15);
             if(tmpContent_tDBInput_10 != null) {
-            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(13).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(15).toUpperCase(java.util.Locale.ENGLISH))) {
             		row1.CreditCardApprovalCode = FormatterUtils.formatUnwithE(tmpContent_tDBInput_10);
             	} else {
                 	row1.CreditCardApprovalCode = tmpContent_tDBInput_10;
@@ -11435,49 +12006,49 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
                 row1.CreditCardApprovalCode = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 14) {
+							if(colQtyInRs_tDBInput_10 < 16) {
 								row1.SubTotal = null;
 							} else {
 		                          
-            row1.SubTotal = rs_tDBInput_10.getObject(14);
-            if(rs_tDBInput_10.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_10 < 15) {
-								row1.TaxAmt = null;
-							} else {
-		                          
-            row1.TaxAmt = rs_tDBInput_10.getObject(15);
-            if(rs_tDBInput_10.wasNull()){
-                    throw new RuntimeException("Null value in non-Nullable column");
-            }
-		                    }
-							if(colQtyInRs_tDBInput_10 < 16) {
-								row1.Freight = null;
-							} else {
-		                          
-            row1.Freight = rs_tDBInput_10.getObject(16);
+            row1.SubTotal = rs_tDBInput_10.getObject(16);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_10 < 17) {
-								row1.TotalDue = null;
+								row1.TaxAmt = null;
 							} else {
 		                          
-            row1.TotalDue = rs_tDBInput_10.getObject(17);
+            row1.TaxAmt = rs_tDBInput_10.getObject(17);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_10 < 18) {
+								row1.Freight = null;
+							} else {
+		                          
+            row1.Freight = rs_tDBInput_10.getObject(18);
+            if(rs_tDBInput_10.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_10 < 19) {
+								row1.TotalDue = null;
+							} else {
+		                          
+            row1.TotalDue = rs_tDBInput_10.getObject(19);
+            if(rs_tDBInput_10.wasNull()){
+                    throw new RuntimeException("Null value in non-Nullable column");
+            }
+		                    }
+							if(colQtyInRs_tDBInput_10 < 20) {
 								row1.Comment = null;
 							} else {
 	                         		
-           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(18);
+           		tmpContent_tDBInput_10 = rs_tDBInput_10.getString(20);
             if(tmpContent_tDBInput_10 != null) {
-            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(18).toUpperCase(java.util.Locale.ENGLISH))) {
+            	if (talendToDBList_tDBInput_10 .contains(rsmd_tDBInput_10.getColumnTypeName(20).toUpperCase(java.util.Locale.ENGLISH))) {
             		row1.Comment = FormatterUtils.formatUnwithE(tmpContent_tDBInput_10);
             	} else {
                 	row1.Comment = tmpContent_tDBInput_10;
@@ -11486,20 +12057,20 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
                 row1.Comment = null;
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 19) {
+							if(colQtyInRs_tDBInput_10 < 21) {
 								row1.rowguid = null;
 							} else {
 		                          
-            row1.rowguid = rs_tDBInput_10.getObject(19);
+            row1.rowguid = rs_tDBInput_10.getObject(21);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
-							if(colQtyInRs_tDBInput_10 < 20) {
+							if(colQtyInRs_tDBInput_10 < 22) {
 								row1.ModifiedDate = null;
 							} else {
 										
-			row1.ModifiedDate = mssqlGTU_tDBInput_10.getDate(rsmd_tDBInput_10, rs_tDBInput_10, 20);
+			row1.ModifiedDate = mssqlGTU_tDBInput_10.getDate(rsmd_tDBInput_10, rs_tDBInput_10, 22);
 			
 		                    }
 					
@@ -11619,6 +12190,18 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
                             if(row1.SalesOrderNumber != null) {
                         sb_tFileOutputDelimited_10.append(
                             row1.SalesOrderNumber
+                        );
+                            }
+                            sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
+                            if(row1.PurchaseOrderNumber != null) {
+                        sb_tFileOutputDelimited_10.append(
+                            row1.PurchaseOrderNumber
+                        );
+                            }
+                            sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
+                            if(row1.AccountNumber != null) {
+                        sb_tFileOutputDelimited_10.append(
+                            row1.AccountNumber
                         );
                             }
                             sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
@@ -12456,6 +13039,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     348727 characters generated by Talend Open Studio for Data Integration 
- *     on the 27 de março de 2022 23:27:07 BRT
+ *     370156 characters generated by Talend Open Studio for Data Integration 
+ *     on the 28 de março de 2022 01:49:25 BRT
  ************************************************************************************************/
