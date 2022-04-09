@@ -476,22 +476,22 @@ private class TalendException extends Exception {
 					tFileInputDelimited_10_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tFileInputDelimited_8_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tFileInputDelimited_13_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
 				status = "failure";
 				
-					tFileInputDelimited_10_onSubJobError(exception, errorComponent, globalMap);
+					tFileInputDelimited_13_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tFileInputDelimited_12_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tFileOutputDelimited_4_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
 				status = "failure";
 				
-					tFileInputDelimited_10_onSubJobError(exception, errorComponent, globalMap);
+					tFileInputDelimited_13_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
 			public void tAdvancedHash_row2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
@@ -557,24 +557,6 @@ private class TalendException extends Exception {
 					tFileInputDelimited_10_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row12_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tFileInputDelimited_10_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
-			public void tAdvancedHash_row13_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
-				
-				end_Hash.put(errorComponent, System.currentTimeMillis());
-				
-				status = "failure";
-				
-					tFileInputDelimited_10_onSubJobError(exception, errorComponent, globalMap);
-			}
-			
 			public void tFileInputDelimited_1_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
@@ -596,6 +578,11 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 			}
 			public void tFileInputDelimited_10_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+
+resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
+
+			}
+			public void tFileInputDelimited_13_onSubJobError(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 
 resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThread().getId()+ "", "FATAL", "", exception.getMessage(), ResumeUtil.getExceptionStackTrace(exception),"");
 
@@ -16020,82 +16007,10 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					return this.ShippingAddressID;
 				}
 				
-			    public String ShippingAddressLine1;
-
-				public String getShippingAddressLine1 () {
-					return this.ShippingAddressLine1;
-				}
-				
-			    public String ShippingAddressLine2;
-
-				public String getShippingAddressLine2 () {
-					return this.ShippingAddressLine2;
-				}
-				
-			    public String ShippingCity;
-
-				public String getShippingCity () {
-					return this.ShippingCity;
-				}
-				
-			    public String ShippingStateProvince;
-
-				public String getShippingStateProvince () {
-					return this.ShippingStateProvince;
-				}
-				
-			    public String ShippingCountryRegion;
-
-				public String getShippingCountryRegion () {
-					return this.ShippingCountryRegion;
-				}
-				
-			    public String ShippingPostalCode;
-
-				public String getShippingPostalCode () {
-					return this.ShippingPostalCode;
-				}
-				
 			    public Integer BillingAddressID;
 
 				public Integer getBillingAddressID () {
 					return this.BillingAddressID;
-				}
-				
-			    public String BillingAddressLine1;
-
-				public String getBillingAddressLine1 () {
-					return this.BillingAddressLine1;
-				}
-				
-			    public String BillingAddressLine2;
-
-				public String getBillingAddressLine2 () {
-					return this.BillingAddressLine2;
-				}
-				
-			    public String BillingCity;
-
-				public String getBillingCity () {
-					return this.BillingCity;
-				}
-				
-			    public String BillingStateProvince;
-
-				public String getBillingStateProvince () {
-					return this.BillingStateProvince;
-				}
-				
-			    public String BillingCountryRegion;
-
-				public String getBillingCountryRegion () {
-					return this.BillingCountryRegion;
-				}
-				
-			    public String BillingPostalCode;
-
-				public String getBillingPostalCode () {
-					return this.BillingPostalCode;
 				}
 				
 			    public String ShipMethod;
@@ -16231,19 +16146,7 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 	            other.AccountNumber = this.AccountNumber;
 	            other.CustomerID = this.CustomerID;
 	            other.ShippingAddressID = this.ShippingAddressID;
-	            other.ShippingAddressLine1 = this.ShippingAddressLine1;
-	            other.ShippingAddressLine2 = this.ShippingAddressLine2;
-	            other.ShippingCity = this.ShippingCity;
-	            other.ShippingStateProvince = this.ShippingStateProvince;
-	            other.ShippingCountryRegion = this.ShippingCountryRegion;
-	            other.ShippingPostalCode = this.ShippingPostalCode;
 	            other.BillingAddressID = this.BillingAddressID;
-	            other.BillingAddressLine1 = this.BillingAddressLine1;
-	            other.BillingAddressLine2 = this.BillingAddressLine2;
-	            other.BillingCity = this.BillingCity;
-	            other.BillingStateProvince = this.BillingStateProvince;
-	            other.BillingCountryRegion = this.BillingCountryRegion;
-	            other.BillingPostalCode = this.BillingPostalCode;
 	            other.ShipMethod = this.ShipMethod;
 	            other.CreditCardApprovalCode = this.CreditCardApprovalCode;
 	            other.SubTotal = this.SubTotal;
@@ -16446,31 +16349,7 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					
 						this.ShippingAddressID = readInteger(dis);
 					
-					this.ShippingAddressLine1 = readString(dis);
-					
-					this.ShippingAddressLine2 = readString(dis);
-					
-					this.ShippingCity = readString(dis);
-					
-					this.ShippingStateProvince = readString(dis);
-					
-					this.ShippingCountryRegion = readString(dis);
-					
-					this.ShippingPostalCode = readString(dis);
-					
 						this.BillingAddressID = readInteger(dis);
-					
-					this.BillingAddressLine1 = readString(dis);
-					
-					this.BillingAddressLine2 = readString(dis);
-					
-					this.BillingCity = readString(dis);
-					
-					this.BillingStateProvince = readString(dis);
-					
-					this.BillingCountryRegion = readString(dis);
-					
-					this.BillingPostalCode = readString(dis);
 					
 					this.ShipMethod = readString(dis);
 					
@@ -16549,31 +16428,7 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					
 						this.ShippingAddressID = readInteger(dis);
 					
-					this.ShippingAddressLine1 = readString(dis);
-					
-					this.ShippingAddressLine2 = readString(dis);
-					
-					this.ShippingCity = readString(dis);
-					
-					this.ShippingStateProvince = readString(dis);
-					
-					this.ShippingCountryRegion = readString(dis);
-					
-					this.ShippingPostalCode = readString(dis);
-					
 						this.BillingAddressID = readInteger(dis);
-					
-					this.BillingAddressLine1 = readString(dis);
-					
-					this.BillingAddressLine2 = readString(dis);
-					
-					this.BillingCity = readString(dis);
-					
-					this.BillingStateProvince = readString(dis);
-					
-					this.BillingCountryRegion = readString(dis);
-					
-					this.BillingPostalCode = readString(dis);
 					
 					this.ShipMethod = readString(dis);
 					
@@ -16672,57 +16527,9 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 				
 						writeInteger(this.ShippingAddressID,dos);
 					
-					// String
-				
-						writeString(this.ShippingAddressLine1,dos);
-					
-					// String
-				
-						writeString(this.ShippingAddressLine2,dos);
-					
-					// String
-				
-						writeString(this.ShippingCity,dos);
-					
-					// String
-				
-						writeString(this.ShippingStateProvince,dos);
-					
-					// String
-				
-						writeString(this.ShippingCountryRegion,dos);
-					
-					// String
-				
-						writeString(this.ShippingPostalCode,dos);
-					
 					// Integer
 				
 						writeInteger(this.BillingAddressID,dos);
-					
-					// String
-				
-						writeString(this.BillingAddressLine1,dos);
-					
-					// String
-				
-						writeString(this.BillingAddressLine2,dos);
-					
-					// String
-				
-						writeString(this.BillingCity,dos);
-					
-					// String
-				
-						writeString(this.BillingStateProvince,dos);
-					
-					// String
-				
-						writeString(this.BillingCountryRegion,dos);
-					
-					// String
-				
-						writeString(this.BillingPostalCode,dos);
 					
 					// String
 				
@@ -16839,57 +16646,9 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 				
 						writeInteger(this.ShippingAddressID,dos);
 					
-					// String
-				
-						writeString(this.ShippingAddressLine1,dos);
-					
-					// String
-				
-						writeString(this.ShippingAddressLine2,dos);
-					
-					// String
-				
-						writeString(this.ShippingCity,dos);
-					
-					// String
-				
-						writeString(this.ShippingStateProvince,dos);
-					
-					// String
-				
-						writeString(this.ShippingCountryRegion,dos);
-					
-					// String
-				
-						writeString(this.ShippingPostalCode,dos);
-					
 					// Integer
 				
 						writeInteger(this.BillingAddressID,dos);
-					
-					// String
-				
-						writeString(this.BillingAddressLine1,dos);
-					
-					// String
-				
-						writeString(this.BillingAddressLine2,dos);
-					
-					// String
-				
-						writeString(this.BillingCity,dos);
-					
-					// String
-				
-						writeString(this.BillingStateProvince,dos);
-					
-					// String
-				
-						writeString(this.BillingCountryRegion,dos);
-					
-					// String
-				
-						writeString(this.BillingPostalCode,dos);
 					
 					// String
 				
@@ -16972,19 +16731,7 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 		sb.append(",AccountNumber="+AccountNumber);
 		sb.append(",CustomerID="+String.valueOf(CustomerID));
 		sb.append(",ShippingAddressID="+String.valueOf(ShippingAddressID));
-		sb.append(",ShippingAddressLine1="+ShippingAddressLine1);
-		sb.append(",ShippingAddressLine2="+ShippingAddressLine2);
-		sb.append(",ShippingCity="+ShippingCity);
-		sb.append(",ShippingStateProvince="+ShippingStateProvince);
-		sb.append(",ShippingCountryRegion="+ShippingCountryRegion);
-		sb.append(",ShippingPostalCode="+ShippingPostalCode);
 		sb.append(",BillingAddressID="+String.valueOf(BillingAddressID));
-		sb.append(",BillingAddressLine1="+BillingAddressLine1);
-		sb.append(",BillingAddressLine2="+BillingAddressLine2);
-		sb.append(",BillingCity="+BillingCity);
-		sb.append(",BillingStateProvince="+BillingStateProvince);
-		sb.append(",BillingCountryRegion="+BillingCountryRegion);
-		sb.append(",BillingPostalCode="+BillingPostalCode);
 		sb.append(",ShipMethod="+ShipMethod);
 		sb.append(",CreditCardApprovalCode="+CreditCardApprovalCode);
 		sb.append(",SubTotal="+String.valueOf(SubTotal));
@@ -18524,8 +18271,6 @@ public void tFileInputDelimited_10Process(final java.util.Map<String, Object> gl
 
 
 		tFileInputDelimited_11Process(globalMap);
-		tFileInputDelimited_8Process(globalMap);
-		tFileInputDelimited_12Process(globalMap);
 
 		row10Struct row10 = new row10Struct();
 SalesOrderMainStruct SalesOrderMain = new SalesOrderMainStruct();
@@ -18634,31 +18379,7 @@ String fileName_tFileOutputDelimited_3 = "";
                                             outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
                                         outtFileOutputDelimited_3.write("ShippingAddressID");
                                             outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("ShippingAddressLine1");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("ShippingAddressLine2");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("ShippingCity");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("ShippingStateProvince");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("ShippingCountryRegion");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("ShippingPostalCode");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
                                         outtFileOutputDelimited_3.write("BillingAddressID");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("BillingAddressLine1");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("BillingAddressLine2");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("BillingCity");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("BillingStateProvince");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("BillingCountryRegion");
-                                            outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
-                                        outtFileOutputDelimited_3.write("BillingPostalCode");
                                             outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
                                         outtFileOutputDelimited_3.write("ShipMethod");
                                             outtFileOutputDelimited_3.write(OUT_DELIM_tFileOutputDelimited_3);
@@ -18743,26 +18464,6 @@ resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3
 
 row11Struct row11HashKey = new row11Struct();
 row11Struct row11Default = new row11Struct();
-	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row12Struct> tHash_Lookup_row12 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row12Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row12Struct>) 
-					globalMap.get( "tHash_Lookup_row12" ))
-					;					
-					
-	
-
-row12Struct row12HashKey = new row12Struct();
-row12Struct row12Default = new row12Struct();
-	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row13Struct> tHash_Lookup_row13 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row13Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row13Struct>) 
-					globalMap.get( "tHash_Lookup_row13" ))
-					;					
-					
-	
-
-row13Struct row13HashKey = new row13Struct();
-row13Struct row13Default = new row13Struct();
 // ###############################        
 
 // ###############################
@@ -19390,222 +19091,6 @@ if(row10 != null) {
 									 	
 							
 	            	
-	           	
-	            	
-	            	
-	            
-
-				///////////////////////////////////////////////
-				// Starting Lookup Table "row12" 
-				///////////////////////////////////////////////
-
-
-				
-				
-                            
- 					    boolean forceLooprow12 = false;
-       		  	    	
-       		  	    	
- 							row12Struct row12ObjectFromLookup = null;
-                          
-		           		  	if(!rejectedInnerJoin_tMap_5) { // G_TM_M_020
-
-								
-								hasCasePrimitiveKeyWithNull_tMap_5 = false;
-								
-	                        		    	Object exprKeyValue_row12__AddressID = row10.ShipToAddressID ;
-	                        		    	if(exprKeyValue_row12__AddressID == null) {
-	                        		    		hasCasePrimitiveKeyWithNull_tMap_5 = true;
-	                        		    	} else {
-                        		    			row12HashKey.AddressID = (int)(Integer) exprKeyValue_row12__AddressID;
-                        		    		}
-                        		    		
-
-								
-		                        	row12HashKey.hashCodeDirty = true;
-                        		
-	  					
-	  							
-	
-		  							if(!hasCasePrimitiveKeyWithNull_tMap_5) { // G_TM_M_091
-		  							
-			  					
-			  					
-			  					
-	  					
-		  							tHash_Lookup_row12.lookup( row12HashKey );
-
-	  							
-
-	  							
-
-			  						} // G_TM_M_091
-			  						
-			  					
-
- 								
-		  				
-	  								
-						
-									
-  									  		
- 								
-
-
-
-							} // G_TM_M_020
-			           		  	  
-							
-				           		if(tHash_Lookup_row12 != null && tHash_Lookup_row12.getCount(row12HashKey) > 1) { // G 071
-			  							
-			  						
-									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row12' and it contains more one result from keys :  row12.AddressID = '" + row12HashKey.AddressID + "'");
-								} // G 071
-							
-
-							row12Struct row12 = null;
-                    		  	 
-							   
-                    		  	 
-	       		  	    	row12Struct fromLookup_row12 = null;
-							row12 = row12Default;
-										 
-							
-								 
-							
-							
-								if (tHash_Lookup_row12 !=null && tHash_Lookup_row12.hasNext()) { // G 099
-								
-							
-								
-								fromLookup_row12 = tHash_Lookup_row12.next();
-
-							
-							
-								} // G 099
-							
-							
-
-							if(fromLookup_row12 != null) {
-								row12 = fromLookup_row12;
-							}
-							
-							
-							
-			  							
-								
-	                    		  	
-		                    
-	            	
-	           	
-	            	
-	            	
-	            
-
-				///////////////////////////////////////////////
-				// Starting Lookup Table "row13" 
-				///////////////////////////////////////////////
-
-
-				
-				
-                            
- 					    boolean forceLooprow13 = false;
-       		  	    	
-       		  	    	
- 							row13Struct row13ObjectFromLookup = null;
-                          
-		           		  	if(!rejectedInnerJoin_tMap_5) { // G_TM_M_020
-
-								
-								hasCasePrimitiveKeyWithNull_tMap_5 = false;
-								
-	                        		    	Object exprKeyValue_row13__AddressID = row10.BillToAddressID ;
-	                        		    	if(exprKeyValue_row13__AddressID == null) {
-	                        		    		hasCasePrimitiveKeyWithNull_tMap_5 = true;
-	                        		    	} else {
-                        		    			row13HashKey.AddressID = (int)(Integer) exprKeyValue_row13__AddressID;
-                        		    		}
-                        		    		
-
-								
-		                        	row13HashKey.hashCodeDirty = true;
-                        		
-	  					
-	  							
-	
-		  							if(!hasCasePrimitiveKeyWithNull_tMap_5) { // G_TM_M_091
-		  							
-			  					
-			  					
-			  					
-	  					
-		  							tHash_Lookup_row13.lookup( row13HashKey );
-
-	  							
-
-	  							
-
-			  						} // G_TM_M_091
-			  						
-			  					
-
- 								
-		  				
-	  								
-						
-									
-  									  		
- 								
-
-
-
-							} // G_TM_M_020
-			           		  	  
-							
-				           		if(tHash_Lookup_row13 != null && tHash_Lookup_row13.getCount(row13HashKey) > 1) { // G 071
-			  							
-			  						
-									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row13' and it contains more one result from keys :  row13.AddressID = '" + row13HashKey.AddressID + "'");
-								} // G 071
-							
-
-							row13Struct row13 = null;
-                    		  	 
-							   
-                    		  	 
-	       		  	    	row13Struct fromLookup_row13 = null;
-							row13 = row13Default;
-										 
-							
-								 
-							
-							
-								if (tHash_Lookup_row13 !=null && tHash_Lookup_row13.hasNext()) { // G 099
-								
-							
-								
-								fromLookup_row13 = tHash_Lookup_row13.next();
-
-							
-							
-								} // G 099
-							
-							
-
-							if(fromLookup_row13 != null) {
-								row13 = fromLookup_row13;
-							}
-							
-							
-							
-			  							
-								
-	                    		  	
-		                    
-	            	
 	            	
 	            // ###############################
         { // start of Var scope
@@ -19633,19 +19118,7 @@ SalesOrderMain_tmp.PurchaseOrderNumber = row10.PurchaseOrderNumber ;
 SalesOrderMain_tmp.AccountNumber = row10.AccountNumber ;
 SalesOrderMain_tmp.CustomerID = row10.CustomerID ;
 SalesOrderMain_tmp.ShippingAddressID = row10.ShipToAddressID ;
-SalesOrderMain_tmp.ShippingAddressLine1 = row12.AddressLine1 ;
-SalesOrderMain_tmp.ShippingAddressLine2 = row12.AddressLine2 ;
-SalesOrderMain_tmp.ShippingCity = row12.City ;
-SalesOrderMain_tmp.ShippingStateProvince = row12.StateProvince ;
-SalesOrderMain_tmp.ShippingCountryRegion = row12.CountryRegion ;
-SalesOrderMain_tmp.ShippingPostalCode = row12.PostalCode ;
 SalesOrderMain_tmp.BillingAddressID = row10.BillToAddressID;
-SalesOrderMain_tmp.BillingAddressLine1 = row13.AddressLine1 ;
-SalesOrderMain_tmp.BillingAddressLine2 = row13.AddressLine2 ;
-SalesOrderMain_tmp.BillingCity = row13.City ;
-SalesOrderMain_tmp.BillingStateProvince = row13.StateProvince ;
-SalesOrderMain_tmp.BillingCountryRegion = row13.CountryRegion ;
-SalesOrderMain_tmp.BillingPostalCode = row13.PostalCode ;
 SalesOrderMain_tmp.ShipMethod = row10.ShipMethod ;
 SalesOrderMain_tmp.CreditCardApprovalCode = row10.CreditCardApprovalCode ;
 SalesOrderMain_tmp.SubTotal = row10.SubTotal ;
@@ -19796,81 +19269,9 @@ if(SalesOrderMain != null) {
                         );
                             }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.ShippingAddressLine1 != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.ShippingAddressLine1
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.ShippingAddressLine2 != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.ShippingAddressLine2
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.ShippingCity != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.ShippingCity
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.ShippingStateProvince != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.ShippingStateProvince
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.ShippingCountryRegion != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.ShippingCountryRegion
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.ShippingPostalCode != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.ShippingPostalCode
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
                             if(SalesOrderMain.BillingAddressID != null) {
                         sb_tFileOutputDelimited_3.append(
                             SalesOrderMain.BillingAddressID
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.BillingAddressLine1 != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.BillingAddressLine1
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.BillingAddressLine2 != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.BillingAddressLine2
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.BillingCity != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.BillingCity
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.BillingStateProvince != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.BillingStateProvince
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.BillingCountryRegion != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.BillingCountryRegion
-                        );
-                            }
-                            sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.BillingPostalCode != null) {
-                        sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.BillingPostalCode
                         );
                             }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
@@ -20129,22 +19530,6 @@ end_Hash.put("tFileInputDelimited_10", System.currentTimeMillis());
 					
 					
 				
-					if(tHash_Lookup_row12 != null) {
-						tHash_Lookup_row12.endGet();
-					}
-					globalMap.remove( "tHash_Lookup_row12" );
-
-					
-					
-				
-					if(tHash_Lookup_row13 != null) {
-						tHash_Lookup_row13.endGet();
-					}
-					globalMap.remove( "tHash_Lookup_row13" );
-
-					
-					
-				
 // ###############################      
 
 
@@ -20239,12 +19624,6 @@ end_Hash.put("tFileOutputDelimited_3", System.currentTimeMillis());
 				
 					     			//free memory for "tMap_5"
 					     			globalMap.remove("tHash_Lookup_row11"); 
-				     			
-					     			//free memory for "tMap_5"
-					     			globalMap.remove("tHash_Lookup_row12"); 
-				     			
-					     			//free memory for "tMap_5"
-					     			globalMap.remove("tHash_Lookup_row13"); 
 				     			
 				try{
 					
@@ -20832,7 +20211,7 @@ public void tFileInputDelimited_11Process(final java.util.Map<String, Object> gl
 
 			   		// connection name:row11
 			   		// source node:tFileInputDelimited_11 - inputs:(after_tFileInputDelimited_10) outputs:(row11,row11) | target node:tAdvancedHash_row11 - inputs:(row11) outputs:()
-			   		// linked node: tMap_5 - inputs:(row10,row11,row12,row13) outputs:(SalesOrderMain)
+			   		// linked node: tMap_5 - inputs:(row10,row11) outputs:(SalesOrderMain)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row11 = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
@@ -21428,7 +20807,7 @@ end_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
 	
 
 
-public static class row12Struct implements routines.system.IPersistableComparableLookupRow<row12Struct> {
+public static class row14Struct implements routines.system.IPersistableRow<row14Struct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -21516,7 +20895,7 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row12Struct other = (row12Struct) obj;
+		final row14Struct other = (row14Struct) obj;
 		
 						if (this.AddressID != other.AddressID)
 							return false;
@@ -21525,7 +20904,7 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 		return true;
     }
 
-	public void copyDataTo(row12Struct other) {
+	public void copyDataTo(row14Struct other) {
 
 		other.AddressID = this.AddressID;
 	            other.AddressLine1 = this.AddressLine1;
@@ -21539,7 +20918,7 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 	            
 	}
 
-	public void copyKeysDataTo(row12Struct other) {
+	public void copyKeysDataTo(row14Struct other) {
 
 		other.AddressID = this.AddressID;
 	            	
@@ -21547,46 +20926,48 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 
 
 
-	
-	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
+
+	private String readString(ObjectInputStream dis) throws IOException{
 		String strReturn = null;
 		int length = 0;
         length = dis.readInt();
 		if (length == -1) {
 			strReturn = null;
 		} else {
-			byte[] byteArray = new byte[length];
-			dis.read(byteArray);
-			strReturn = new String(byteArray, utf8Charset);
+			if(length > commonByteArray_LOCAL_PROJECT_HARMONIZED.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_HARMONIZED.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length, utf8Charset);
 		}
 		return strReturn;
 	}
 	
-	private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
+	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
 		String strReturn = null;
 		int length = 0;
         length = unmarshaller.readInt();
 		if (length == -1) {
 			strReturn = null;
 		} else {
-			byte[] byteArray = new byte[length];
-			unmarshaller.read(byteArray);
-			strReturn = new String(byteArray, utf8Charset);
+			if(length > commonByteArray_LOCAL_PROJECT_HARMONIZED.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_HARMONIZED.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[2 * length];
+   				}
+			}
+			unmarshaller.readFully(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length, utf8Charset);
 		}
 		return strReturn;
 	}
-	
-	private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-	}
 
-	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
 		if(str == null) {
             dos.writeInt(-1);
 		} else {
@@ -21594,11 +20975,21 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 	    	dos.writeInt(byteArray.length);
 			dos.write(byteArray);
     	}
-	}
+    }
+    
+    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
+		if(str == null) {
+			marshaller.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+            marshaller.writeInt(byteArray.length);
+            marshaller.write(byteArray);
+    	}
+    }
 
-	private java.util.Date readDate(DataInputStream dis, ObjectInputStream ois) throws IOException{
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
 		java.util.Date dateReturn = null;
-		int length = 0;
+        int length = 0;
         length = dis.readByte();
 		if (length == -1) {
 			dateReturn = null;
@@ -21608,9 +20999,9 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 		return dateReturn;
 	}
 	
-	private java.util.Date readDate(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller ) throws IOException{
+	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
 		java.util.Date dateReturn = null;
-		int length = 0;
+        int length = 0;
         length = unmarshaller.readByte();
 		if (length == -1) {
 			dateReturn = null;
@@ -21620,25 +21011,25 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 		return dateReturn;
 	}
 
-	private void writeDate(java.util.Date date1, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
 		if(date1 == null) {
             dos.writeByte(-1);
 		} else {
 			dos.writeByte(0);
 	    	dos.writeLong(date1.getTime());
     	}
-	}
-	
-	private void writeDate(java.util.Date date1, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller) throws IOException{
+    }
+    
+    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
 		if(date1 == null) {
 			marshaller.writeByte(-1);
 		} else {
 			marshaller.writeByte(0);
 			marshaller.writeLong(date1.getTime());
     	}
-	}
+    }
 
-    public void readKeysData(ObjectInputStream dis) {
+    public void readData(ObjectInputStream dis) {
 
 		synchronized(commonByteArrayLock_LOCAL_PROJECT_HARMONIZED) {
 
@@ -21648,99 +21039,21 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 		
 			        this.AddressID = dis.readInt();
 					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_LOCAL_PROJECT_HARMONIZED) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.AddressID = dis.readInt();
+					this.AddressLine1 = readString(dis);
 					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeKeysData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.AddressID);
+					this.AddressLine2 = readString(dis);
 					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.AddressID);
+					this.City = readString(dis);
 					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-
-    /**
-     * Fill Values data by reading ObjectInputStream.
-     */
-    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-        try {
-
-			int length = 0;
-		
-						this.AddressLine1 = readString(dis,ois);
+					this.StateProvince = readString(dis);
 					
-						this.AddressLine2 = readString(dis,ois);
+					this.CountryRegion = readString(dis);
 					
-						this.City = readString(dis,ois);
+					this.PostalCode = readString(dis);
 					
-						this.StateProvince = readString(dis,ois);
+						this.rowguid = (Object) dis.readObject();
 					
-						this.CountryRegion = readString(dis,ois);
-					
-						this.PostalCode = readString(dis,ois);
-					
-       			    	this.rowguid = (Object) ois.readObject();
-					
-						this.ModifiedDate = readDate(dis,ois);
+					this.ModifiedDate = readDate(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -21754,27 +21067,36 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 
 		
 
+      }
+
+
     }
     
-    public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
-        try {
-			int length = 0;
+    public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+		synchronized(commonByteArrayLock_LOCAL_PROJECT_HARMONIZED) {
+
+        	try {
+
+        		int length = 0;
 		
-						this.AddressLine1 = readString(dis,objectIn);
+			        this.AddressID = dis.readInt();
 					
-						this.AddressLine2 = readString(dis,objectIn);
+					this.AddressLine1 = readString(dis);
 					
-						this.City = readString(dis,objectIn);
+					this.AddressLine2 = readString(dis);
 					
-						this.StateProvince = readString(dis,objectIn);
+					this.City = readString(dis);
 					
-						this.CountryRegion = readString(dis,objectIn);
+					this.StateProvince = readString(dis);
 					
-						this.PostalCode = readString(dis,objectIn);
+					this.CountryRegion = readString(dis);
 					
-       			    	this.rowguid = (Object) objectIn.readObject();
+					this.PostalCode = readString(dis);
 					
-						this.ModifiedDate = readDate(dis,objectIn);
+						this.rowguid = (Object) dis.readObject();
+					
+					this.ModifiedDate = readDate(dis);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -21788,66 +21110,103 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 
 		
 
+      }
+
+
     }
 
-    /**
-     * Return a byte array which represents Values data.
-     */
-    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
+    public void writeData(ObjectOutputStream dos) {
         try {
 
 		
-						writeString(this.AddressLine1, dos, oos);
+					// int
+				
+		            	dos.writeInt(this.AddressID);
 					
-						writeString(this.AddressLine2, dos, oos);
+					// String
+				
+						writeString(this.AddressLine1,dos);
 					
-						writeString(this.City, dos, oos);
+					// String
+				
+						writeString(this.AddressLine2,dos);
 					
-						writeString(this.StateProvince, dos, oos);
+					// String
+				
+						writeString(this.City,dos);
 					
-						writeString(this.CountryRegion, dos, oos);
+					// String
+				
+						writeString(this.StateProvince,dos);
 					
-						writeString(this.PostalCode, dos, oos);
+					// String
+				
+						writeString(this.CountryRegion,dos);
 					
-       			    	oos.writeObject(this.rowguid);
+					// String
+				
+						writeString(this.PostalCode,dos);
 					
-						writeDate(this.ModifiedDate, dos, oos);
+					// Object
+				
+       			    	dos.writeObject(this.rowguid);
+					
+					// java.util.Date
+				
+						writeDate(this.ModifiedDate,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
-        	}
+        }
+
 
     }
     
-    public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut){
-                try {
+    public void writeData(org.jboss.marshalling.Marshaller dos) {
+        try {
 
 		
-						writeString(this.AddressLine1, dos, objectOut);
+					// int
+				
+		            	dos.writeInt(this.AddressID);
 					
-						writeString(this.AddressLine2, dos, objectOut);
+					// String
+				
+						writeString(this.AddressLine1,dos);
 					
-						writeString(this.City, dos, objectOut);
+					// String
+				
+						writeString(this.AddressLine2,dos);
 					
-						writeString(this.StateProvince, dos, objectOut);
+					// String
+				
+						writeString(this.City,dos);
 					
-						writeString(this.CountryRegion, dos, objectOut);
+					// String
+				
+						writeString(this.StateProvince,dos);
 					
-						writeString(this.PostalCode, dos, objectOut);
+					// String
+				
+						writeString(this.CountryRegion,dos);
 					
-       			    	objectOut.writeObject(this.rowguid);
+					// String
+				
+						writeString(this.PostalCode,dos);
 					
-						writeDate(this.ModifiedDate, dos, objectOut);
+					// Object
+				
+       			    	dos.writeObject(this.rowguid);
+					
+					// java.util.Date
+				
+						writeDate(this.ModifiedDate,dos);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
-        	}
-    }
+        }
 
 
-    
-    public boolean supportMarshaller(){
-        return true;
     }
 
 
@@ -21873,7 +21232,7 @@ public static class row12Struct implements routines.system.IPersistableComparabl
     /**
      * Compare keys
      */
-    public int compareTo(row12Struct other) {
+    public int compareTo(row14Struct other) {
 
 		int returnValue = -1;
 		
@@ -21910,8 +21269,8 @@ public static class row12Struct implements routines.system.IPersistableComparabl
 
 
 }
-public void tFileInputDelimited_8Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tFileInputDelimited_8_SUBPROCESS_STATE", 0);
+public void tFileInputDelimited_13Process(final java.util.Map<String, Object> globalMap) throws TalendException {
+	globalMap.put("tFileInputDelimited_13_SUBPROCESS_STATE", 0);
 
  final boolean execStat = this.execStat;
 	
@@ -21933,1138 +21292,139 @@ public void tFileInputDelimited_8Process(final java.util.Map<String, Object> glo
 
 
 
-		row12Struct row12 = new row12Struct();
+		row14Struct row14 = new row14Struct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row12 begin ] start
+	 * [tFileOutputDelimited_4 begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row12", false);
-		start_Hash.put("tAdvancedHash_row12", System.currentTimeMillis());
+		ok_Hash.put("tFileOutputDelimited_4", false);
+		start_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row12";
+	currentComponent="tFileOutputDelimited_4";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row12");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row14");
 					}
 				
-		int tos_count_tAdvancedHash_row12 = 0;
+		int tos_count_tFileOutputDelimited_4 = 0;
 		
 
-			   		// connection name:row12
-			   		// source node:tFileInputDelimited_8 - inputs:(after_tFileInputDelimited_10) outputs:(row12,row12) | target node:tAdvancedHash_row12 - inputs:(row12) outputs:()
-			   		// linked node: tMap_5 - inputs:(row10,row11,row12,row13) outputs:(SalesOrderMain)
-			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row12 = 
-			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
-			   			
-			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row12Struct> tHash_Lookup_row12 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row12Struct>getLookup(matchingModeEnum_row12);
-	   						   
-		   	   	   globalMap.put("tHash_Lookup_row12", tHash_Lookup_row12);
-		   	   	   
-				
-           
-
- 
-
-
-
-/**
- * [tAdvancedHash_row12 begin ] stop
- */
-
-
-
-	
-	/**
-	 * [tFileInputDelimited_8 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tFileInputDelimited_8", false);
-		start_Hash.put("tFileInputDelimited_8", System.currentTimeMillis());
-		
-	
-	currentComponent="tFileInputDelimited_8";
-
-	
-		int tos_count_tFileInputDelimited_8 = 0;
-		
-	
-	
-	
- 
-	
-	
-	final routines.system.RowState rowstate_tFileInputDelimited_8 = new routines.system.RowState();
-	
-	
-				int nb_line_tFileInputDelimited_8 = 0;
-				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_8 = null;
-				int limit_tFileInputDelimited_8 = -1;
-				try{
-					
-						Object filename_tFileInputDelimited_8 = context.pathraw+"Address.csv";
-						if(filename_tFileInputDelimited_8 instanceof java.io.InputStream){
-							
-			int footer_value_tFileInputDelimited_8 = 0, random_value_tFileInputDelimited_8 = -1;
-			if(footer_value_tFileInputDelimited_8 >0 || random_value_tFileInputDelimited_8 > 0){
-				throw new java.lang.Exception("When the input source is a stream,footer and random shouldn't be bigger than 0.");				
-			}
-		
-						}
-						try {
-							fid_tFileInputDelimited_8 = new org.talend.fileprocess.FileInputDelimited(context.pathraw+"Address.csv", "ISO-8859-15",";","\n",true,1,0,
-									limit_tFileInputDelimited_8
-								,-1, false);
-						} catch(java.lang.Exception e) {
-globalMap.put("tFileInputDelimited_8_ERROR_MESSAGE",e.getMessage());
-							
-								
-								System.err.println(e.getMessage());
-							
-						}
-					
-				    
-					while (fid_tFileInputDelimited_8!=null && fid_tFileInputDelimited_8.nextRecord()) {
-						rowstate_tFileInputDelimited_8.reset();
-						
-			    						row12 = null;			
-									
-			    						row12 = null;			
-												
-									boolean whetherReject_tFileInputDelimited_8 = false;
-									row12 = new row12Struct();
-									try {
-										
-				int columnIndexWithD_tFileInputDelimited_8 = 0;
-				
-					String temp = ""; 
-				
-					columnIndexWithD_tFileInputDelimited_8 = 0;
-					
-						temp = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						if(temp.length() > 0) {
-							
-								try {
-								
-    								row12.AddressID = ParserUtils.parseTo_int(temp);
-    							
-    							} catch(java.lang.Exception ex_tFileInputDelimited_8) {
-globalMap.put("tFileInputDelimited_8_ERROR_MESSAGE",ex_tFileInputDelimited_8.getMessage());
-									rowstate_tFileInputDelimited_8.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"AddressID", "row12", temp, ex_tFileInputDelimited_8), ex_tFileInputDelimited_8));
-								}
-    							
-						} else {						
-							
-								rowstate_tFileInputDelimited_8.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'row12' connection, value is invalid or this column should be nullable or have a default value."));
-							
-						}
-					
-				
-					columnIndexWithD_tFileInputDelimited_8 = 1;
-					
-							row12.AddressLine1 = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						
-				
-					columnIndexWithD_tFileInputDelimited_8 = 2;
-					
-							row12.AddressLine2 = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						
-				
-					columnIndexWithD_tFileInputDelimited_8 = 3;
-					
-							row12.City = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						
-				
-					columnIndexWithD_tFileInputDelimited_8 = 4;
-					
-							row12.StateProvince = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						
-				
-					columnIndexWithD_tFileInputDelimited_8 = 5;
-					
-							row12.CountryRegion = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						
-				
-					columnIndexWithD_tFileInputDelimited_8 = 6;
-					
-							row12.PostalCode = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						
-				
-					columnIndexWithD_tFileInputDelimited_8 = 7;
-					
-							row12.rowguid = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						
-				
-					columnIndexWithD_tFileInputDelimited_8 = 8;
-					
-						temp = fid_tFileInputDelimited_8.get(columnIndexWithD_tFileInputDelimited_8);
-						if(temp.length() > 0) {
-							
-								try {
-								
-    									row12.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
-    								
-    							} catch(java.lang.Exception ex_tFileInputDelimited_8) {
-globalMap.put("tFileInputDelimited_8_ERROR_MESSAGE",ex_tFileInputDelimited_8.getMessage());
-									rowstate_tFileInputDelimited_8.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row12", temp, ex_tFileInputDelimited_8), ex_tFileInputDelimited_8));
-								}
-    							
-						} else {						
-							
-								
-									row12.ModifiedDate = null;
-								
-							
-						}
-					
-				
-				
-										
-										if(rowstate_tFileInputDelimited_8.getException()!=null) {
-											throw rowstate_tFileInputDelimited_8.getException();
-										}
-										
-										
-							
-			    					} catch (java.lang.Exception e) {
-globalMap.put("tFileInputDelimited_8_ERROR_MESSAGE",e.getMessage());
-			        					whetherReject_tFileInputDelimited_8 = true;
-			        					
-			                					System.err.println(e.getMessage());
-			                					row12 = null;
-			                				
-										
-			    					}
-								
-
- 
-
-
-
-/**
- * [tFileInputDelimited_8 begin ] stop
- */
-	
-	/**
-	 * [tFileInputDelimited_8 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileInputDelimited_8";
-
-	
-
- 
-
-
-	tos_count_tFileInputDelimited_8++;
-
-/**
- * [tFileInputDelimited_8 main ] stop
- */
-	
-	/**
-	 * [tFileInputDelimited_8 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileInputDelimited_8";
-
-	
-
- 
-
-
-
-/**
- * [tFileInputDelimited_8 process_data_begin ] stop
- */
-// Start of branch "row12"
-if(row12 != null) { 
-
-
-
-	
-	/**
-	 * [tAdvancedHash_row12 main ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tAdvancedHash_row12";
-
-	
-					if(execStat){
-						runStat.updateStatOnConnection(iterateId,1,1
-						
-							,"row12"
-						
-						);
-					}
-					
-
-
-			   
-			   
-
-					row12Struct row12_HashRow = new row12Struct();
-		   	   	   
-				
-				row12_HashRow.AddressID = row12.AddressID;
-				
-				row12_HashRow.AddressLine1 = row12.AddressLine1;
-				
-				row12_HashRow.AddressLine2 = row12.AddressLine2;
-				
-				row12_HashRow.City = row12.City;
-				
-				row12_HashRow.StateProvince = row12.StateProvince;
-				
-				row12_HashRow.CountryRegion = row12.CountryRegion;
-				
-				row12_HashRow.PostalCode = row12.PostalCode;
-				
-				row12_HashRow.rowguid = row12.rowguid;
-				
-				row12_HashRow.ModifiedDate = row12.ModifiedDate;
-				
-			tHash_Lookup_row12.put(row12_HashRow);
-			
-            
-
-
-
-
- 
-
-
-	tos_count_tAdvancedHash_row12++;
-
-/**
- * [tAdvancedHash_row12 main ] stop
- */
-	
-	/**
-	 * [tAdvancedHash_row12 process_data_begin ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tAdvancedHash_row12";
-
-	
-
- 
-
-
-
-/**
- * [tAdvancedHash_row12 process_data_begin ] stop
- */
-	
-	/**
-	 * [tAdvancedHash_row12 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tAdvancedHash_row12";
-
-	
-
- 
-
-
-
-/**
- * [tAdvancedHash_row12 process_data_end ] stop
- */
-
-} // End of branch "row12"
-
-
-
-
-	
-	/**
-	 * [tFileInputDelimited_8 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileInputDelimited_8";
-
-	
-
- 
-
-
-
-/**
- * [tFileInputDelimited_8 process_data_end ] stop
- */
-	
-	/**
-	 * [tFileInputDelimited_8 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileInputDelimited_8";
-
-	
-
-
-
-            }
-            }finally{
-                if(!((Object)(context.pathraw+"Address.csv") instanceof java.io.InputStream)){
-                	if(fid_tFileInputDelimited_8!=null){
-                		fid_tFileInputDelimited_8.close();
-                	}
-                }
-                if(fid_tFileInputDelimited_8!=null){
-                	globalMap.put("tFileInputDelimited_8_NB_LINE", fid_tFileInputDelimited_8.getRowNumber());
-					
-                }
-			}
-			  
-
- 
-
-ok_Hash.put("tFileInputDelimited_8", true);
-end_Hash.put("tFileInputDelimited_8", System.currentTimeMillis());
-
-
-
-
-/**
- * [tFileInputDelimited_8 end ] stop
- */
-
-	
-	/**
-	 * [tAdvancedHash_row12 end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tAdvancedHash_row12";
-
-	
-
-tHash_Lookup_row12.endPut();
-
-				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row12");
-			  	}
-			  	
- 
-
-ok_Hash.put("tAdvancedHash_row12", true);
-end_Hash.put("tAdvancedHash_row12", System.currentTimeMillis());
-
-
-
-
-/**
- * [tAdvancedHash_row12 end ] stop
- */
-
-
-
-				}//end the resume
-
-				
-
-
-
-	
-			}catch(java.lang.Exception e){	
-				
-				TalendException te = new TalendException(e, currentComponent, globalMap);
-				
-				throw te;
-			}catch(java.lang.Error error){	
-				
-					runStat.stopThreadStat();
-				
-				throw error;
-			}finally{
-				
-				try{
-					
-	
-	/**
-	 * [tFileInputDelimited_8 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileInputDelimited_8";
-
-	
-
- 
-
-
-
-/**
- * [tFileInputDelimited_8 finally ] stop
- */
-
-	
-	/**
-	 * [tAdvancedHash_row12 finally ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tAdvancedHash_row12";
-
-	
-
- 
-
-
-
-/**
- * [tAdvancedHash_row12 finally ] stop
- */
-
-
-
-				}catch(java.lang.Exception e){	
-					//ignore
-				}catch(java.lang.Error error){
-					//ignore
-				}
-				resourceMap = null;
-			}
-		
-
-		globalMap.put("tFileInputDelimited_8_SUBPROCESS_STATE", 1);
-	}
-	
-
-
-public static class row13Struct implements routines.system.IPersistableComparableLookupRow<row13Struct> {
-    final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
-    static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
-	protected static final int DEFAULT_HASHCODE = 1;
-    protected static final int PRIME = 31;
-    protected int hashCode = DEFAULT_HASHCODE;
-    public boolean hashCodeDirty = true;
-
-    public String loopKey;
-
-
-
-	
-			    public int AddressID;
-
-				public int getAddressID () {
-					return this.AddressID;
-				}
-				
-			    public String AddressLine1;
-
-				public String getAddressLine1 () {
-					return this.AddressLine1;
-				}
-				
-			    public String AddressLine2;
-
-				public String getAddressLine2 () {
-					return this.AddressLine2;
-				}
-				
-			    public String City;
-
-				public String getCity () {
-					return this.City;
-				}
-				
-			    public String StateProvince;
-
-				public String getStateProvince () {
-					return this.StateProvince;
-				}
-				
-			    public String CountryRegion;
-
-				public String getCountryRegion () {
-					return this.CountryRegion;
-				}
-				
-			    public String PostalCode;
-
-				public String getPostalCode () {
-					return this.PostalCode;
-				}
-				
-			    public Object rowguid;
-
-				public Object getRowguid () {
-					return this.rowguid;
-				}
-				
-			    public java.util.Date ModifiedDate;
-
-				public java.util.Date getModifiedDate () {
-					return this.ModifiedDate;
-				}
-				
-
-
-	@Override
-	public int hashCode() {
-		if (this.hashCodeDirty) {
-			final int prime = PRIME;
-			int result = DEFAULT_HASHCODE;
-	
-							result = prime * result + (int) this.AddressID;
-						
-    		this.hashCode = result;
-    		this.hashCodeDirty = false;
-		}
-		return this.hashCode;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj) return true;
-		if (obj == null) return false;
-		if (getClass() != obj.getClass()) return false;
-		final row13Struct other = (row13Struct) obj;
-		
-						if (this.AddressID != other.AddressID)
-							return false;
-					
-
-		return true;
-    }
-
-	public void copyDataTo(row13Struct other) {
-
-		other.AddressID = this.AddressID;
-	            other.AddressLine1 = this.AddressLine1;
-	            other.AddressLine2 = this.AddressLine2;
-	            other.City = this.City;
-	            other.StateProvince = this.StateProvince;
-	            other.CountryRegion = this.CountryRegion;
-	            other.PostalCode = this.PostalCode;
-	            other.rowguid = this.rowguid;
-	            other.ModifiedDate = this.ModifiedDate;
-	            
-	}
-
-	public void copyKeysDataTo(row13Struct other) {
-
-		other.AddressID = this.AddressID;
-	            	
-	}
-
-
-
-	
-	private String readString(DataInputStream dis, ObjectInputStream ois) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = dis.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			byte[] byteArray = new byte[length];
-			dis.read(byteArray);
-			strReturn = new String(byteArray, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private String readString(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
-		String strReturn = null;
-		int length = 0;
-        length = unmarshaller.readInt();
-		if (length == -1) {
-			strReturn = null;
-		} else {
-			byte[] byteArray = new byte[length];
-			unmarshaller.read(byteArray);
-			strReturn = new String(byteArray, utf8Charset);
-		}
-		return strReturn;
-	}
-	
-	private void writeString(String str, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(str == null) {
-			marshaller.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-            marshaller.writeInt(byteArray.length);
-            marshaller.write(byteArray);
-    	}
-	}
-
-	private void writeString(String str, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
-		if(str == null) {
-            dos.writeInt(-1);
-		} else {
-            byte[] byteArray = str.getBytes(utf8Charset);
-	    	dos.writeInt(byteArray.length);
-			dos.write(byteArray);
-    	}
-	}
-
-	private java.util.Date readDate(DataInputStream dis, ObjectInputStream ois) throws IOException{
-		java.util.Date dateReturn = null;
-		int length = 0;
-        length = dis.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(dis.readLong());
-		}
-		return dateReturn;
-	}
-	
-	private java.util.Date readDate(DataInputStream dis, org.jboss.marshalling.Unmarshaller unmarshaller ) throws IOException{
-		java.util.Date dateReturn = null;
-		int length = 0;
-        length = unmarshaller.readByte();
-		if (length == -1) {
-			dateReturn = null;
-		} else {
-	    	dateReturn = new Date(unmarshaller.readLong());
-		}
-		return dateReturn;
-	}
-
-	private void writeDate(java.util.Date date1, DataOutputStream dos, ObjectOutputStream oos) throws IOException{
-		if(date1 == null) {
-            dos.writeByte(-1);
-		} else {
-			dos.writeByte(0);
-	    	dos.writeLong(date1.getTime());
-    	}
-	}
-	
-	private void writeDate(java.util.Date date1, DataOutputStream dos, org.jboss.marshalling.Marshaller marshaller) throws IOException{
-		if(date1 == null) {
-			marshaller.writeByte(-1);
-		} else {
-			marshaller.writeByte(0);
-			marshaller.writeLong(date1.getTime());
-    	}
-	}
-
-    public void readKeysData(ObjectInputStream dis) {
-
-		synchronized(commonByteArrayLock_LOCAL_PROJECT_HARMONIZED) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.AddressID = dis.readInt();
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-    
-    public void readKeysData(org.jboss.marshalling.Unmarshaller dis) {
-
-		synchronized(commonByteArrayLock_LOCAL_PROJECT_HARMONIZED) {
-
-        	try {
-
-        		int length = 0;
-		
-			        this.AddressID = dis.readInt();
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-
-        }
-
-		
-
-      }
-
-
-    }
-
-    public void writeKeysData(ObjectOutputStream dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.AddressID);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-    
-    public void writeKeysData(org.jboss.marshalling.Marshaller dos) {
-        try {
-
-		
-					// int
-				
-		            	dos.writeInt(this.AddressID);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        }
-
-
-    }
-
-
-
-    /**
-     * Fill Values data by reading ObjectInputStream.
-     */
-    public void readValuesData(DataInputStream dis, ObjectInputStream ois) {
-        try {
-
-			int length = 0;
-		
-						this.AddressLine1 = readString(dis,ois);
-					
-						this.AddressLine2 = readString(dis,ois);
-					
-						this.City = readString(dis,ois);
-					
-						this.StateProvince = readString(dis,ois);
-					
-						this.CountryRegion = readString(dis,ois);
-					
-						this.PostalCode = readString(dis,ois);
-					
-       			    	this.rowguid = (Object) ois.readObject();
-					
-						this.ModifiedDate = readDate(dis,ois);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
-
-        }
-
-		
-
-    }
-    
-    public void readValuesData(DataInputStream dis, org.jboss.marshalling.Unmarshaller objectIn) {
-        try {
-			int length = 0;
-		
-						this.AddressLine1 = readString(dis,objectIn);
-					
-						this.AddressLine2 = readString(dis,objectIn);
-					
-						this.City = readString(dis,objectIn);
-					
-						this.StateProvince = readString(dis,objectIn);
-					
-						this.CountryRegion = readString(dis,objectIn);
-					
-						this.PostalCode = readString(dis,objectIn);
-					
-       			    	this.rowguid = (Object) objectIn.readObject();
-					
-						this.ModifiedDate = readDate(dis,objectIn);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
-		
-
-        }
-
-		
-
-    }
-
-    /**
-     * Return a byte array which represents Values data.
-     */
-    public void writeValuesData(DataOutputStream dos, ObjectOutputStream oos) {
-        try {
-
-		
-						writeString(this.AddressLine1, dos, oos);
-					
-						writeString(this.AddressLine2, dos, oos);
-					
-						writeString(this.City, dos, oos);
-					
-						writeString(this.StateProvince, dos, oos);
-					
-						writeString(this.CountryRegion, dos, oos);
-					
-						writeString(this.PostalCode, dos, oos);
-					
-       			    	oos.writeObject(this.rowguid);
-					
-						writeDate(this.ModifiedDate, dos, oos);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        	}
-
-    }
-    
-    public void writeValuesData(DataOutputStream dos, org.jboss.marshalling.Marshaller objectOut){
-                try {
-
-		
-						writeString(this.AddressLine1, dos, objectOut);
-					
-						writeString(this.AddressLine2, dos, objectOut);
-					
-						writeString(this.City, dos, objectOut);
-					
-						writeString(this.StateProvince, dos, objectOut);
-					
-						writeString(this.CountryRegion, dos, objectOut);
-					
-						writeString(this.PostalCode, dos, objectOut);
-					
-       			    	objectOut.writeObject(this.rowguid);
-					
-						writeDate(this.ModifiedDate, dos, objectOut);
-					
-        	} catch (IOException e) {
-	            throw new RuntimeException(e);
-        	}
-    }
-
-
-    
-    public boolean supportMarshaller(){
-        return true;
-    }
-
-
-    public String toString() {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(super.toString());
-		sb.append("[");
-		sb.append("AddressID="+String.valueOf(AddressID));
-		sb.append(",AddressLine1="+AddressLine1);
-		sb.append(",AddressLine2="+AddressLine2);
-		sb.append(",City="+City);
-		sb.append(",StateProvince="+StateProvince);
-		sb.append(",CountryRegion="+CountryRegion);
-		sb.append(",PostalCode="+PostalCode);
-		sb.append(",rowguid="+String.valueOf(rowguid));
-		sb.append(",ModifiedDate="+String.valueOf(ModifiedDate));
-	    sb.append("]");
-
-	    return sb.toString();
-    }
-
-    /**
-     * Compare keys
-     */
-    public int compareTo(row13Struct other) {
-
-		int returnValue = -1;
-		
-						returnValue = checkNullsAndCompare(this.AddressID, other.AddressID);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-	    return returnValue;
-    }
-
-
-    private int checkNullsAndCompare(Object object1, Object object2) {
-        int returnValue = 0;
-		if (object1 instanceof Comparable && object2 instanceof Comparable) {
-            returnValue = ((Comparable) object1).compareTo(object2);
-        } else if (object1 != null && object2 != null) {
-            returnValue = compareStrings(object1.toString(), object2.toString());
-        } else if (object1 == null && object2 != null) {
-            returnValue = 1;
-        } else if (object1 != null && object2 == null) {
-            returnValue = -1;
+String fileName_tFileOutputDelimited_4 = "";
+    fileName_tFileOutputDelimited_4 = (new java.io.File(context.path_harm+"Address.csv")).getAbsolutePath().replace("\\","/");
+    String fullName_tFileOutputDelimited_4 = null;
+    String extension_tFileOutputDelimited_4 = null;
+    String directory_tFileOutputDelimited_4 = null;
+    if((fileName_tFileOutputDelimited_4.indexOf("/") != -1)) {
+        if(fileName_tFileOutputDelimited_4.lastIndexOf(".") < fileName_tFileOutputDelimited_4.lastIndexOf("/")) {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+            extension_tFileOutputDelimited_4 = "";
         } else {
-            returnValue = 0;
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("."));
+            extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
         }
-
-        return returnValue;
+        directory_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("/"));
+    } else {
+        if(fileName_tFileOutputDelimited_4.lastIndexOf(".") != -1) {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(0, fileName_tFileOutputDelimited_4.lastIndexOf("."));
+            extension_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4.substring(fileName_tFileOutputDelimited_4.lastIndexOf("."));
+        } else {
+            fullName_tFileOutputDelimited_4 = fileName_tFileOutputDelimited_4;
+            extension_tFileOutputDelimited_4 = "";
+        }
+        directory_tFileOutputDelimited_4 = "";
     }
+    boolean isFileGenerated_tFileOutputDelimited_4 = true;
+    java.io.File filetFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+    globalMap.put("tFileOutputDelimited_4_FILE_NAME",fileName_tFileOutputDelimited_4);
+            int nb_line_tFileOutputDelimited_4 = 0;
+            int splitedFileNo_tFileOutputDelimited_4 = 0;
+            int currentRow_tFileOutputDelimited_4 = 0;
 
-    private int compareStrings(String string1, String string2) {
-        return string1.compareTo(string2);
-    }
+            final String OUT_DELIM_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:FIELDSEPARATOR */";"/** End field tFileOutputDelimited_4:FIELDSEPARATOR */;
+
+            final String OUT_DELIM_ROWSEP_tFileOutputDelimited_4 = /** Start field tFileOutputDelimited_4:ROWSEPARATOR */"\n"/** End field tFileOutputDelimited_4:ROWSEPARATOR */;
+
+                    //create directory only if not exists
+                    if(directory_tFileOutputDelimited_4 != null && directory_tFileOutputDelimited_4.trim().length() != 0) {
+                        java.io.File dir_tFileOutputDelimited_4 = new java.io.File(directory_tFileOutputDelimited_4);
+                        if(!dir_tFileOutputDelimited_4.exists()) {
+                            dir_tFileOutputDelimited_4.mkdirs();
+                        }
+                    }
+
+                        //routines.system.Row
+                        java.io.Writer outtFileOutputDelimited_4 = null;
+
+                        java.io.File fileToDelete_tFileOutputDelimited_4 = new java.io.File(fileName_tFileOutputDelimited_4);
+                        if(fileToDelete_tFileOutputDelimited_4.exists()) {
+                            fileToDelete_tFileOutputDelimited_4.delete();
+                        }
+                        outtFileOutputDelimited_4 = new java.io.BufferedWriter(new java.io.OutputStreamWriter(
+                        new java.io.FileOutputStream(fileName_tFileOutputDelimited_4, false),"ISO-8859-15"));
+                                    if(filetFileOutputDelimited_4.length()==0){
+                                        outtFileOutputDelimited_4.write("AddressID");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("AddressLine1");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("AddressLine2");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("City");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("StateProvince");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("CountryRegion");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("PostalCode");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("rowguid");
+                                            outtFileOutputDelimited_4.write(OUT_DELIM_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.write("ModifiedDate");
+                                        outtFileOutputDelimited_4.write(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
+                                        outtFileOutputDelimited_4.flush();
+                                    }
 
 
-}
-public void tFileInputDelimited_12Process(final java.util.Map<String, Object> globalMap) throws TalendException {
-	globalMap.put("tFileInputDelimited_12_SUBPROCESS_STATE", 0);
-
- final boolean execStat = this.execStat;
-	
-		String iterateId = "";
-	
-	
-	String currentComponent = "";
-	java.util.Map<String, Object> resourceMap = new java.util.HashMap<String, Object>();
-
-	try {
-			// TDI-39566 avoid throwing an useless Exception
-			boolean resumeIt = true;
-			if (globalResumeTicket == false && resumeEntryMethodName != null) {
-				String currentMethodName = new java.lang.Exception().getStackTrace()[0].getMethodName();
-				resumeIt = resumeEntryMethodName.equals(currentMethodName);
-			}
-			if (resumeIt || globalResumeTicket) { //start the resume
-				globalResumeTicket = true;
-
-
-
-		row13Struct row13 = new row13Struct();
-
-
-
-
-	
-	/**
-	 * [tAdvancedHash_row13 begin ] start
-	 */
-
-	
-
-	
-		
-		ok_Hash.put("tAdvancedHash_row13", false);
-		start_Hash.put("tAdvancedHash_row13", System.currentTimeMillis());
-		
-	
-	currentComponent="tAdvancedHash_row13";
-
-	
-					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row13");
-					}
-				
-		int tos_count_tAdvancedHash_row13 = 0;
-		
-
-			   		// connection name:row13
-			   		// source node:tFileInputDelimited_12 - inputs:(after_tFileInputDelimited_10) outputs:(row13,row13) | target node:tAdvancedHash_row13 - inputs:(row13) outputs:()
-			   		// linked node: tMap_5 - inputs:(row10,row11,row12,row13) outputs:(SalesOrderMain)
-			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row13 = 
-			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
-			   			
-			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row13Struct> tHash_Lookup_row13 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row13Struct>getLookup(matchingModeEnum_row13);
-	   						   
-		   	   	   globalMap.put("tHash_Lookup_row13", tHash_Lookup_row13);
-		   	   	   
-				
-           
+        resourceMap.put("out_tFileOutputDelimited_4", outtFileOutputDelimited_4);
+resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
 
  
 
 
 
 /**
- * [tAdvancedHash_row13 begin ] stop
+ * [tFileOutputDelimited_4 begin ] stop
  */
 
 
 
 	
 	/**
-	 * [tFileInputDelimited_12 begin ] start
+	 * [tFileInputDelimited_13 begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tFileInputDelimited_12", false);
-		start_Hash.put("tFileInputDelimited_12", System.currentTimeMillis());
+		ok_Hash.put("tFileInputDelimited_13", false);
+		start_Hash.put("tFileInputDelimited_13", System.currentTimeMillis());
 		
 	
-	currentComponent="tFileInputDelimited_12";
+	currentComponent="tFileInputDelimited_13";
 
 	
-		int tos_count_tFileInputDelimited_12 = 0;
+		int tos_count_tFileInputDelimited_13 = 0;
 		
 	
 	
@@ -23072,29 +21432,29 @@ public void tFileInputDelimited_12Process(final java.util.Map<String, Object> gl
  
 	
 	
-	final routines.system.RowState rowstate_tFileInputDelimited_12 = new routines.system.RowState();
+	final routines.system.RowState rowstate_tFileInputDelimited_13 = new routines.system.RowState();
 	
 	
-				int nb_line_tFileInputDelimited_12 = 0;
-				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_12 = null;
-				int limit_tFileInputDelimited_12 = -1;
+				int nb_line_tFileInputDelimited_13 = 0;
+				org.talend.fileprocess.FileInputDelimited fid_tFileInputDelimited_13 = null;
+				int limit_tFileInputDelimited_13 = -1;
 				try{
 					
-						Object filename_tFileInputDelimited_12 = context.pathraw+"Address.csv";
-						if(filename_tFileInputDelimited_12 instanceof java.io.InputStream){
+						Object filename_tFileInputDelimited_13 = context.pathraw+"Address.csv";
+						if(filename_tFileInputDelimited_13 instanceof java.io.InputStream){
 							
-			int footer_value_tFileInputDelimited_12 = 0, random_value_tFileInputDelimited_12 = -1;
-			if(footer_value_tFileInputDelimited_12 >0 || random_value_tFileInputDelimited_12 > 0){
+			int footer_value_tFileInputDelimited_13 = 0, random_value_tFileInputDelimited_13 = -1;
+			if(footer_value_tFileInputDelimited_13 >0 || random_value_tFileInputDelimited_13 > 0){
 				throw new java.lang.Exception("When the input source is a stream,footer and random shouldn't be bigger than 0.");				
 			}
 		
 						}
 						try {
-							fid_tFileInputDelimited_12 = new org.talend.fileprocess.FileInputDelimited(context.pathraw+"Address.csv", "ISO-8859-15",";","\n",true,1,0,
-									limit_tFileInputDelimited_12
+							fid_tFileInputDelimited_13 = new org.talend.fileprocess.FileInputDelimited(context.pathraw+"Address.csv", "ISO-8859-15",";","\n",true,1,0,
+									limit_tFileInputDelimited_13
 								,-1, false);
 						} catch(java.lang.Exception e) {
-globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",e.getMessage());
+globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",e.getMessage());
 							
 								
 								System.err.println(e.getMessage());
@@ -23102,97 +21462,95 @@ globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",e.getMessage());
 						}
 					
 				    
-					while (fid_tFileInputDelimited_12!=null && fid_tFileInputDelimited_12.nextRecord()) {
-						rowstate_tFileInputDelimited_12.reset();
+					while (fid_tFileInputDelimited_13!=null && fid_tFileInputDelimited_13.nextRecord()) {
+						rowstate_tFileInputDelimited_13.reset();
 						
-			    						row13 = null;			
-									
-			    						row13 = null;			
+			    						row14 = null;			
 												
-									boolean whetherReject_tFileInputDelimited_12 = false;
-									row13 = new row13Struct();
+									boolean whetherReject_tFileInputDelimited_13 = false;
+									row14 = new row14Struct();
 									try {
 										
-				int columnIndexWithD_tFileInputDelimited_12 = 0;
+				int columnIndexWithD_tFileInputDelimited_13 = 0;
 				
 					String temp = ""; 
 				
-					columnIndexWithD_tFileInputDelimited_12 = 0;
+					columnIndexWithD_tFileInputDelimited_13 = 0;
 					
-						temp = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+						temp = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						if(temp.length() > 0) {
 							
 								try {
 								
-    								row13.AddressID = ParserUtils.parseTo_int(temp);
+    								row14.AddressID = ParserUtils.parseTo_int(temp);
     							
-    							} catch(java.lang.Exception ex_tFileInputDelimited_12) {
-globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",ex_tFileInputDelimited_12.getMessage());
-									rowstate_tFileInputDelimited_12.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"AddressID", "row13", temp, ex_tFileInputDelimited_12), ex_tFileInputDelimited_12));
+    							} catch(java.lang.Exception ex_tFileInputDelimited_13) {
+globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",ex_tFileInputDelimited_13.getMessage());
+									rowstate_tFileInputDelimited_13.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"AddressID", "row14", temp, ex_tFileInputDelimited_13), ex_tFileInputDelimited_13));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_12.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'row13' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_13.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'row14' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
-					columnIndexWithD_tFileInputDelimited_12 = 1;
+					columnIndexWithD_tFileInputDelimited_13 = 1;
 					
-							row13.AddressLine1 = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+							row14.AddressLine1 = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
-					columnIndexWithD_tFileInputDelimited_12 = 2;
+					columnIndexWithD_tFileInputDelimited_13 = 2;
 					
-							row13.AddressLine2 = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+							row14.AddressLine2 = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
-					columnIndexWithD_tFileInputDelimited_12 = 3;
+					columnIndexWithD_tFileInputDelimited_13 = 3;
 					
-							row13.City = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+							row14.City = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
-					columnIndexWithD_tFileInputDelimited_12 = 4;
+					columnIndexWithD_tFileInputDelimited_13 = 4;
 					
-							row13.StateProvince = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+							row14.StateProvince = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
-					columnIndexWithD_tFileInputDelimited_12 = 5;
+					columnIndexWithD_tFileInputDelimited_13 = 5;
 					
-							row13.CountryRegion = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+							row14.CountryRegion = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
-					columnIndexWithD_tFileInputDelimited_12 = 6;
+					columnIndexWithD_tFileInputDelimited_13 = 6;
 					
-							row13.PostalCode = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+							row14.PostalCode = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
-					columnIndexWithD_tFileInputDelimited_12 = 7;
+					columnIndexWithD_tFileInputDelimited_13 = 7;
 					
-							row13.rowguid = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+							row14.rowguid = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
-					columnIndexWithD_tFileInputDelimited_12 = 8;
+					columnIndexWithD_tFileInputDelimited_13 = 8;
 					
-						temp = fid_tFileInputDelimited_12.get(columnIndexWithD_tFileInputDelimited_12);
+						temp = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						if(temp.length() > 0) {
 							
 								try {
 								
-    									row13.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									row14.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
-    							} catch(java.lang.Exception ex_tFileInputDelimited_12) {
-globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",ex_tFileInputDelimited_12.getMessage());
-									rowstate_tFileInputDelimited_12.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row13", temp, ex_tFileInputDelimited_12), ex_tFileInputDelimited_12));
+    							} catch(java.lang.Exception ex_tFileInputDelimited_13) {
+globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",ex_tFileInputDelimited_13.getMessage());
+									rowstate_tFileInputDelimited_13.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"ModifiedDate", "row14", temp, ex_tFileInputDelimited_13), ex_tFileInputDelimited_13));
 								}
     							
 						} else {						
 							
 								
-									row13.ModifiedDate = null;
+									row14.ModifiedDate = null;
 								
 							
 						}
@@ -23200,18 +21558,18 @@ globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",ex_tFileInputDelimited_12.g
 				
 				
 										
-										if(rowstate_tFileInputDelimited_12.getException()!=null) {
-											throw rowstate_tFileInputDelimited_12.getException();
+										if(rowstate_tFileInputDelimited_13.getException()!=null) {
+											throw rowstate_tFileInputDelimited_13.getException();
 										}
 										
 										
 							
 			    					} catch (java.lang.Exception e) {
-globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",e.getMessage());
-			        					whetherReject_tFileInputDelimited_12 = true;
+globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",e.getMessage());
+			        					whetherReject_tFileInputDelimited_13 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row13 = null;
+			                					row14 = null;
 			                				
 										
 			    					}
@@ -23222,39 +21580,39 @@ globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",e.getMessage());
 
 
 /**
- * [tFileInputDelimited_12 begin ] stop
+ * [tFileInputDelimited_13 begin ] stop
  */
 	
 	/**
-	 * [tFileInputDelimited_12 main ] start
+	 * [tFileInputDelimited_13 main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileInputDelimited_12";
+	currentComponent="tFileInputDelimited_13";
 
 	
 
  
 
 
-	tos_count_tFileInputDelimited_12++;
+	tos_count_tFileInputDelimited_13++;
 
 /**
- * [tFileInputDelimited_12 main ] stop
+ * [tFileInputDelimited_13 main ] stop
  */
 	
 	/**
-	 * [tFileInputDelimited_12 process_data_begin ] start
+	 * [tFileInputDelimited_13 process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileInputDelimited_12";
+	currentComponent="tFileInputDelimited_13";
 
 	
 
@@ -23263,62 +21621,94 @@ globalMap.put("tFileInputDelimited_12_ERROR_MESSAGE",e.getMessage());
 
 
 /**
- * [tFileInputDelimited_12 process_data_begin ] stop
+ * [tFileInputDelimited_13 process_data_begin ] stop
  */
-// Start of branch "row13"
-if(row13 != null) { 
+// Start of branch "row14"
+if(row14 != null) { 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row13 main ] start
+	 * [tFileOutputDelimited_4 main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row13";
+	currentComponent="tFileOutputDelimited_4";
 
 	
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row13"
+							,"row14"
 						
 						);
 					}
 					
 
 
-			   
-			   
+                    StringBuilder sb_tFileOutputDelimited_4 = new StringBuilder();
+                        sb_tFileOutputDelimited_4.append(
+                            row14.AddressID
+                        );
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.AddressLine1 != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row14.AddressLine1
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.AddressLine2 != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row14.AddressLine2
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.City != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row14.City
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.StateProvince != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row14.StateProvince
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.CountryRegion != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row14.CountryRegion
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.PostalCode != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row14.PostalCode
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.rowguid != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            row14.rowguid
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(row14.ModifiedDate != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            FormatterUtils.format_Date(row14.ModifiedDate, "dd-MM-yyyy")
+                        );
+                            }
+                    sb_tFileOutputDelimited_4.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
 
-					row13Struct row13_HashRow = new row13Struct();
-		   	   	   
-				
-				row13_HashRow.AddressID = row13.AddressID;
-				
-				row13_HashRow.AddressLine1 = row13.AddressLine1;
-				
-				row13_HashRow.AddressLine2 = row13.AddressLine2;
-				
-				row13_HashRow.City = row13.City;
-				
-				row13_HashRow.StateProvince = row13.StateProvince;
-				
-				row13_HashRow.CountryRegion = row13.CountryRegion;
-				
-				row13_HashRow.PostalCode = row13.PostalCode;
-				
-				row13_HashRow.rowguid = row13.rowguid;
-				
-				row13_HashRow.ModifiedDate = row13.ModifiedDate;
-				
-			tHash_Lookup_row13.put(row13_HashRow);
-			
-            
+
+                    nb_line_tFileOutputDelimited_4++;
+                    resourceMap.put("nb_line_tFileOutputDelimited_4", nb_line_tFileOutputDelimited_4);
+
+                        outtFileOutputDelimited_4.write(sb_tFileOutputDelimited_4.toString());
 
 
 
@@ -23326,67 +21716,21 @@ if(row13 != null) {
  
 
 
-	tos_count_tAdvancedHash_row13++;
+	tos_count_tFileOutputDelimited_4++;
 
 /**
- * [tAdvancedHash_row13 main ] stop
+ * [tFileOutputDelimited_4 main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row13 process_data_begin ] start
+	 * [tFileOutputDelimited_4 process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row13";
-
-	
-
- 
-
-
-
-/**
- * [tAdvancedHash_row13 process_data_begin ] stop
- */
-	
-	/**
-	 * [tAdvancedHash_row13 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tAdvancedHash_row13";
-
-	
-
- 
-
-
-
-/**
- * [tAdvancedHash_row13 process_data_end ] stop
- */
-
-} // End of branch "row13"
-
-
-
-
-	
-	/**
-	 * [tFileInputDelimited_12 process_data_end ] start
-	 */
-
-	
-
-	
-	
-	currentComponent="tFileInputDelimited_12";
+	currentComponent="tFileOutputDelimited_4";
 
 	
 
@@ -23395,18 +21739,64 @@ if(row13 != null) {
 
 
 /**
- * [tFileInputDelimited_12 process_data_end ] stop
+ * [tFileOutputDelimited_4 process_data_begin ] stop
  */
 	
 	/**
-	 * [tFileInputDelimited_12 end ] start
+	 * [tFileOutputDelimited_4 process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileInputDelimited_12";
+	currentComponent="tFileOutputDelimited_4";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileOutputDelimited_4 process_data_end ] stop
+ */
+
+} // End of branch "row14"
+
+
+
+
+	
+	/**
+	 * [tFileInputDelimited_13 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_13";
+
+	
+
+ 
+
+
+
+/**
+ * [tFileInputDelimited_13 process_data_end ] stop
+ */
+	
+	/**
+	 * [tFileInputDelimited_13 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tFileInputDelimited_13";
 
 	
 
@@ -23415,12 +21805,12 @@ if(row13 != null) {
             }
             }finally{
                 if(!((Object)(context.pathraw+"Address.csv") instanceof java.io.InputStream)){
-                	if(fid_tFileInputDelimited_12!=null){
-                		fid_tFileInputDelimited_12.close();
+                	if(fid_tFileInputDelimited_13!=null){
+                		fid_tFileInputDelimited_13.close();
                 	}
                 }
-                if(fid_tFileInputDelimited_12!=null){
-                	globalMap.put("tFileInputDelimited_12_NB_LINE", fid_tFileInputDelimited_12.getRowNumber());
+                if(fid_tFileInputDelimited_13!=null){
+                	globalMap.put("tFileInputDelimited_13_NB_LINE", fid_tFileInputDelimited_13.getRowNumber());
 					
                 }
 			}
@@ -23428,45 +21818,60 @@ if(row13 != null) {
 
  
 
-ok_Hash.put("tFileInputDelimited_12", true);
-end_Hash.put("tFileInputDelimited_12", System.currentTimeMillis());
+ok_Hash.put("tFileInputDelimited_13", true);
+end_Hash.put("tFileInputDelimited_13", System.currentTimeMillis());
 
 
 
 
 /**
- * [tFileInputDelimited_12 end ] stop
+ * [tFileInputDelimited_13 end ] stop
  */
 
 	
 	/**
-	 * [tAdvancedHash_row13 end ] start
+	 * [tFileOutputDelimited_4 end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row13";
+	currentComponent="tFileOutputDelimited_4";
 
 	
 
-tHash_Lookup_row13.endPut();
+
+
+		
+			
+					if(outtFileOutputDelimited_4!=null) {
+						outtFileOutputDelimited_4.flush();
+						outtFileOutputDelimited_4.close();
+					}
+				
+				globalMap.put("tFileOutputDelimited_4_NB_LINE",nb_line_tFileOutputDelimited_4);
+				globalMap.put("tFileOutputDelimited_4_FILE_NAME",fileName_tFileOutputDelimited_4);
+			
+		
+		
+		resourceMap.put("finish_tFileOutputDelimited_4", true);
+	
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row13");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row14");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row13", true);
-end_Hash.put("tAdvancedHash_row13", System.currentTimeMillis());
+ok_Hash.put("tFileOutputDelimited_4", true);
+end_Hash.put("tFileOutputDelimited_4", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row13 end ] stop
+ * [tFileOutputDelimited_4 end ] stop
  */
 
 
@@ -23494,14 +21899,14 @@ end_Hash.put("tAdvancedHash_row13", System.currentTimeMillis());
 					
 	
 	/**
-	 * [tFileInputDelimited_12 finally ] start
+	 * [tFileInputDelimited_13 finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tFileInputDelimited_12";
+	currentComponent="tFileInputDelimited_13";
 
 	
 
@@ -23510,20 +21915,35 @@ end_Hash.put("tAdvancedHash_row13", System.currentTimeMillis());
 
 
 /**
- * [tFileInputDelimited_12 finally ] stop
+ * [tFileInputDelimited_13 finally ] stop
  */
 
 	
 	/**
-	 * [tAdvancedHash_row13 finally ] start
+	 * [tFileOutputDelimited_4 finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row13";
+	currentComponent="tFileOutputDelimited_4";
 
+	
+
+
+		if(resourceMap.get("finish_tFileOutputDelimited_4") == null){ 
+			
+				
+						java.io.Writer outtFileOutputDelimited_4 = (java.io.Writer)resourceMap.get("out_tFileOutputDelimited_4");
+						if(outtFileOutputDelimited_4!=null) {
+							outtFileOutputDelimited_4.flush();
+							outtFileOutputDelimited_4.close();
+						}
+					
+				
+			
+		}
 	
 
  
@@ -23531,7 +21951,7 @@ end_Hash.put("tAdvancedHash_row13", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row13 finally ] stop
+ * [tFileOutputDelimited_4 finally ] stop
  */
 
 
@@ -23545,7 +21965,7 @@ end_Hash.put("tAdvancedHash_row13", System.currentTimeMillis());
 			}
 		
 
-		globalMap.put("tFileInputDelimited_12_SUBPROCESS_STATE", 1);
+		globalMap.put("tFileInputDelimited_13_SUBPROCESS_STATE", 1);
 	}
 	
     public String resuming_logs_dir_path = null;
@@ -23804,6 +22224,15 @@ globalMap.put("tFileInputDelimited_10_SUBPROCESS_STATE", -1);
 e_tFileInputDelimited_10.printStackTrace();
 
 }
+try {
+errorCode = null;tFileInputDelimited_13Process(globalMap);
+if(!"failure".equals(status)) { status = "end"; }
+}catch (TalendException e_tFileInputDelimited_13) {
+globalMap.put("tFileInputDelimited_13_SUBPROCESS_STATE", -1);
+
+e_tFileInputDelimited_13.printStackTrace();
+
+}
 
 this.globalResumeTicket = true;//to run tPostJob
 
@@ -23979,6 +22408,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     596222 characters generated by Talend Open Studio for Data Integration 
- *     on the 9 de abril de 2022 00:46:43 BRT
+ *     559518 characters generated by Talend Open Studio for Data Integration 
+ *     on the 9 de abril de 2022 02:22:27 BRT
  ************************************************************************************************/
