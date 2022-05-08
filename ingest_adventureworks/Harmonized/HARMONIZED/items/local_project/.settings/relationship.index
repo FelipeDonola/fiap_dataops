@@ -185,10 +185,6 @@
     "id" : "_x2bfAK4FEeyrdM0bpjD8cw - ProductModelProductDescription",
     "version" : "Latest",
     "type" : "schema"
-  }, {
-    "id" : "_x2bfAK4FEeyrdM0bpjD8cw - SalesOrderDetail",
-    "version" : "Latest",
-    "type" : "schema"
   } ]
 }, {
   "baseItem" : {
@@ -267,6 +263,17 @@
 }, {
   "baseItem" : {
     "id" : "_Pg3FgLPCEey_YaYu1IwcTQ",
+    "version" : "0.1",
+    "type" : "job"
+  },
+  "relatedItems" : [ {
+    "id" : "built-in",
+    "version" : "Latest",
+    "type" : "context"
+  } ]
+}, {
+  "baseItem" : {
+    "id" : "_dNyAALfJEeytkP54CQWl4Q",
     "version" : "0.1",
     "type" : "job"
   },

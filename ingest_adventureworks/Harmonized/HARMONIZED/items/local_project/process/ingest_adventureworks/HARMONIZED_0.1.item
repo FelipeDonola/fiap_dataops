@@ -46,7 +46,7 @@
     <elementParameter field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:1VOMMfwYFJ6MWFDhmH3Y6plq99p5UiGmFB05K3tC" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS_IMPLICIT_CONTEXT" value="enc:system.encryption.key.v1:5QlaXRdS+74r76bMBQNSt78YUW+MpKhldKzPhm74" show="false"/>
     <elementParameter field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" show="false"/>
@@ -81,7 +81,7 @@
     <elementParameter field="TEXT" name="PROPERTIES" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" show="false"/>
     <elementParameter field="TEXT" name="USER" value="&quot;&quot;" show="false"/>
-    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:B5MJMa+YGS2Kptaxilah/VLx93IV3mGntlPgNSEr" show="false"/>
+    <elementParameter field="PASSWORD" name="PASS" value="enc:system.encryption.key.v1:6QH2OU7wOTHpznXnQh3FT4f0QjFQpFBLgbRfyaQv" show="false"/>
     <elementParameter field="FILE" name="DBFILE" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" show="false"/>
@@ -383,25 +383,25 @@
       <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="HProduct">
-        <mapperTableEntries name="ProductID" expression="row1.ProductID " type="id_Integer"/>
-        <mapperTableEntries name="Name" expression="row1.Name " type="id_String" nullable="true"/>
-        <mapperTableEntries name="ProductNumber" expression="row1.ProductNumber " type="id_String"/>
-        <mapperTableEntries name="Color" expression="row1.Color " type="id_String" nullable="true"/>
-        <mapperTableEntries name="StandardCost" expression="row1.StandardCost " type="id_Object"/>
-        <mapperTableEntries name="ListPrice" expression="row1.ListPrice " type="id_Object"/>
-        <mapperTableEntries name="Size" expression="row1.Size " type="id_String" nullable="true"/>
-        <mapperTableEntries name="Weight" expression="row1.Weight " type="id_BigDecimal" nullable="true"/>
-        <mapperTableEntries name="ProductCategoryID" expression="row1.ProductCategoryID " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="ProductCategoryName" expression="row2.Name " type="id_String" nullable="true"/>
-        <mapperTableEntries name="ProductModelID" expression="row1.ProductModelID " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="ProductID" expression="Product.ProductID " type="id_Integer"/>
+        <mapperTableEntries name="Name" expression="Product.Name " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ProductNumber" expression="Product.ProductNumber " type="id_String"/>
+        <mapperTableEntries name="Color" expression="Product.Color " type="id_String" nullable="true"/>
+        <mapperTableEntries name="StandardCost" expression="Product.StandardCost " type="id_Object"/>
+        <mapperTableEntries name="ListPrice" expression="Product.ListPrice " type="id_Object"/>
+        <mapperTableEntries name="Size" expression="Product.Size " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Weight" expression="Product.Weight " type="id_BigDecimal" nullable="true"/>
+        <mapperTableEntries name="ProductCategoryID" expression="Product.ProductCategoryID " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="ProductCategoryName" expression="ProductCategory.Name " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ProductModelID" expression="Product.ProductModelID " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="ProductModelName" expression="ProductModelMain.Name " type="id_String" nullable="true"/>
         <mapperTableEntries name="ProductDescription" expression="ProductModelMain.Description " type="id_String" nullable="true"/>
-        <mapperTableEntries name="SellStartDate" expression="row1.SellStartDate " type="id_Date"/>
-        <mapperTableEntries name="SellEndDate" expression="row1.SellEndDate " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="DiscontinuedDate" expression="row1.DiscontinuedDate " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="ModifiedDate" expression="row1.ModifiedDate " type="id_Date"/>
+        <mapperTableEntries name="SellStartDate" expression="Product.SellStartDate " type="id_Date"/>
+        <mapperTableEntries name="SellEndDate" expression="Product.SellEndDate " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="DiscontinuedDate" expression="Product.DiscontinuedDate " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="ModifiedDate" expression="Product.ModifiedDate " type="id_Date"/>
       </outputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row1" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="Product" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="ProductID" type="id_Integer"/>
         <mapperTableEntries name="Name" type="id_String" nullable="true"/>
         <mapperTableEntries name="ProductNumber" type="id_String"/>
@@ -420,15 +420,15 @@
         <mapperTableEntries name="rowguid" type="id_Object"/>
         <mapperTableEntries name="ModifiedDate" type="id_Date"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row2" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="ProductCategoryID" expression="row1.ProductCategoryID " type="id_Integer" operator="="/>
+      <inputTables sizeState="INTERMEDIATE" name="ProductCategory" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="ProductCategoryID" expression="Product.ProductCategoryID " type="id_Integer" operator="="/>
         <mapperTableEntries name="ParentProductCategoryID" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="Name" type="id_String" nullable="true"/>
         <mapperTableEntries name="rowguid" type="id_Object"/>
         <mapperTableEntries name="ModifiedDate" type="id_Date"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="ProductModelMain" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="ProductModelID" expression="row1.ProductModelID " type="id_Integer" operator="="/>
+        <mapperTableEntries name="ProductModelID" expression="Product.ProductModelID " type="id_Integer" operator="="/>
         <mapperTableEntries name="Name" type="id_String" nullable="true"/>
         <mapperTableEntries name="Description" type="id_String"/>
       </inputTables>
@@ -817,23 +817,23 @@
       <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var"/>
       <outputTables sizeState="INTERMEDIATE" name="ProductModelMain">
-        <mapperTableEntries name="ProductModelID" expression="row6.ProductModelID " type="id_Integer"/>
-        <mapperTableEntries name="Name" expression="row6.Name " type="id_String" nullable="true"/>
-        <mapperTableEntries name="Description" expression="row5.Description " type="id_String"/>
+        <mapperTableEntries name="ProductModelID" expression="ProductModel.ProductModelID " type="id_Integer"/>
+        <mapperTableEntries name="Name" expression="ProductModel.Name " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Description" expression="ProductDescription.Description " type="id_String"/>
       </outputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row6" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="ProductModelID" expression="row5.ProductModelID " type="id_Integer" operator="="/>
+      <inputTables sizeState="INTERMEDIATE" name="ProductModel" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="ProductModelID" expression="ProductDescription.ProductModelID " type="id_Integer" operator="="/>
         <mapperTableEntries name="Name" type="id_String" nullable="true"/>
         <mapperTableEntries name="CatalogDescription" type="id_String" nullable="true"/>
         <mapperTableEntries name="rowguid" type="id_Object"/>
         <mapperTableEntries name="ModifiedDate" type="id_Date"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="ProdModProdDesc" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="ProductModelID" expression="row6.ProductModelID " type="id_Integer" operator="="/>
+        <mapperTableEntries name="ProductModelID" expression="ProductModel.ProductModelID " type="id_Integer" operator="="/>
         <mapperTableEntries name="ProductDescriptionID" type="id_Integer"/>
         <mapperTableEntries name="Culture" type="id_String"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row5" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="ProductDescription" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="ProductDescriptionID" expression="ProdModProdDesc.ProductDescriptionID " type="id_Integer" operator="="/>
         <mapperTableEntries name="Description" type="id_String"/>
         <mapperTableEntries name="rowguid" type="id_Object"/>
@@ -963,12 +963,12 @@
     <nodeData xsi:type="TalendMapper:MapperData">
       <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var"/>
-      <outputTables sizeState="INTERMEDIATE" name="ProdModProdDesc" expressionFilter="row4.Culture.equals(&quot;en&quot;)" activateExpressionFilter="true">
-        <mapperTableEntries name="ProductModelID" expression="row4.ProductModelID " type="id_Integer"/>
-        <mapperTableEntries name="ProductDescriptionID" expression="row4.ProductDescriptionID " type="id_Integer"/>
-        <mapperTableEntries name="Culture" expression="row4.Culture" type="id_String"/>
+      <outputTables sizeState="INTERMEDIATE" name="ProdModProdDesc" expressionFilter="ProdModProdDescOrin.Culture.equals(&quot;en&quot;)" activateExpressionFilter="true">
+        <mapperTableEntries name="ProductModelID" expression="ProdModProdDescOrin.ProductModelID " type="id_Integer"/>
+        <mapperTableEntries name="ProductDescriptionID" expression="ProdModProdDescOrin.ProductDescriptionID " type="id_Integer"/>
+        <mapperTableEntries name="Culture" expression="ProdModProdDescOrin.Culture" type="id_String"/>
       </outputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row4" activateExpressionFilter="true" columnNameFilter="" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="ProdModProdDescOrin" activateExpressionFilter="true" columnNameFilter="" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="ProductModelID" type="id_Integer"/>
         <mapperTableEntries name="ProductDescriptionID" type="id_Integer"/>
         <mapperTableEntries name="Culture" type="id_String"/>
@@ -1295,26 +1295,26 @@
       <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="CustomerMain">
-        <mapperTableEntries name="CustomerID" expression="row7.CustomerID " type="id_Integer"/>
-        <mapperTableEntries name="Title" expression="row7.Title " type="id_String" nullable="true"/>
-        <mapperTableEntries name="MiddleName" expression="row7.MiddleName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="FirstName" expression="row7.FirstName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="LastName" expression="row7.LastName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="Suffix" expression="row7.Suffix " type="id_String" nullable="true"/>
-        <mapperTableEntries name="CompanyName" expression="row7.CompanyName " type="id_String" nullable="true"/>
-        <mapperTableEntries name="SalesPerson" expression="row7.SalesPerson " type="id_String" nullable="true"/>
-        <mapperTableEntries name="EmailAddress" expression="row7.EmailAddress " type="id_String" nullable="true"/>
-        <mapperTableEntries name="Phone" expression="row7.Phone " type="id_String" nullable="true"/>
-        <mapperTableEntries name="AddressType" expression="row8.AddressType " type="id_String" nullable="true"/>
-        <mapperTableEntries name="AddressLine1" expression="row9.AddressLine1 " type="id_String"/>
-        <mapperTableEntries name="AddressLine2" expression="row9.AddressLine2 " type="id_String" nullable="true"/>
-        <mapperTableEntries name="City" expression="row9.City " type="id_String"/>
-        <mapperTableEntries name="StateProvince" expression="row9.StateProvince " type="id_String" nullable="true"/>
-        <mapperTableEntries name="CountryRegion" expression="row9.CountryRegion " type="id_String" nullable="true"/>
-        <mapperTableEntries name="PostalCode" expression="row9.PostalCode " type="id_String"/>
-        <mapperTableEntries name="ModifiedDate_1" expression="row9.ModifiedDate " type="id_Date"/>
+        <mapperTableEntries name="CustomerID" expression="Customer.CustomerID " type="id_Integer"/>
+        <mapperTableEntries name="Title" expression="Customer.Title " type="id_String" nullable="true"/>
+        <mapperTableEntries name="MiddleName" expression="Customer.MiddleName " type="id_String" nullable="true"/>
+        <mapperTableEntries name="FirstName" expression="Customer.FirstName " type="id_String" nullable="true"/>
+        <mapperTableEntries name="LastName" expression="Customer.LastName " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Suffix" expression="Customer.Suffix " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CompanyName" expression="Customer.CompanyName " type="id_String" nullable="true"/>
+        <mapperTableEntries name="SalesPerson" expression="Customer.SalesPerson" type="id_String" nullable="true"/>
+        <mapperTableEntries name="EmailAddress" expression="Customer.EmailAddress " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Phone" expression="Customer.Phone " type="id_String" nullable="true"/>
+        <mapperTableEntries name="AddressType" expression="CustomerAddress.AddressType " type="id_String" nullable="true"/>
+        <mapperTableEntries name="AddressLine1" expression="Address.AddressLine1 " type="id_String"/>
+        <mapperTableEntries name="AddressLine2" expression="Address.AddressLine2 " type="id_String" nullable="true"/>
+        <mapperTableEntries name="City" expression="Address.City " type="id_String"/>
+        <mapperTableEntries name="StateProvince" expression="Address.StateProvince " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CountryRegion" expression="Address.CountryRegion " type="id_String" nullable="true"/>
+        <mapperTableEntries name="PostalCode" expression="Address.PostalCode " type="id_String"/>
+        <mapperTableEntries name="ModifiedDate_1" expression="Address.ModifiedDate " type="id_Date"/>
       </outputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row7" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="Customer" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="CustomerID" type="id_Integer"/>
         <mapperTableEntries name="NameStyle" type="id_String" nullable="true"/>
         <mapperTableEntries name="Title" type="id_String" nullable="true"/>
@@ -1331,15 +1331,15 @@
         <mapperTableEntries name="rowguid" type="id_Object"/>
         <mapperTableEntries name="ModifiedDate" type="id_Date"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row8" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="CustomerID" expression="row7.CustomerID " type="id_Integer" operator="="/>
+      <inputTables sizeState="INTERMEDIATE" name="CustomerAddress" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="CustomerID" expression="Customer.CustomerID " type="id_Integer" operator="="/>
         <mapperTableEntries name="AddressID" expression="" type="id_Integer"/>
         <mapperTableEntries name="AddressType" type="id_String" nullable="true"/>
         <mapperTableEntries name="rowguid" type="id_Object"/>
         <mapperTableEntries name="ModifiedDate" type="id_Date"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row9" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="AddressID" expression="row8.AddressID " type="id_Integer" operator="="/>
+      <inputTables sizeState="INTERMEDIATE" name="Address" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="AddressID" expression="CustomerAddress.AddressID " type="id_Integer" operator="="/>
         <mapperTableEntries name="AddressLine1" type="id_String"/>
         <mapperTableEntries name="AddressLine2" type="id_String" nullable="true"/>
         <mapperTableEntries name="City" type="id_String"/>
@@ -1439,80 +1439,6 @@
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-    </metadata>
-  </node>
-  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="608">
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_2" show="false"/>
-    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
-    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
-    <elementParameter field="FILE" name="FILENAME" value="context.path_harm+&quot;HCustomer.csv&quot;"/>
-    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
-    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
-    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
-    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
-    <elementParameter field="CHECK" name="APPEND" value="false"/>
-    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
-    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
-    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
-    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
-    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
-    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
-    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
-    <elementParameter field="CHECK" name="CREATE" value="true"/>
-    <elementParameter field="CHECK" name="SPLIT" value="false"/>
-    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
-    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
-    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
-    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
-    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
-    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
-    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
-    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
-    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
-    <elementParameter field="TEXT" name="LABEL" value="HCustomer.csv"/>
-    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
-    <metadata connector="FLOW" name="tFileOutputDelimited_2">
-      <column comment="" key="true" length="10" name="CustomerID" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="8" name="Title" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="MiddleName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="FirstName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="LastName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="10" name="Suffix" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="128" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="256" name="SalesPerson" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="50" name="EmailAddress" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="Phone" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="AddressType" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="60" name="AddressLine1" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="60" name="AddressLine2" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="30" name="City" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="-1" name="StateProvince" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="-1" name="CountryRegion" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
-      <column comment="" key="false" length="15" name="PostalCode" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
-      <column comment="" key="false" length="23" name="ModifiedDate_1" nullable="false" originalDbColumnName="ModifiedDate" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
-        <additionalField key="Comment" value=""/>
-      </column>
     </metadata>
   </node>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="704">
@@ -1639,6 +1565,145 @@
       </column>
       <column defaultValue="" key="false" length="255" name="errorCode" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
       <column defaultValue="" key="false" length="255" name="errorMessage" nullable="true" precision="0" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+    </metadata>
+  </node>
+  <node componentName="tReplace" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="672" posY="608">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tReplace_1" show="false"/>
+    <elementParameter field="CHECK" name="SIMPLE_MODE" value="true"/>
+    <elementParameter field="LABEL" name="SIMPLEMODE_OLDLABLE" value="Simple mode works with regex expression(in last version)" show="false"/>
+    <elementParameter field="TABLE" name="SUBSTITUTIONS">
+      <elementValue elementRef="INPUT_COLUMN" value="SalesPerson"/>
+      <elementValue elementRef="SEARCH_PATTERN" value="&quot;adventure-works\\&quot;"/>
+      <elementValue elementRef="REPLACE_STRING" value="&quot;&quot;"/>
+      <elementValue elementRef="WHOLE_WORD" value="false"/>
+      <elementValue elementRef="CASE_SENSITIVE" value="false"/>
+      <elementValue elementRef="USE_GLOB" value="false"/>
+      <elementValue elementRef="COMMENT" value=""/>
+    </elementParameter>
+    <elementParameter field="CHECK" name="STRICT_MATCH" value="true" show="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_MODE" value="true"/>
+    <elementParameter field="TABLE" name="ADVANCED_SUBST">
+      <elementValue elementRef="INPUT_COLUMN" value="SalesPerson"/>
+      <elementValue elementRef="SEARCH_COLUMN" value="&quot;[0-9]&quot;"/>
+      <elementValue elementRef="REPLACE_COLUMN" value="&quot;&quot;"/>
+      <elementValue elementRef="COMMENT" value=""/>
+    </elementParameter>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tReplace_1">
+      <column comment="" key="true" length="10" name="CustomerID" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="8" name="Title" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="MiddleName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FirstName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LastName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="Suffix" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="128" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="256" name="SalesPerson" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="EmailAddress" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="Phone" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="AddressType" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="60" name="AddressLine1" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="60" name="AddressLine2" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="City" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="StateProvince" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CountryRegion" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="PostalCode" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="ModifiedDate_1" nullable="false" originalDbColumnName="ModifiedDate" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+    </metadata>
+  </node>
+  <node componentName="tFileOutputDelimited" componentVersion="0.101" offsetLabelX="0" offsetLabelY="0" posX="864" posY="608">
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="tFileOutputDelimited_2" show="false"/>
+    <elementParameter field="CHECK" name="USESTREAM" value="false"/>
+    <elementParameter field="TEXT" name="STREAMNAME" value="outputStream" show="false"/>
+    <elementParameter field="FILE" name="FILENAME" value="context.path_harm+&quot;HCustomer.csv&quot;"/>
+    <elementParameter field="TEXT" name="ROWSEPARATOR" value="&quot;\n&quot;"/>
+    <elementParameter field="CHECK" name="OS_LINE_SEPARATOR_AS_ROW_SEPARATOR" value="true" show="false"/>
+    <elementParameter field="OPENED_LIST" name="CSVROWSEPARATOR" value="&quot;\n&quot;" show="false"/>
+    <elementParameter field="TEXT" name="FIELDSEPARATOR" value="&quot;;&quot;"/>
+    <elementParameter field="CHECK" name="APPEND" value="false"/>
+    <elementParameter field="CHECK" name="INCLUDEHEADER" value="true"/>
+    <elementParameter field="CHECK" name="COMPRESS" value="false"/>
+    <elementParameter field="CHECK" name="ADVANCED_SEPARATOR" value="false"/>
+    <elementParameter field="TEXT" name="THOUSANDS_SEPARATOR" value="&quot;,&quot;" show="false"/>
+    <elementParameter field="TEXT" name="DECIMAL_SEPARATOR" value="&quot;.&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CSV_OPTION" value="false"/>
+    <elementParameter field="TEXT" name="ESCAPE_CHAR" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="TEXT" name="TEXT_ENCLOSURE" value="&quot;&quot;&quot;" show="false"/>
+    <elementParameter field="CHECK" name="CREATE" value="true"/>
+    <elementParameter field="CHECK" name="SPLIT" value="false"/>
+    <elementParameter field="TEXT" name="SPLIT_EVERY" value="1000" show="false"/>
+    <elementParameter field="CHECK" name="FLUSHONROW" value="false"/>
+    <elementParameter field="TEXT" name="FLUSHONROW_NUM" value="1" show="false"/>
+    <elementParameter field="CHECK" name="ROW_MODE" value="false"/>
+    <elementParameter field="ENCODING_TYPE" name="ENCODING" value="&quot;ISO-8859-15&quot;"/>
+    <elementParameter field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15"/>
+    <elementParameter field="CHECK" name="DELETE_EMPTYFILE" value="false"/>
+    <elementParameter field="CHECK" name="FILE_EXIST_EXCEPTION" value="false"/>
+    <elementParameter field="TEXT" name="SCHEMA_OPT_NUM" value="90" show="false"/>
+    <elementParameter field="TEXT" name="LABEL" value="HCustomer.csv"/>
+    <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
+    <metadata connector="FLOW" name="tFileOutputDelimited_2">
+      <column comment="" key="true" length="10" name="CustomerID" nullable="false" pattern="" precision="0" sourceType="INT IDENTITY" type="id_Integer" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="8" name="Title" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="MiddleName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="FirstName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="LastName" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="10" name="Suffix" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="128" name="CompanyName" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="256" name="SalesPerson" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="50" name="EmailAddress" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="Phone" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="AddressType" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="60" name="AddressLine1" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="60" name="AddressLine2" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="30" name="City" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="-1" name="StateProvince" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="-1" name="CountryRegion" nullable="true" pattern="" precision="-1" sourceType="" type="id_String" originalLength="-1" usefulColumn="true"/>
+      <column comment="" key="false" length="15" name="PostalCode" nullable="false" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
+      <column comment="" key="false" length="23" name="ModifiedDate_1" nullable="false" originalDbColumnName="ModifiedDate" pattern="&quot;dd-MM-yyyy&quot;" precision="3" sourceType="DATETIME" type="id_Date" usefulColumn="true">
+        <additionalField key="Comment" value=""/>
+      </column>
     </metadata>
   </node>
   <node componentName="tFileInputDelimited" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="96" posY="1056">
@@ -1806,16 +1871,16 @@
       <column comment="" key="false" length="15" name="CreditCardApprovalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1073741823" name="Comment" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
@@ -1868,16 +1933,16 @@
       <column comment="" key="false" length="15" name="CreditCardApprovalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1073741823" name="Comment" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
@@ -1947,16 +2012,16 @@
       <column comment="" key="false" length="15" name="CreditCardApprovalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1073741823" name="Comment" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
@@ -1974,49 +2039,49 @@
       <column comment="" key="false" length="10" name="ProductID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
     <nodeData xsi:type="TalendMapper:MapperData">
-      <uiProperties shellMaximized="true"/>
+      <uiProperties/>
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="SalesOrderMain">
-        <mapperTableEntries name="SalesOrderID" expression="row10.SalesOrderID " type="id_Integer"/>
-        <mapperTableEntries name="RevisionNumber" expression="row10.RevisionNumber " type="id_Short"/>
-        <mapperTableEntries name="OrderDate" expression="row10.OrderDate " type="id_Date"/>
-        <mapperTableEntries name="DueDate" expression="row10.DueDate " type="id_Date"/>
-        <mapperTableEntries name="ShipDate" expression="row10.ShipDate " type="id_Date" nullable="true"/>
-        <mapperTableEntries name="Status" expression="row10.Status " type="id_Short"/>
-        <mapperTableEntries name="OnlineOrderFlag" expression="row10.OnlineOrderFlag " type="id_String" nullable="true"/>
-        <mapperTableEntries name="SalesOrderNumber" expression="row10.SalesOrderNumber " type="id_String"/>
-        <mapperTableEntries name="PurchaseOrderNumber" expression="row10.PurchaseOrderNumber " type="id_String" nullable="true"/>
-        <mapperTableEntries name="AccountNumber" expression="row10.AccountNumber " type="id_String" nullable="true"/>
-        <mapperTableEntries name="CustomerID" expression="row10.CustomerID " type="id_Integer"/>
-        <mapperTableEntries name="ShippingAddressID" expression="row10.ShipToAddressID " type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="BillingAddressID" expression="row10.BillToAddressID" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="ShipMethod" expression="row10.ShipMethod " type="id_String"/>
-        <mapperTableEntries name="CreditCardApprovalCode" expression="row10.CreditCardApprovalCode " type="id_String" nullable="true"/>
-        <mapperTableEntries name="SubTotal" expression="row10.SubTotal " type="id_Object"/>
-        <mapperTableEntries name="TaxAmt" expression="row10.TaxAmt " type="id_Object"/>
-        <mapperTableEntries name="Freight" expression="row10.Freight " type="id_Object"/>
-        <mapperTableEntries name="TotalDue" expression="row10.TotalDue " type="id_Object"/>
-        <mapperTableEntries name="Comment" expression="row10.Comment " type="id_String" nullable="true"/>
-        <mapperTableEntries name="ModifiedDate" expression="row10.ModifiedDate " type="id_Date"/>
-        <mapperTableEntries name="SalesOrderDetailID" expression="row11.SalesOrderDetailID " type="id_Integer"/>
-        <mapperTableEntries name="OrderQty" expression="row11.OrderQty " type="id_Short"/>
-        <mapperTableEntries name="ProductID" expression="row11.ProductID " type="id_Integer"/>
-        <mapperTableEntries name="UnitPrice" expression="row11.UnitPrice " type="id_Object"/>
-        <mapperTableEntries name="UnitPriceDiscount" expression="row11.UnitPriceDiscount " type="id_Object"/>
-        <mapperTableEntries name="LineTotal" expression="row11.LineTotal " type="id_BigDecimal"/>
+        <mapperTableEntries name="SalesOrderID" expression="SalesOrderHeader.SalesOrderID " type="id_Integer"/>
+        <mapperTableEntries name="RevisionNumber" expression="SalesOrderHeader.RevisionNumber " type="id_Short"/>
+        <mapperTableEntries name="OrderDate" expression="SalesOrderHeader.OrderDate " type="id_Date"/>
+        <mapperTableEntries name="DueDate" expression="SalesOrderHeader.DueDate " type="id_Date"/>
+        <mapperTableEntries name="ShipDate" expression="SalesOrderHeader.ShipDate " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="Status" expression="SalesOrderHeader.Status " type="id_Short"/>
+        <mapperTableEntries name="OnlineOrderFlag" expression="SalesOrderHeader.OnlineOrderFlag " type="id_String" nullable="true"/>
+        <mapperTableEntries name="SalesOrderNumber" expression="SalesOrderHeader.SalesOrderNumber " type="id_String"/>
+        <mapperTableEntries name="PurchaseOrderNumber" expression="SalesOrderHeader.PurchaseOrderNumber " type="id_String" nullable="true"/>
+        <mapperTableEntries name="AccountNumber" expression="SalesOrderHeader.AccountNumber " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CustomerID" expression="SalesOrderHeader.CustomerID " type="id_Integer"/>
+        <mapperTableEntries name="ShippingAddressID" expression="SalesOrderHeader.ShipToAddressID " type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="BillingAddressID" expression="SalesOrderHeader.BillToAddressID" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="ShipMethod" expression="SalesOrderHeader.ShipMethod " type="id_String"/>
+        <mapperTableEntries name="CreditCardApprovalCode" expression="SalesOrderHeader.CreditCardApprovalCode " type="id_String" nullable="true"/>
+        <mapperTableEntries name="SubTotal" expression="SalesOrderHeader.SubTotal " type="id_Float"/>
+        <mapperTableEntries name="TaxAmt" expression="SalesOrderHeader.TaxAmt " type="id_Float"/>
+        <mapperTableEntries name="Freight" expression="SalesOrderHeader.Freight " type="id_Float"/>
+        <mapperTableEntries name="TotalDue" expression="SalesOrderHeader.TotalDue " type="id_Float"/>
+        <mapperTableEntries name="Comment" expression="SalesOrderHeader.Comment " type="id_String" nullable="true"/>
+        <mapperTableEntries name="ModifiedDate" expression="SalesOrderHeader.ModifiedDate " type="id_Date"/>
+        <mapperTableEntries name="SalesOrderDetailID" expression="SalesOrderDetail.SalesOrderDetailID " type="id_Integer"/>
+        <mapperTableEntries name="OrderQty" expression="SalesOrderDetail.OrderQty " type="id_Short"/>
+        <mapperTableEntries name="ProductID" expression="SalesOrderDetail.ProductID " type="id_Integer"/>
+        <mapperTableEntries name="UnitPrice" expression="SalesOrderDetail.UnitPrice " type="id_Float"/>
+        <mapperTableEntries name="UnitPriceDiscount" expression="SalesOrderDetail.UnitPriceDiscount " type="id_Float"/>
+        <mapperTableEntries name="LineTotal" expression="SalesOrderDetail.LineTotal " type="id_Float"/>
       </outputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row10" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
+      <inputTables sizeState="INTERMEDIATE" name="SalesOrderHeader" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
         <mapperTableEntries name="SalesOrderID" type="id_Integer"/>
         <mapperTableEntries name="RevisionNumber" type="id_Short"/>
         <mapperTableEntries name="OrderDate" type="id_Date"/>
@@ -2032,22 +2097,22 @@
         <mapperTableEntries name="BillToAddressID" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="ShipMethod" type="id_String"/>
         <mapperTableEntries name="CreditCardApprovalCode" type="id_String" nullable="true"/>
-        <mapperTableEntries name="SubTotal" type="id_Object"/>
-        <mapperTableEntries name="TaxAmt" type="id_Object"/>
-        <mapperTableEntries name="Freight" type="id_Object"/>
-        <mapperTableEntries name="TotalDue" type="id_Object"/>
+        <mapperTableEntries name="SubTotal" type="id_Float"/>
+        <mapperTableEntries name="TaxAmt" type="id_Float"/>
+        <mapperTableEntries name="Freight" type="id_Float"/>
+        <mapperTableEntries name="TotalDue" type="id_Float"/>
         <mapperTableEntries name="Comment" type="id_String" nullable="true"/>
         <mapperTableEntries name="rowguid" type="id_Object"/>
         <mapperTableEntries name="ModifiedDate" type="id_Date"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row11" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="SalesOrderID" expression="row10.SalesOrderID " type="id_Integer" operator="="/>
+      <inputTables sizeState="INTERMEDIATE" name="SalesOrderDetail" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE">
+        <mapperTableEntries name="SalesOrderID" expression="SalesOrderHeader.SalesOrderID " type="id_Integer" operator="="/>
         <mapperTableEntries name="SalesOrderDetailID" type="id_Integer"/>
         <mapperTableEntries name="OrderQty" type="id_Short"/>
         <mapperTableEntries name="ProductID" type="id_Integer"/>
-        <mapperTableEntries name="UnitPrice" type="id_Object"/>
-        <mapperTableEntries name="UnitPriceDiscount" type="id_Object"/>
-        <mapperTableEntries name="LineTotal" type="id_BigDecimal"/>
+        <mapperTableEntries name="UnitPrice" type="id_Float"/>
+        <mapperTableEntries name="UnitPriceDiscount" type="id_Float"/>
+        <mapperTableEntries name="LineTotal" type="id_Float"/>
         <mapperTableEntries name="rowguid" type="id_Object"/>
         <mapperTableEntries name="ModifiedDate" type="id_Date"/>
       </inputTables>
@@ -2124,16 +2189,16 @@
       <column comment="" key="false" length="15" name="CreditCardApprovalCode" nullable="true" pattern="" precision="0" sourceType="VARCHAR" type="id_String" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="SubTotal" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TaxAmt" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="Freight" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="TotalDue" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="1073741823" name="Comment" nullable="true" pattern="" precision="0" sourceType="NVARCHAR" type="id_String" usefulColumn="true">
@@ -2151,13 +2216,13 @@
       <column comment="" key="false" length="10" name="ProductID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
     </metadata>
@@ -2248,13 +2313,13 @@
       <column comment="" key="false" length="10" name="ProductID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="36" name="rowguid" nullable="false" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_Object" usefulColumn="true">
@@ -2277,13 +2342,13 @@
       <column comment="" key="false" length="10" name="ProductID" nullable="false" pattern="" precision="0" sourceType="INT" type="id_Integer" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPrice" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Object" usefulColumn="true">
+      <column comment="" key="false" length="19" name="UnitPriceDiscount" nullable="false" pattern="" precision="4" sourceType="MONEY" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
-      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_BigDecimal" usefulColumn="true">
+      <column comment="" key="false" length="38" name="LineTotal" nullable="false" pattern="" precision="6" sourceType="NUMERIC" type="id_Float" usefulColumn="true">
         <additionalField key="Comment" value=""/>
       </column>
       <column comment="" key="false" length="36" name="rowguid" nullable="false" pattern="" precision="0" sourceType="UNIQUEIDENTIFIER" type="id_Object" usefulColumn="true">
@@ -2479,7 +2544,7 @@
       </column>
     </metadata>
   </node>
-  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMap_2">
+  <connection connectorName="FLOW" label="Product" lineStyle="0" metaname="tFileInputDelimited_1" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_1" target="tMap_2">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="NameStyle"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -2498,7 +2563,7 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="Product" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="HProduct" lineStyle="0" metaname="HProduct" offsetLabelX="0" offsetLabelY="0" source="tMap_2" target="tLogRow_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -2521,35 +2586,35 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="HProduct" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row2" lineStyle="8" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tMap_2">
+  <connection connectorName="FLOW" label="ProductCategory" lineStyle="8" metaname="tFileInputDelimited_2" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_2" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row2" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ProductCategory" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row3" lineStyle="0" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tFileOutputDelimited_1">
+  <connection connectorName="FLOW" label="Main" lineStyle="0" metaname="tLogRow_1" offsetLabelX="0" offsetLabelY="0" source="tLogRow_1" target="tFileOutputDelimited_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row3" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="Main" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row6" lineStyle="0" metaname="tFileInputDelimited_5" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_5" target="tMap_1">
+  <connection connectorName="FLOW" label="ProductModel" lineStyle="0" metaname="tFileInputDelimited_5" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_5" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row6" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ProductModel" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="ProductModelMain" lineStyle="8" metaname="ProductModelMain" offsetLabelX="0" offsetLabelY="0" source="tMap_1" target="tMap_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="ProductModelMain" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row4" lineStyle="0" metaname="tFileInputDelimited_4" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_4" target="tMap_3">
+  <connection connectorName="FLOW" label="ProdModProdDescOrin" lineStyle="0" metaname="tFileInputDelimited_4" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_4" target="tMap_3">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row4" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ProdModProdDescOrin" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="ProdModProdDesc" lineStyle="8" metaname="ProdModProdDesc" offsetLabelX="0" offsetLabelY="0" source="tMap_3" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="ProdModProdDesc" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row5" lineStyle="8" metaname="tFileInputDelimited_6" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_6" target="tMap_1">
+  <connection connectorName="FLOW" label="ProductDescription" lineStyle="8" metaname="tFileInputDelimited_6" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_6" target="tMap_1">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row5" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="ProductDescription" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row7" lineStyle="0" metaname="tFileInputDelimited_3" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_3" target="tMap_4">
+  <connection connectorName="FLOW" label="Customer" lineStyle="0" metaname="tFileInputDelimited_3" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_3" target="tMap_4">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="NameStyle"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -2568,9 +2633,9 @@
       <elementValue elementRef="TRACE_COLUMN_CONDITION" value=""/>
     </elementParameter>
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row7" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="Customer" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="CustomerMain" lineStyle="0" metaname="CustomerMain" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tFileOutputDelimited_2">
+  <connection connectorName="FLOW" label="CustomerMain" lineStyle="0" metaname="CustomerMain" offsetLabelX="0" offsetLabelY="0" source="tMap_4" target="tReplace_1">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
       <elementValue elementRef="TRACE_COLUMN" value="ModifiedDateAddressType"/>
       <elementValue elementRef="TRACE_COLUMN_CHECKED" value="true"/>
@@ -2603,17 +2668,21 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="CustomerMain" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row8" lineStyle="8" metaname="tFileInputDelimited_7" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_7" target="tMap_4">
+  <connection connectorName="FLOW" label="CustomerAddress" lineStyle="8" metaname="tFileInputDelimited_7" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_7" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row8" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="CustomerAddress" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row9" lineStyle="8" metaname="tFileInputDelimited_9" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_9" target="tMap_4">
+  <connection connectorName="FLOW" label="Address" lineStyle="8" metaname="tFileInputDelimited_9" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_9" target="tMap_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row9" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="Address" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row10" lineStyle="0" metaname="tFileInputDelimited_10" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_10" target="tMap_5">
+  <connection connectorName="FLOW" label="row1" lineStyle="0" metaname="tReplace_1" offsetLabelX="0" offsetLabelY="0" source="tReplace_1" target="tFileOutputDelimited_2">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row10" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row1" show="false"/>
+  </connection>
+  <connection connectorName="FLOW" label="SalesOrderHeader" lineStyle="0" metaname="tFileInputDelimited_10" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_10" target="tMap_5">
+    <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="SalesOrderHeader" show="false"/>
   </connection>
   <connection connectorName="FLOW" label="SalesOrderMain" lineStyle="0" metaname="SalesOrderMain" offsetLabelX="0" offsetLabelY="0" source="tMap_5" target="tFileOutputDelimited_3">
     <elementParameter field="TABLE" name="TRACES_CONNECTION_FILTER" show="false">
@@ -2699,13 +2768,13 @@
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="SalesOrderMain" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row11" lineStyle="8" metaname="tFileInputDelimited_11" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_11" target="tMap_5">
+  <connection connectorName="FLOW" label="SalesOrderDetail" lineStyle="8" metaname="tFileInputDelimited_11" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_11" target="tMap_5">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row11" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="SalesOrderDetail" show="false"/>
   </connection>
-  <connection connectorName="FLOW" label="row14" lineStyle="0" metaname="tFileInputDelimited_13" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_13" target="tFileOutputDelimited_4">
+  <connection connectorName="FLOW" label="AddressFull" lineStyle="0" metaname="tFileInputDelimited_13" offsetLabelX="0" offsetLabelY="0" source="tFileInputDelimited_13" target="tFileOutputDelimited_4">
     <elementParameter field="CHECK" name="MONITOR_CONNECTION" value="false"/>
-    <elementParameter field="TEXT" name="UNIQUE_NAME" value="row14" show="false"/>
+    <elementParameter field="TEXT" name="UNIQUE_NAME" value="AddressFull" show="false"/>
   </connection>
   <subjob>
     <elementParameter field="CHECK" name="SHOW_SUBJOB_TITLE" value="true"/>
