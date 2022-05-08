@@ -845,7 +845,7 @@ public void tDBConnection_1Process(final java.util.Map<String, Object> globalMap
 	
 	
 		 
-	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:f0jkw+jmOkhXQCowcXCwbBDc+Dy4nG0R1INW1hcIHar0wV3KpA==");
+	final String decryptedPassword_tDBConnection_1 = routines.system.PasswordEncryptUtil.decryptPassword("enc:routine.encryption.key.v1:AIUNwLX6wPMB4HbXNz+eigsU6A+OqpZo5pG5m2bMMJRJi8iREg==");
 		String dbPwd_tDBConnection_1 = decryptedPassword_tDBConnection_1;
 	
 	
@@ -10648,10 +10648,8 @@ resourceMap.put("nb_line_tFileOutputDelimited_9", nb_line_tFileOutputDelimited_9
 		    
 			java.sql.Statement stmt_tDBInput_9 = conn_tDBInput_9.createStatement();
 
-		    String dbquery_tDBInput_9 = "SELECT SalesLT.SalesOrderDetail.SalesOrderID,\n		SalesLT.SalesOrderDetail.SalesOrderDetailID,\n		SalesLT.SalesOrderDetail"
-+".OrderQty,\n		SalesLT.SalesOrderDetail.ProductID,\n		SalesLT.SalesOrderDetail.UnitPrice,\n		SalesLT.SalesOrderDetail.UnitPr"
-+"iceDiscount,\n		SalesLT.SalesOrderDetail.LineTotal,\n		SalesLT.SalesOrderDetail.rowguid,\n		SalesLT.SalesOrderDetail.Modifi"
-+"edDate\nFROM	SalesLT.SalesOrderDetail";
+		    String dbquery_tDBInput_9 = "SELECT \n	SalesOrderID, \n	SalesOrderDetailID, \n	OrderQty, \n	ProductID, \n	UnitPrice, \n	UnitPriceDiscount, \n	LineTo"
++"tal,\n	rowguid,\n	ModifiedDate\nFROM SalesLT.SalesOrderDetail";
 		    
 
             	globalMap.put("tDBInput_9_QUERY",dbquery_tDBInput_9);
@@ -10841,23 +10839,17 @@ resourceMap.put("nb_line_tFileOutputDelimited_9", nb_line_tFileOutputDelimited_9
                             SalesOrderDetail.ProductID
                         );
                             sb_tFileOutputDelimited_9.append(OUT_DELIM_tFileOutputDelimited_9);
-                            if(SalesOrderDetail.UnitPrice != null) {
                         sb_tFileOutputDelimited_9.append(
                             SalesOrderDetail.UnitPrice
                         );
-                            }
                             sb_tFileOutputDelimited_9.append(OUT_DELIM_tFileOutputDelimited_9);
-                            if(SalesOrderDetail.UnitPriceDiscount != null) {
                         sb_tFileOutputDelimited_9.append(
                             SalesOrderDetail.UnitPriceDiscount
                         );
-                            }
                             sb_tFileOutputDelimited_9.append(OUT_DELIM_tFileOutputDelimited_9);
-                            if(SalesOrderDetail.LineTotal != null) {
                         sb_tFileOutputDelimited_9.append(
-                            SalesOrderDetail.LineTotal.setScale(6, java.math.RoundingMode.HALF_UP).toPlainString()
+                            SalesOrderDetail.LineTotal
                         );
-                            }
                             sb_tFileOutputDelimited_9.append(OUT_DELIM_tFileOutputDelimited_9);
                             if(SalesOrderDetail.rowguid != null) {
                         sb_tFileOutputDelimited_9.append(
@@ -11237,27 +11229,27 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					return this.CreditCardApprovalCode;
 				}
 				
-			    public Object SubTotal;
+			    public float SubTotal;
 
-				public Object getSubTotal () {
+				public float getSubTotal () {
 					return this.SubTotal;
 				}
 				
-			    public Object TaxAmt;
+			    public float TaxAmt;
 
-				public Object getTaxAmt () {
+				public float getTaxAmt () {
 					return this.TaxAmt;
 				}
 				
-			    public Object Freight;
+			    public float Freight;
 
-				public Object getFreight () {
+				public float getFreight () {
 					return this.Freight;
 				}
 				
-			    public Object TotalDue;
+			    public float TotalDue;
 
-				public Object getTotalDue () {
+				public float getTotalDue () {
 					return this.TotalDue;
 				}
 				
@@ -11531,13 +11523,13 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -11605,13 +11597,13 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -11705,21 +11697,21 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -11809,21 +11801,21 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -12116,14 +12108,10 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
 		    
 			java.sql.Statement stmt_tDBInput_10 = conn_tDBInput_10.createStatement();
 
-		    String dbquery_tDBInput_10 = "SELECT SalesLT.SalesOrderHeader.SalesOrderID,\n		SalesLT.SalesOrderHeader.RevisionNumber,\n		SalesLT.SalesOrderHeader.Ord"
-+"erDate,\n		SalesLT.SalesOrderHeader.DueDate,\n		SalesLT.SalesOrderHeader.ShipDate,\n		SalesLT.SalesOrderHeader.Status,\n		Sa"
-+"lesLT.SalesOrderHeader.OnlineOrderFlag,\n		SalesLT.SalesOrderHeader.SalesOrderNumber,\n		SalesLT.SalesOrderHeader.Purchase"
-+"OrderNumber,\n		SalesLT.SalesOrderHeader.AccountNumber,\n		SalesLT.SalesOrderHeader.CustomerID,\n		SalesLT.SalesOrderHeader"
-+".ShipToAddressID,\n		SalesLT.SalesOrderHeader.BillToAddressID,\n		SalesLT.SalesOrderHeader.ShipMethod,\n		SalesLT.SalesOrde"
-+"rHeader.CreditCardApprovalCode,\n		SalesLT.SalesOrderHeader.SubTotal,\n		SalesLT.SalesOrderHeader.TaxAmt,\n		SalesLT.SalesO"
-+"rderHeader.Freight,\n		SalesLT.SalesOrderHeader.TotalDue,\n		SalesLT.SalesOrderHeader.Comment,\n		SalesLT.SalesOrderHeader."
-+"rowguid,\n		SalesLT.SalesOrderHeader.ModifiedDate\nFROM	SalesLT.SalesOrderHeader";
+		    String dbquery_tDBInput_10 = "SELECT  SalesOrderID,\n		RevisionNumber,\n		OrderDate,\n		DueDate,\n		ShipDate,\n		Status,\n		OnlineOrderFlag,\n		Sales"
++"OrderNumber,\n		PurchaseOrderNumber,\n		AccountNumber,\n		CustomerID,\n		ShipToAddressID,\n		BillToAddressID,\n		ShipMet"
++"hod,\n		CreditCardApprovalCode,\n		SubTotal,\n		TaxAmt,\n		Freight,\n		TotalDue,\n		Comment,\n		rowguid,\n		ModifiedDate"
++"\nFROM	SalesLT.SalesOrderHeader";
 		    
 
             	globalMap.put("tDBInput_10_QUERY",dbquery_tDBInput_10);
@@ -12300,37 +12288,37 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
             }
 		                    }
 							if(colQtyInRs_tDBInput_10 < 16) {
-								row1.SubTotal = null;
+								row1.SubTotal = 0;
 							} else {
 		                          
-            row1.SubTotal = rs_tDBInput_10.getObject(16);
+            row1.SubTotal = rs_tDBInput_10.getFloat(16);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_10 < 17) {
-								row1.TaxAmt = null;
+								row1.TaxAmt = 0;
 							} else {
 		                          
-            row1.TaxAmt = rs_tDBInput_10.getObject(17);
+            row1.TaxAmt = rs_tDBInput_10.getFloat(17);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_10 < 18) {
-								row1.Freight = null;
+								row1.Freight = 0;
 							} else {
 		                          
-            row1.Freight = rs_tDBInput_10.getObject(18);
+            row1.Freight = rs_tDBInput_10.getFloat(18);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
 		                    }
 							if(colQtyInRs_tDBInput_10 < 19) {
-								row1.TotalDue = null;
+								row1.TotalDue = 0;
 							} else {
 		                          
-            row1.TotalDue = rs_tDBInput_10.getObject(19);
+            row1.TotalDue = rs_tDBInput_10.getFloat(19);
             if(rs_tDBInput_10.wasNull()){
                     throw new RuntimeException("Null value in non-Nullable column");
             }
@@ -12526,29 +12514,21 @@ resourceMap.put("nb_line_tFileOutputDelimited_10", nb_line_tFileOutputDelimited_
                         );
                             }
                             sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
-                            if(row1.SubTotal != null) {
                         sb_tFileOutputDelimited_10.append(
                             row1.SubTotal
                         );
-                            }
                             sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
-                            if(row1.TaxAmt != null) {
                         sb_tFileOutputDelimited_10.append(
                             row1.TaxAmt
                         );
-                            }
                             sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
-                            if(row1.Freight != null) {
                         sb_tFileOutputDelimited_10.append(
                             row1.Freight
                         );
-                            }
                             sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
-                            if(row1.TotalDue != null) {
                         sb_tFileOutputDelimited_10.append(
                             row1.TotalDue
                         );
-                            }
                             sb_tFileOutputDelimited_10.append(OUT_DELIM_tFileOutputDelimited_10);
                             if(row1.Comment != null) {
                         sb_tFileOutputDelimited_10.append(
@@ -13644,6 +13624,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     379987 characters generated by Talend Open Studio for Data Integration 
- *     on the 9 de abril de 2022 01:15:00 BRT
+ *     378390 characters generated by Talend Open Studio for Data Integration 
+ *     on the 8 de maio de 2022 20:03:21 BRT
  ************************************************************************************************/
