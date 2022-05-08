@@ -413,6 +413,15 @@ private class TalendException extends Exception {
 					tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
+			public void tReplace_1_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+				
+				end_Hash.put(errorComponent, System.currentTimeMillis());
+				
+				status = "failure";
+				
+					tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
+			}
+			
 			public void tFileOutputDelimited_2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
@@ -494,7 +503,7 @@ private class TalendException extends Exception {
 					tFileInputDelimited_13_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row2_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tAdvancedHash_ProductCategory_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -521,7 +530,7 @@ private class TalendException extends Exception {
 					tFileInputDelimited_4_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row5_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tAdvancedHash_ProductDescription_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -530,7 +539,7 @@ private class TalendException extends Exception {
 					tFileInputDelimited_5_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row8_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tAdvancedHash_CustomerAddress_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -539,7 +548,7 @@ private class TalendException extends Exception {
 					tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row9_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tAdvancedHash_Address_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -548,7 +557,7 @@ private class TalendException extends Exception {
 					tFileInputDelimited_3_onSubJobError(exception, errorComponent, globalMap);
 			}
 			
-			public void tAdvancedHash_row11_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
+			public void tAdvancedHash_SalesOrderDetail_error(Exception exception, String errorComponent, final java.util.Map<String, Object> globalMap) throws TalendException {
 				
 				end_Hash.put(errorComponent, System.currentTimeMillis());
 				
@@ -594,7 +603,7 @@ resumeUtil.addLog("SYSTEM_LOG", "NODE:"+ errorComponent, "", Thread.currentThrea
 
 
 
-public static class row3Struct implements routines.system.IPersistableRow<row3Struct> {
+public static class MainStruct implements routines.system.IPersistableRow<MainStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -730,7 +739,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row3Struct other = (row3Struct) obj;
+		final MainStruct other = (MainStruct) obj;
 		
 						if (this.ProductID != other.ProductID)
 							return false;
@@ -739,7 +748,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 		return true;
     }
 
-	public void copyDataTo(row3Struct other) {
+	public void copyDataTo(MainStruct other) {
 
 		other.ProductID = this.ProductID;
 	            other.Name = this.Name;
@@ -761,7 +770,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
 	            
 	}
 
-	public void copyKeysDataTo(row3Struct other) {
+	public void copyKeysDataTo(MainStruct other) {
 
 		other.ProductID = this.ProductID;
 	            	
@@ -1220,7 +1229,7 @@ public static class row3Struct implements routines.system.IPersistableRow<row3St
     /**
      * Compare keys
      */
-    public int compareTo(row3Struct other) {
+    public int compareTo(MainStruct other) {
 
 		int returnValue = -1;
 		
@@ -1922,7 +1931,7 @@ public static class HProductStruct implements routines.system.IPersistableRow<HP
 
 }
 
-public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+public static class ProductStruct implements routines.system.IPersistableRow<ProductStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 
@@ -2482,7 +2491,7 @@ public static class row1Struct implements routines.system.IPersistableRow<row1St
     /**
      * Compare keys
      */
-    public int compareTo(row1Struct other) {
+    public int compareTo(ProductStruct other) {
 
 		int returnValue = -1;
 		
@@ -3202,9 +3211,9 @@ public void tFileInputDelimited_1Process(final java.util.Map<String, Object> glo
 		tFileInputDelimited_2Process(globalMap);
 		tFileInputDelimited_5Process(globalMap);
 
-		row1Struct row1 = new row1Struct();
+		ProductStruct Product = new ProductStruct();
 HProductStruct HProduct = new HProductStruct();
-HProductStruct row3 = HProduct;
+HProductStruct Main = HProduct;
 
 
 
@@ -3228,7 +3237,7 @@ HProductStruct row3 = HProduct;
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row3");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Main");
 					}
 				
 		int tos_count_tFileOutputDelimited_1 = 0;
@@ -3399,7 +3408,7 @@ resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Product");
 					}
 				
 		int tos_count_tMap_2 = 0;
@@ -3411,15 +3420,15 @@ resourceMap.put("nb_line_tFileOutputDelimited_1", nb_line_tFileOutputDelimited_1
 // ###############################
 // # Lookup's keys initialization
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct>) 
-					globalMap.get( "tHash_Lookup_row2" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductCategoryStruct> tHash_Lookup_ProductCategory = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductCategoryStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductCategoryStruct>) 
+					globalMap.get( "tHash_Lookup_ProductCategory" ))
 					;					
 					
 	
 
-row2Struct row2HashKey = new row2Struct();
-row2Struct row2Default = new row2Struct();
+ProductCategoryStruct ProductCategoryHashKey = new ProductCategoryStruct();
+ProductCategoryStruct ProductCategoryDefault = new ProductCategoryStruct();
 	
 		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductModelMainStruct> tHash_Lookup_ProductModelMain = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductModelMainStruct>) 
 				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductModelMainStruct>) 
@@ -3526,10 +3535,10 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_1!=null && fid_tFileInputDelimited_1.nextRecord()) {
 						rowstate_tFileInputDelimited_1.reset();
 						
-			    						row1 = null;			
+			    						Product = null;			
 												
 									boolean whetherReject_tFileInputDelimited_1 = false;
-									row1 = new row1Struct();
+									Product = new ProductStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_1 = 0;
@@ -3543,49 +3552,49 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row1.ProductID = ParserUtils.parseTo_int(temp);
+    								Product.ProductID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductID", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"ProductID", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_1.setException(new RuntimeException("Value is empty for column : 'ProductID' in 'row1' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_1.setException(new RuntimeException("Value is empty for column : 'ProductID' in 'Product' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_1 = 1;
 					
-							row1.Name = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.Name = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 2;
 					
-							row1.ProductNumber = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.ProductNumber = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 3;
 					
-							row1.Color = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.Color = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 4;
 					
-							row1.StandardCost = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.StandardCost = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 5;
 					
-							row1.ListPrice = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.ListPrice = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 6;
 					
-							row1.Size = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.Size = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 7;
@@ -3595,18 +3604,18 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 							
 								try {
 								
-    								row1.Weight = ParserUtils.parseTo_BigDecimal(temp);
+    								Product.Weight = ParserUtils.parseTo_BigDecimal(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"Weight", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"Weight", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
 								
-									row1.Weight = null;
+									Product.Weight = null;
 								
 							
 						}
@@ -3619,18 +3628,18 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 							
 								try {
 								
-    								row1.ProductCategoryID = ParserUtils.parseTo_Integer(temp);
+    								Product.ProductCategoryID = ParserUtils.parseTo_Integer(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductCategoryID", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"ProductCategoryID", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
 								
-									row1.ProductCategoryID = null;
+									Product.ProductCategoryID = null;
 								
 							
 						}
@@ -3643,18 +3652,18 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 							
 								try {
 								
-    								row1.ProductModelID = ParserUtils.parseTo_Integer(temp);
+    								Product.ProductModelID = ParserUtils.parseTo_Integer(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductModelID", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"ProductModelID", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
 								
-									row1.ProductModelID = null;
+									Product.ProductModelID = null;
 								
 							
 						}
@@ -3667,18 +3676,18 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 							
 								try {
 								
-    									row1.SellStartDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									Product.SellStartDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"SellStartDate", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"SellStartDate", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
 								
-									row1.SellStartDate = null;
+									Product.SellStartDate = null;
 								
 							
 						}
@@ -3691,18 +3700,18 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 							
 								try {
 								
-    									row1.SellEndDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									Product.SellEndDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"SellEndDate", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"SellEndDate", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
 								
-									row1.SellEndDate = null;
+									Product.SellEndDate = null;
 								
 							
 						}
@@ -3715,18 +3724,18 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 							
 								try {
 								
-    									row1.DiscontinuedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									Product.DiscontinuedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"DiscontinuedDate", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"DiscontinuedDate", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
 								
-									row1.DiscontinuedDate = null;
+									Product.DiscontinuedDate = null;
 								
 							
 						}
@@ -3734,17 +3743,17 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 				
 					columnIndexWithD_tFileInputDelimited_1 = 13;
 					
-							row1.ThumbNailPhoto = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.ThumbNailPhoto = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 14;
 					
-							row1.ThumbnailPhotoFileName = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.ThumbnailPhotoFileName = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 15;
 					
-							row1.rowguid = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
+							Product.rowguid = fid_tFileInputDelimited_1.get(columnIndexWithD_tFileInputDelimited_1);
 						
 				
 					columnIndexWithD_tFileInputDelimited_1 = 16;
@@ -3754,18 +3763,18 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.get
 							
 								try {
 								
-    									row1.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									Product.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_1) {
 globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",ex_tFileInputDelimited_1.getMessage());
 									rowstate_tFileInputDelimited_1.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row1", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
+										"ModifiedDate", "Product", temp, ex_tFileInputDelimited_1), ex_tFileInputDelimited_1));
 								}
     							
 						} else {						
 							
 								
-									row1.ModifiedDate = null;
+									Product.ModifiedDate = null;
 								
 							
 						}
@@ -3784,7 +3793,7 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_1 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row1 = null;
+			                					Product = null;
 			                				
 										
 			    					}
@@ -3838,8 +3847,8 @@ globalMap.put("tFileInputDelimited_1_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_1 process_data_begin ] stop
  */
-// Start of branch "row1"
-if(row1 != null) { 
+// Start of branch "Product"
+if(Product != null) { 
 
 
 
@@ -3858,7 +3867,7 @@ if(row1 != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row1"
+							,"Product"
 						
 						);
 					}
@@ -3877,33 +3886,33 @@ if(row1 != null) {
 		
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row2" 
+				// Starting Lookup Table "ProductCategory" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow2 = false;
+ 					    boolean forceLoopProductCategory = false;
        		  	    	
        		  	    	
- 							row2Struct row2ObjectFromLookup = null;
+ 							ProductCategoryStruct ProductCategoryObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_2) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_2 = false;
 								
-	                        		    	Object exprKeyValue_row2__ProductCategoryID = row1.ProductCategoryID ;
-	                        		    	if(exprKeyValue_row2__ProductCategoryID == null) {
+	                        		    	Object exprKeyValue_ProductCategory__ProductCategoryID = Product.ProductCategoryID ;
+	                        		    	if(exprKeyValue_ProductCategory__ProductCategoryID == null) {
 	                        		    		hasCasePrimitiveKeyWithNull_tMap_2 = true;
 	                        		    	} else {
-                        		    			row2HashKey.ProductCategoryID = (int)(Integer) exprKeyValue_row2__ProductCategoryID;
+                        		    			ProductCategoryHashKey.ProductCategoryID = (int)(Integer) exprKeyValue_ProductCategory__ProductCategoryID;
                         		    		}
                         		    		
 
 								
-		                        	row2HashKey.hashCodeDirty = true;
+		                        	ProductCategoryHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
@@ -3914,7 +3923,7 @@ if(row1 != null) {
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row2.lookup( row2HashKey );
+		  							tHash_Lookup_ProductCategory.lookup( ProductCategoryHashKey );
 
 	  							
 
@@ -3937,30 +3946,30 @@ if(row1 != null) {
 							} // G_TM_M_020
 			           		  	  
 							
-				           		if(tHash_Lookup_row2 != null && tHash_Lookup_row2.getCount(row2HashKey) > 1) { // G 071
+				           		if(tHash_Lookup_ProductCategory != null && tHash_Lookup_ProductCategory.getCount(ProductCategoryHashKey) > 1) { // G 071
 			  							
 			  						
 									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row2' and it contains more one result from keys :  row2.ProductCategoryID = '" + row2HashKey.ProductCategoryID + "'");
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'ProductCategory' and it contains more one result from keys :  ProductCategory.ProductCategoryID = '" + ProductCategoryHashKey.ProductCategoryID + "'");
 								} // G 071
 							
 
-							row2Struct row2 = null;
+							ProductCategoryStruct ProductCategory = null;
                     		  	 
 							   
                     		  	 
-	       		  	    	row2Struct fromLookup_row2 = null;
-							row2 = row2Default;
+	       		  	    	ProductCategoryStruct fromLookup_ProductCategory = null;
+							ProductCategory = ProductCategoryDefault;
 										 
 							
 								 
 							
 							
-								if (tHash_Lookup_row2 !=null && tHash_Lookup_row2.hasNext()) { // G 099
+								if (tHash_Lookup_ProductCategory !=null && tHash_Lookup_ProductCategory.hasNext()) { // G 099
 								
 							
 								
-								fromLookup_row2 = tHash_Lookup_row2.next();
+								fromLookup_ProductCategory = tHash_Lookup_ProductCategory.next();
 
 							
 							
@@ -3968,8 +3977,8 @@ if(row1 != null) {
 							
 							
 
-							if(fromLookup_row2 != null) {
-								row2 = fromLookup_row2;
+							if(fromLookup_ProductCategory != null) {
+								ProductCategory = fromLookup_ProductCategory;
 							}
 							
 							
@@ -4002,7 +4011,7 @@ if(row1 != null) {
 								
 								hasCasePrimitiveKeyWithNull_tMap_2 = false;
 								
-	                        		    	Object exprKeyValue_ProductModelMain__ProductModelID = row1.ProductModelID ;
+	                        		    	Object exprKeyValue_ProductModelMain__ProductModelID = Product.ProductModelID ;
 	                        		    	if(exprKeyValue_ProductModelMain__ProductModelID == null) {
 	                        		    		hasCasePrimitiveKeyWithNull_tMap_2 = true;
 	                        		    	} else {
@@ -4102,23 +4111,23 @@ HProduct = null;
 
 
 // # Output table : 'HProduct'
-HProduct_tmp.ProductID = row1.ProductID ;
-HProduct_tmp.Name = row1.Name ;
-HProduct_tmp.ProductNumber = row1.ProductNumber ;
-HProduct_tmp.Color = row1.Color ;
-HProduct_tmp.StandardCost = row1.StandardCost ;
-HProduct_tmp.ListPrice = row1.ListPrice ;
-HProduct_tmp.Size = row1.Size ;
-HProduct_tmp.Weight = row1.Weight ;
-HProduct_tmp.ProductCategoryID = row1.ProductCategoryID ;
-HProduct_tmp.ProductCategoryName = row2.Name ;
-HProduct_tmp.ProductModelID = row1.ProductModelID ;
+HProduct_tmp.ProductID = Product.ProductID ;
+HProduct_tmp.Name = Product.Name ;
+HProduct_tmp.ProductNumber = Product.ProductNumber ;
+HProduct_tmp.Color = Product.Color ;
+HProduct_tmp.StandardCost = Product.StandardCost ;
+HProduct_tmp.ListPrice = Product.ListPrice ;
+HProduct_tmp.Size = Product.Size ;
+HProduct_tmp.Weight = Product.Weight ;
+HProduct_tmp.ProductCategoryID = Product.ProductCategoryID ;
+HProduct_tmp.ProductCategoryName = ProductCategory.Name ;
+HProduct_tmp.ProductModelID = Product.ProductModelID ;
 HProduct_tmp.ProductModelName = ProductModelMain.Name ;
 HProduct_tmp.ProductDescription = ProductModelMain.Description ;
-HProduct_tmp.SellStartDate = row1.SellStartDate ;
-HProduct_tmp.SellEndDate = row1.SellEndDate ;
-HProduct_tmp.DiscontinuedDate = row1.DiscontinuedDate ;
-HProduct_tmp.ModifiedDate = row1.ModifiedDate ;
+HProduct_tmp.SellStartDate = Product.SellStartDate ;
+HProduct_tmp.SellEndDate = Product.SellEndDate ;
+HProduct_tmp.DiscontinuedDate = Product.DiscontinuedDate ;
+HProduct_tmp.ModifiedDate = Product.ModifiedDate ;
 HProduct = HProduct_tmp;
 // ###############################
 
@@ -4484,7 +4493,7 @@ if(HProduct != null) {
 ///////////////////////    			
 
  
-     row3 = HProduct;
+     Main = HProduct;
 
 
 	tos_count_tLogRow_1++;
@@ -4528,7 +4537,7 @@ if(HProduct != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row3"
+							,"Main"
 						
 						);
 					}
@@ -4537,102 +4546,102 @@ if(HProduct != null) {
 
                     StringBuilder sb_tFileOutputDelimited_1 = new StringBuilder();
                         sb_tFileOutputDelimited_1.append(
-                            row3.ProductID
+                            Main.ProductID
                         );
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.Name != null) {
+                            if(Main.Name != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.Name
-                        );
-                            }
-                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ProductNumber != null) {
-                        sb_tFileOutputDelimited_1.append(
-                            row3.ProductNumber
+                            Main.Name
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.Color != null) {
+                            if(Main.ProductNumber != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.Color
+                            Main.ProductNumber
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.StandardCost != null) {
+                            if(Main.Color != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.StandardCost
+                            Main.Color
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ListPrice != null) {
+                            if(Main.StandardCost != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.ListPrice
+                            Main.StandardCost
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.Size != null) {
+                            if(Main.ListPrice != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.Size
+                            Main.ListPrice
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.Weight != null) {
+                            if(Main.Size != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.Weight.setScale(2, java.math.RoundingMode.HALF_UP).toPlainString()
+                            Main.Size
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ProductCategoryID != null) {
+                            if(Main.Weight != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.ProductCategoryID
+                            Main.Weight.setScale(2, java.math.RoundingMode.HALF_UP).toPlainString()
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ProductCategoryName != null) {
+                            if(Main.ProductCategoryID != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.ProductCategoryName
+                            Main.ProductCategoryID
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ProductModelID != null) {
+                            if(Main.ProductCategoryName != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.ProductModelID
+                            Main.ProductCategoryName
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ProductModelName != null) {
+                            if(Main.ProductModelID != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.ProductModelName
+                            Main.ProductModelID
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ProductDescription != null) {
+                            if(Main.ProductModelName != null) {
                         sb_tFileOutputDelimited_1.append(
-                            row3.ProductDescription
+                            Main.ProductModelName
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.SellStartDate != null) {
+                            if(Main.ProductDescription != null) {
                         sb_tFileOutputDelimited_1.append(
-                            FormatterUtils.format_Date(row3.SellStartDate, "dd-MM-yyyy")
+                            Main.ProductDescription
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.SellEndDate != null) {
+                            if(Main.SellStartDate != null) {
                         sb_tFileOutputDelimited_1.append(
-                            FormatterUtils.format_Date(row3.SellEndDate, "dd-MM-yyyy")
+                            FormatterUtils.format_Date(Main.SellStartDate, "dd-MM-yyyy")
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.DiscontinuedDate != null) {
+                            if(Main.SellEndDate != null) {
                         sb_tFileOutputDelimited_1.append(
-                            FormatterUtils.format_Date(row3.DiscontinuedDate, "dd-MM-yyyy")
+                            FormatterUtils.format_Date(Main.SellEndDate, "dd-MM-yyyy")
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(row3.ModifiedDate != null) {
+                            if(Main.DiscontinuedDate != null) {
                         sb_tFileOutputDelimited_1.append(
-                            FormatterUtils.format_Date(row3.ModifiedDate, "dd-MM-yyyy")
+                            FormatterUtils.format_Date(Main.DiscontinuedDate, "dd-MM-yyyy")
+                        );
+                            }
+                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
+                            if(Main.ModifiedDate != null) {
+                        sb_tFileOutputDelimited_1.append(
+                            FormatterUtils.format_Date(Main.ModifiedDate, "dd-MM-yyyy")
                         );
                             }
                     sb_tFileOutputDelimited_1.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_1);
@@ -4744,7 +4753,7 @@ if(HProduct != null) {
  * [tMap_2 process_data_end ] stop
  */
 
-} // End of branch "row1"
+} // End of branch "Product"
 
 
 
@@ -4826,10 +4835,10 @@ end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 // ###############################
 // # Lookup hashes releasing
-					if(tHash_Lookup_row2 != null) {
-						tHash_Lookup_row2.endGet();
+					if(tHash_Lookup_ProductCategory != null) {
+						tHash_Lookup_ProductCategory.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row2" );
+					globalMap.remove( "tHash_Lookup_ProductCategory" );
 
 					
 					
@@ -4849,7 +4858,7 @@ end_Hash.put("tFileInputDelimited_1", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Product");
 			  	}
 			  	
  
@@ -4931,7 +4940,7 @@ end_Hash.put("tLogRow_1", System.currentTimeMillis());
 	
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row3");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Main");
 			  	}
 			  	
  
@@ -4974,7 +4983,7 @@ end_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
 			}finally{
 				
 					     			//free memory for "tMap_2"
-					     			globalMap.remove("tHash_Lookup_row2"); 
+					     			globalMap.remove("tHash_Lookup_ProductCategory"); 
 				     			
 					     			//free memory for "tMap_2"
 					     			globalMap.remove("tHash_Lookup_ProductModelMain"); 
@@ -5102,7 +5111,7 @@ end_Hash.put("tFileOutputDelimited_1", System.currentTimeMillis());
 	
 
 
-public static class row2Struct implements routines.system.IPersistableComparableLookupRow<row2Struct> {
+public static class ProductCategoryStruct implements routines.system.IPersistableComparableLookupRow<ProductCategoryStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -5166,7 +5175,7 @@ public static class row2Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row2Struct other = (row2Struct) obj;
+		final ProductCategoryStruct other = (ProductCategoryStruct) obj;
 		
 						if (this.ProductCategoryID != other.ProductCategoryID)
 							return false;
@@ -5175,7 +5184,7 @@ public static class row2Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row2Struct other) {
+	public void copyDataTo(ProductCategoryStruct other) {
 
 		other.ProductCategoryID = this.ProductCategoryID;
 	            other.ParentProductCategoryID = this.ParentProductCategoryID;
@@ -5185,7 +5194,7 @@ public static class row2Struct implements routines.system.IPersistableComparable
 	            
 	}
 
-	public void copyKeysDataTo(row2Struct other) {
+	public void copyKeysDataTo(ProductCategoryStruct other) {
 
 		other.ProductCategoryID = this.ProductCategoryID;
 	            	
@@ -5524,7 +5533,7 @@ public static class row2Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row2Struct other) {
+    public int compareTo(ProductCategoryStruct other) {
 
 		int returnValue = -1;
 		
@@ -5584,46 +5593,46 @@ public void tFileInputDelimited_2Process(final java.util.Map<String, Object> glo
 
 
 
-		row2Struct row2 = new row2Struct();
+		ProductCategoryStruct ProductCategory = new ProductCategoryStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row2 begin ] start
+	 * [tAdvancedHash_ProductCategory begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row2", false);
-		start_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_ProductCategory", false);
+		start_Hash.put("tAdvancedHash_ProductCategory", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row2";
+	currentComponent="tAdvancedHash_ProductCategory";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row2");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"ProductCategory");
 					}
 				
-		int tos_count_tAdvancedHash_row2 = 0;
+		int tos_count_tAdvancedHash_ProductCategory = 0;
 		
 
-			   		// connection name:row2
-			   		// source node:tFileInputDelimited_2 - inputs:(after_tFileInputDelimited_1) outputs:(row2,row2) | target node:tAdvancedHash_row2 - inputs:(row2) outputs:()
-			   		// linked node: tMap_2 - inputs:(row1,row2,ProductModelMain) outputs:(HProduct)
+			   		// connection name:ProductCategory
+			   		// source node:tFileInputDelimited_2 - inputs:(after_tFileInputDelimited_1) outputs:(ProductCategory,ProductCategory) | target node:tAdvancedHash_ProductCategory - inputs:(ProductCategory) outputs:()
+			   		// linked node: tMap_2 - inputs:(Product,ProductCategory,ProductModelMain) outputs:(HProduct)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row2 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_ProductCategory = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row2Struct> tHash_Lookup_row2 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row2Struct>getLookup(matchingModeEnum_row2);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductCategoryStruct> tHash_Lookup_ProductCategory =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<ProductCategoryStruct>getLookup(matchingModeEnum_ProductCategory);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row2", tHash_Lookup_row2);
+		   	   	   globalMap.put("tHash_Lookup_ProductCategory", tHash_Lookup_ProductCategory);
 		   	   	   
 				
            
@@ -5633,7 +5642,7 @@ public void tFileInputDelimited_2Process(final java.util.Map<String, Object> glo
 
 
 /**
- * [tAdvancedHash_row2 begin ] stop
+ * [tAdvancedHash_ProductCategory begin ] stop
  */
 
 
@@ -5695,12 +5704,12 @@ globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_2!=null && fid_tFileInputDelimited_2.nextRecord()) {
 						rowstate_tFileInputDelimited_2.reset();
 						
-			    						row2 = null;			
+			    						ProductCategory = null;			
 									
-			    						row2 = null;			
+			    						ProductCategory = null;			
 												
 									boolean whetherReject_tFileInputDelimited_2 = false;
-									row2 = new row2Struct();
+									ProductCategory = new ProductCategoryStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_2 = 0;
@@ -5714,17 +5723,17 @@ globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row2.ProductCategoryID = ParserUtils.parseTo_int(temp);
+    								ProductCategory.ProductCategoryID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_2) {
 globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",ex_tFileInputDelimited_2.getMessage());
 									rowstate_tFileInputDelimited_2.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductCategoryID", "row2", temp, ex_tFileInputDelimited_2), ex_tFileInputDelimited_2));
+										"ProductCategoryID", "ProductCategory", temp, ex_tFileInputDelimited_2), ex_tFileInputDelimited_2));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_2.setException(new RuntimeException("Value is empty for column : 'ProductCategoryID' in 'row2' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_2.setException(new RuntimeException("Value is empty for column : 'ProductCategoryID' in 'ProductCategory' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -5736,18 +5745,18 @@ globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",ex_tFileInputDelimited_2.get
 							
 								try {
 								
-    								row2.ParentProductCategoryID = ParserUtils.parseTo_Integer(temp);
+    								ProductCategory.ParentProductCategoryID = ParserUtils.parseTo_Integer(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_2) {
 globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",ex_tFileInputDelimited_2.getMessage());
 									rowstate_tFileInputDelimited_2.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ParentProductCategoryID", "row2", temp, ex_tFileInputDelimited_2), ex_tFileInputDelimited_2));
+										"ParentProductCategoryID", "ProductCategory", temp, ex_tFileInputDelimited_2), ex_tFileInputDelimited_2));
 								}
     							
 						} else {						
 							
 								
-									row2.ParentProductCategoryID = null;
+									ProductCategory.ParentProductCategoryID = null;
 								
 							
 						}
@@ -5755,12 +5764,12 @@ globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",ex_tFileInputDelimited_2.get
 				
 					columnIndexWithD_tFileInputDelimited_2 = 2;
 					
-							row2.Name = fid_tFileInputDelimited_2.get(columnIndexWithD_tFileInputDelimited_2);
+							ProductCategory.Name = fid_tFileInputDelimited_2.get(columnIndexWithD_tFileInputDelimited_2);
 						
 				
 					columnIndexWithD_tFileInputDelimited_2 = 3;
 					
-							row2.rowguid = fid_tFileInputDelimited_2.get(columnIndexWithD_tFileInputDelimited_2);
+							ProductCategory.rowguid = fid_tFileInputDelimited_2.get(columnIndexWithD_tFileInputDelimited_2);
 						
 				
 					columnIndexWithD_tFileInputDelimited_2 = 4;
@@ -5770,18 +5779,18 @@ globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",ex_tFileInputDelimited_2.get
 							
 								try {
 								
-    									row2.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									ProductCategory.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_2) {
 globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",ex_tFileInputDelimited_2.getMessage());
 									rowstate_tFileInputDelimited_2.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row2", temp, ex_tFileInputDelimited_2), ex_tFileInputDelimited_2));
+										"ModifiedDate", "ProductCategory", temp, ex_tFileInputDelimited_2), ex_tFileInputDelimited_2));
 								}
     							
 						} else {						
 							
 								
-									row2.ModifiedDate = null;
+									ProductCategory.ModifiedDate = null;
 								
 							
 						}
@@ -5800,7 +5809,7 @@ globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_2 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row2 = null;
+			                					ProductCategory = null;
 			                				
 										
 			    					}
@@ -5854,27 +5863,27 @@ globalMap.put("tFileInputDelimited_2_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_2 process_data_begin ] stop
  */
-// Start of branch "row2"
-if(row2 != null) { 
+// Start of branch "ProductCategory"
+if(ProductCategory != null) { 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row2 main ] start
+	 * [tAdvancedHash_ProductCategory main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row2";
+	currentComponent="tAdvancedHash_ProductCategory";
 
 	
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row2"
+							,"ProductCategory"
 						
 						);
 					}
@@ -5884,20 +5893,20 @@ if(row2 != null) {
 			   
 			   
 
-					row2Struct row2_HashRow = new row2Struct();
+					ProductCategoryStruct ProductCategory_HashRow = new ProductCategoryStruct();
 		   	   	   
 				
-				row2_HashRow.ProductCategoryID = row2.ProductCategoryID;
+				ProductCategory_HashRow.ProductCategoryID = ProductCategory.ProductCategoryID;
 				
-				row2_HashRow.ParentProductCategoryID = row2.ParentProductCategoryID;
+				ProductCategory_HashRow.ParentProductCategoryID = ProductCategory.ParentProductCategoryID;
 				
-				row2_HashRow.Name = row2.Name;
+				ProductCategory_HashRow.Name = ProductCategory.Name;
 				
-				row2_HashRow.rowguid = row2.rowguid;
+				ProductCategory_HashRow.rowguid = ProductCategory.rowguid;
 				
-				row2_HashRow.ModifiedDate = row2.ModifiedDate;
+				ProductCategory_HashRow.ModifiedDate = ProductCategory.ModifiedDate;
 				
-			tHash_Lookup_row2.put(row2_HashRow);
+			tHash_Lookup_ProductCategory.put(ProductCategory_HashRow);
 			
             
 
@@ -5907,21 +5916,21 @@ if(row2 != null) {
  
 
 
-	tos_count_tAdvancedHash_row2++;
+	tos_count_tAdvancedHash_ProductCategory++;
 
 /**
- * [tAdvancedHash_row2 main ] stop
+ * [tAdvancedHash_ProductCategory main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row2 process_data_begin ] start
+	 * [tAdvancedHash_ProductCategory process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row2";
+	currentComponent="tAdvancedHash_ProductCategory";
 
 	
 
@@ -5930,18 +5939,18 @@ if(row2 != null) {
 
 
 /**
- * [tAdvancedHash_row2 process_data_begin ] stop
+ * [tAdvancedHash_ProductCategory process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row2 process_data_end ] start
+	 * [tAdvancedHash_ProductCategory process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row2";
+	currentComponent="tAdvancedHash_ProductCategory";
 
 	
 
@@ -5950,10 +5959,10 @@ if(row2 != null) {
 
 
 /**
- * [tAdvancedHash_row2 process_data_end ] stop
+ * [tAdvancedHash_ProductCategory process_data_end ] stop
  */
 
-} // End of branch "row2"
+} // End of branch "ProductCategory"
 
 
 
@@ -6021,33 +6030,33 @@ end_Hash.put("tFileInputDelimited_2", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row2 end ] start
+	 * [tAdvancedHash_ProductCategory end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row2";
+	currentComponent="tAdvancedHash_ProductCategory";
 
 	
 
-tHash_Lookup_row2.endPut();
+tHash_Lookup_ProductCategory.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row2");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"ProductCategory");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row2", true);
-end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_ProductCategory", true);
+end_Hash.put("tAdvancedHash_ProductCategory", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row2 end ] stop
+ * [tAdvancedHash_ProductCategory end ] stop
  */
 
 
@@ -6096,14 +6105,14 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row2 finally ] start
+	 * [tAdvancedHash_ProductCategory finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row2";
+	currentComponent="tAdvancedHash_ProductCategory";
 
 	
 
@@ -6112,7 +6121,7 @@ end_Hash.put("tAdvancedHash_row2", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row2 finally ] stop
+ * [tAdvancedHash_ProductCategory finally ] stop
  */
 
 
@@ -6470,7 +6479,7 @@ public static class ProductModelMainStruct implements routines.system.IPersistab
 
 }
 
-public static class row6Struct implements routines.system.IPersistableComparableLookupRow<row6Struct> {
+public static class ProductModelStruct implements routines.system.IPersistableComparableLookupRow<ProductModelStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -6534,7 +6543,7 @@ public static class row6Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row6Struct other = (row6Struct) obj;
+		final ProductModelStruct other = (ProductModelStruct) obj;
 		
 						if (this.ProductModelID != other.ProductModelID)
 							return false;
@@ -6543,7 +6552,7 @@ public static class row6Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row6Struct other) {
+	public void copyDataTo(ProductModelStruct other) {
 
 		other.ProductModelID = this.ProductModelID;
 	            other.Name = this.Name;
@@ -6553,7 +6562,7 @@ public static class row6Struct implements routines.system.IPersistableComparable
 	            
 	}
 
-	public void copyKeysDataTo(row6Struct other) {
+	public void copyKeysDataTo(ProductModelStruct other) {
 
 		other.ProductModelID = this.ProductModelID;
 	            	
@@ -6851,7 +6860,7 @@ public static class row6Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row6Struct other) {
+    public int compareTo(ProductModelStruct other) {
 
 		int returnValue = -1;
 		
@@ -7296,7 +7305,7 @@ public void tFileInputDelimited_5Process(final java.util.Map<String, Object> glo
 		tFileInputDelimited_4Process(globalMap);
 		tFileInputDelimited_6Process(globalMap);
 
-		row6Struct row6 = new row6Struct();
+		ProductModelStruct ProductModel = new ProductModelStruct();
 ProductModelMainStruct ProductModelMain = new ProductModelMainStruct();
 
 
@@ -7327,8 +7336,8 @@ ProductModelMainStruct ProductModelMain = new ProductModelMainStruct();
 		
 
 			   		// connection name:ProductModelMain
-			   		// source node:tMap_1 - inputs:(row6,ProdModProdDesc,row5) outputs:(ProductModelMain,ProductModelMain) | target node:tAdvancedHash_ProductModelMain - inputs:(ProductModelMain) outputs:()
-			   		// linked node: tMap_2 - inputs:(row1,row2,ProductModelMain) outputs:(HProduct)
+			   		// source node:tMap_1 - inputs:(ProductModel,ProdModProdDesc,ProductDescription) outputs:(ProductModelMain,ProductModelMain) | target node:tAdvancedHash_ProductModelMain - inputs:(ProductModelMain) outputs:()
+			   		// linked node: tMap_2 - inputs:(Product,ProductCategory,ProductModelMain) outputs:(HProduct)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_ProductModelMain = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -7369,7 +7378,7 @@ ProductModelMainStruct ProductModelMain = new ProductModelMainStruct();
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row6");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"ProductModel");
 					}
 				
 		int tos_count_tMap_1 = 0;
@@ -7391,15 +7400,15 @@ ProductModelMainStruct ProductModelMain = new ProductModelMainStruct();
 ProdModProdDescStruct ProdModProdDescHashKey = new ProdModProdDescStruct();
 ProdModProdDescStruct ProdModProdDescDefault = new ProdModProdDescStruct();
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct>) 
-					globalMap.get( "tHash_Lookup_row5" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductDescriptionStruct> tHash_Lookup_ProductDescription = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductDescriptionStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductDescriptionStruct>) 
+					globalMap.get( "tHash_Lookup_ProductDescription" ))
 					;					
 					
 	
 
-row5Struct row5HashKey = new row5Struct();
-row5Struct row5Default = new row5Struct();
+ProductDescriptionStruct ProductDescriptionHashKey = new ProductDescriptionStruct();
+ProductDescriptionStruct ProductDescriptionDefault = new ProductDescriptionStruct();
 // ###############################        
 
 // ###############################
@@ -7496,10 +7505,10 @@ globalMap.put("tFileInputDelimited_5_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_5!=null && fid_tFileInputDelimited_5.nextRecord()) {
 						rowstate_tFileInputDelimited_5.reset();
 						
-			    						row6 = null;			
+			    						ProductModel = null;			
 												
 									boolean whetherReject_tFileInputDelimited_5 = false;
-									row6 = new row6Struct();
+									ProductModel = new ProductModelStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_5 = 0;
@@ -7513,34 +7522,34 @@ globalMap.put("tFileInputDelimited_5_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row6.ProductModelID = ParserUtils.parseTo_int(temp);
+    								ProductModel.ProductModelID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_5) {
 globalMap.put("tFileInputDelimited_5_ERROR_MESSAGE",ex_tFileInputDelimited_5.getMessage());
 									rowstate_tFileInputDelimited_5.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductModelID", "row6", temp, ex_tFileInputDelimited_5), ex_tFileInputDelimited_5));
+										"ProductModelID", "ProductModel", temp, ex_tFileInputDelimited_5), ex_tFileInputDelimited_5));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_5.setException(new RuntimeException("Value is empty for column : 'ProductModelID' in 'row6' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_5.setException(new RuntimeException("Value is empty for column : 'ProductModelID' in 'ProductModel' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_5 = 1;
 					
-							row6.Name = fid_tFileInputDelimited_5.get(columnIndexWithD_tFileInputDelimited_5);
+							ProductModel.Name = fid_tFileInputDelimited_5.get(columnIndexWithD_tFileInputDelimited_5);
 						
 				
 					columnIndexWithD_tFileInputDelimited_5 = 2;
 					
-							row6.CatalogDescription = fid_tFileInputDelimited_5.get(columnIndexWithD_tFileInputDelimited_5);
+							ProductModel.CatalogDescription = fid_tFileInputDelimited_5.get(columnIndexWithD_tFileInputDelimited_5);
 						
 				
 					columnIndexWithD_tFileInputDelimited_5 = 3;
 					
-							row6.rowguid = fid_tFileInputDelimited_5.get(columnIndexWithD_tFileInputDelimited_5);
+							ProductModel.rowguid = fid_tFileInputDelimited_5.get(columnIndexWithD_tFileInputDelimited_5);
 						
 				
 					columnIndexWithD_tFileInputDelimited_5 = 4;
@@ -7550,18 +7559,18 @@ globalMap.put("tFileInputDelimited_5_ERROR_MESSAGE",ex_tFileInputDelimited_5.get
 							
 								try {
 								
-    									row6.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									ProductModel.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_5) {
 globalMap.put("tFileInputDelimited_5_ERROR_MESSAGE",ex_tFileInputDelimited_5.getMessage());
 									rowstate_tFileInputDelimited_5.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row6", temp, ex_tFileInputDelimited_5), ex_tFileInputDelimited_5));
+										"ModifiedDate", "ProductModel", temp, ex_tFileInputDelimited_5), ex_tFileInputDelimited_5));
 								}
     							
 						} else {						
 							
 								
-									row6.ModifiedDate = null;
+									ProductModel.ModifiedDate = null;
 								
 							
 						}
@@ -7580,7 +7589,7 @@ globalMap.put("tFileInputDelimited_5_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_5 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row6 = null;
+			                					ProductModel = null;
 			                				
 										
 			    					}
@@ -7634,8 +7643,8 @@ globalMap.put("tFileInputDelimited_5_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_5 process_data_begin ] stop
  */
-// Start of branch "row6"
-if(row6 != null) { 
+// Start of branch "ProductModel"
+if(ProductModel != null) { 
 
 
 
@@ -7654,7 +7663,7 @@ if(row6 != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row6"
+							,"ProductModel"
 						
 						);
 					}
@@ -7690,7 +7699,7 @@ if(row6 != null) {
 								
 								hasCasePrimitiveKeyWithNull_tMap_1 = false;
 								
-	                        		    	Object exprKeyValue_ProdModProdDesc__ProductModelID = row6.ProductModelID ;
+	                        		    	Object exprKeyValue_ProdModProdDesc__ProductModelID = ProductModel.ProductModelID ;
 	                        		    	if(exprKeyValue_ProdModProdDesc__ProductModelID == null) {
 	                        		    		hasCasePrimitiveKeyWithNull_tMap_1 = true;
 	                        		    	} else {
@@ -7781,33 +7790,33 @@ if(row6 != null) {
 	            
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row5" 
+				// Starting Lookup Table "ProductDescription" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow5 = false;
+ 					    boolean forceLoopProductDescription = false;
        		  	    	
        		  	    	
- 							row5Struct row5ObjectFromLookup = null;
+ 							ProductDescriptionStruct ProductDescriptionObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_1) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_1 = false;
 								
-	                        		    	Object exprKeyValue_row5__ProductDescriptionID = ProdModProdDesc.ProductDescriptionID ;
-	                        		    	if(exprKeyValue_row5__ProductDescriptionID == null) {
+	                        		    	Object exprKeyValue_ProductDescription__ProductDescriptionID = ProdModProdDesc.ProductDescriptionID ;
+	                        		    	if(exprKeyValue_ProductDescription__ProductDescriptionID == null) {
 	                        		    		hasCasePrimitiveKeyWithNull_tMap_1 = true;
 	                        		    	} else {
-                        		    			row5HashKey.ProductDescriptionID = (int)(Integer) exprKeyValue_row5__ProductDescriptionID;
+                        		    			ProductDescriptionHashKey.ProductDescriptionID = (int)(Integer) exprKeyValue_ProductDescription__ProductDescriptionID;
                         		    		}
                         		    		
 
 								
-		                        	row5HashKey.hashCodeDirty = true;
+		                        	ProductDescriptionHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
@@ -7818,7 +7827,7 @@ if(row6 != null) {
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row5.lookup( row5HashKey );
+		  							tHash_Lookup_ProductDescription.lookup( ProductDescriptionHashKey );
 
 	  							
 
@@ -7841,30 +7850,30 @@ if(row6 != null) {
 							} // G_TM_M_020
 			           		  	  
 							
-				           		if(tHash_Lookup_row5 != null && tHash_Lookup_row5.getCount(row5HashKey) > 1) { // G 071
+				           		if(tHash_Lookup_ProductDescription != null && tHash_Lookup_ProductDescription.getCount(ProductDescriptionHashKey) > 1) { // G 071
 			  							
 			  						
 									 		
-									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'row5' and it contains more one result from keys :  row5.ProductDescriptionID = '" + row5HashKey.ProductDescriptionID + "'");
+									//System.out.println("WARNING: UNIQUE MATCH is configured for the lookup 'ProductDescription' and it contains more one result from keys :  ProductDescription.ProductDescriptionID = '" + ProductDescriptionHashKey.ProductDescriptionID + "'");
 								} // G 071
 							
 
-							row5Struct row5 = null;
+							ProductDescriptionStruct ProductDescription = null;
                     		  	 
 							   
                     		  	 
-	       		  	    	row5Struct fromLookup_row5 = null;
-							row5 = row5Default;
+	       		  	    	ProductDescriptionStruct fromLookup_ProductDescription = null;
+							ProductDescription = ProductDescriptionDefault;
 										 
 							
 								 
 							
 							
-								if (tHash_Lookup_row5 !=null && tHash_Lookup_row5.hasNext()) { // G 099
+								if (tHash_Lookup_ProductDescription !=null && tHash_Lookup_ProductDescription.hasNext()) { // G 099
 								
 							
 								
-								fromLookup_row5 = tHash_Lookup_row5.next();
+								fromLookup_ProductDescription = tHash_Lookup_ProductDescription.next();
 
 							
 							
@@ -7872,8 +7881,8 @@ if(row6 != null) {
 							
 							
 
-							if(fromLookup_row5 != null) {
-								row5 = fromLookup_row5;
+							if(fromLookup_ProductDescription != null) {
+								ProductDescription = fromLookup_ProductDescription;
 							}
 							
 							
@@ -7898,9 +7907,9 @@ ProductModelMain = null;
 
 
 // # Output table : 'ProductModelMain'
-ProductModelMain_tmp.ProductModelID = row6.ProductModelID ;
-ProductModelMain_tmp.Name = row6.Name ;
-ProductModelMain_tmp.Description = row5.Description ;
+ProductModelMain_tmp.ProductModelID = ProductModel.ProductModelID ;
+ProductModelMain_tmp.Name = ProductModel.Name ;
+ProductModelMain_tmp.Description = ProductDescription.Description ;
 ProductModelMain = ProductModelMain_tmp;
 // ###############################
 
@@ -8066,7 +8075,7 @@ if(ProductModelMain != null) {
  * [tMap_1 process_data_end ] stop
  */
 
-} // End of branch "row6"
+} // End of branch "ProductModel"
 
 
 
@@ -8156,10 +8165,10 @@ end_Hash.put("tFileInputDelimited_5", System.currentTimeMillis());
 					
 					
 				
-					if(tHash_Lookup_row5 != null) {
-						tHash_Lookup_row5.endGet();
+					if(tHash_Lookup_ProductDescription != null) {
+						tHash_Lookup_ProductDescription.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row5" );
+					globalMap.remove( "tHash_Lookup_ProductDescription" );
 
 					
 					
@@ -8171,7 +8180,7 @@ end_Hash.put("tFileInputDelimited_5", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row6");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"ProductModel");
 			  	}
 			  	
  
@@ -8245,7 +8254,7 @@ end_Hash.put("tAdvancedHash_ProductModelMain", System.currentTimeMillis());
 					     			globalMap.remove("tHash_Lookup_ProdModProdDesc"); 
 				     			
 					     			//free memory for "tMap_1"
-					     			globalMap.remove("tHash_Lookup_row5"); 
+					     			globalMap.remove("tHash_Lookup_ProductDescription"); 
 				     			
 				try{
 					
@@ -8670,7 +8679,7 @@ public static class ProdModProdDescStruct implements routines.system.IPersistabl
 
 }
 
-public static class row4Struct implements routines.system.IPersistableRow<row4Struct> {
+public static class ProdModProdDescOrinStruct implements routines.system.IPersistableRow<ProdModProdDescOrinStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 
@@ -8961,7 +8970,7 @@ public static class row4Struct implements routines.system.IPersistableRow<row4St
     /**
      * Compare keys
      */
-    public int compareTo(row4Struct other) {
+    public int compareTo(ProdModProdDescOrinStruct other) {
 
 		int returnValue = -1;
 		
@@ -9015,7 +9024,7 @@ public void tFileInputDelimited_4Process(final java.util.Map<String, Object> glo
 
 
 
-		row4Struct row4 = new row4Struct();
+		ProdModProdDescOrinStruct ProdModProdDescOrin = new ProdModProdDescOrinStruct();
 ProdModProdDescStruct ProdModProdDesc = new ProdModProdDescStruct();
 
 
@@ -9046,8 +9055,8 @@ ProdModProdDescStruct ProdModProdDesc = new ProdModProdDescStruct();
 		
 
 			   		// connection name:ProdModProdDesc
-			   		// source node:tMap_3 - inputs:(row4) outputs:(ProdModProdDesc,ProdModProdDesc) | target node:tAdvancedHash_ProdModProdDesc - inputs:(ProdModProdDesc) outputs:()
-			   		// linked node: tMap_1 - inputs:(row6,ProdModProdDesc,row5) outputs:(ProductModelMain,ProductModelMain)
+			   		// source node:tMap_3 - inputs:(ProdModProdDescOrin) outputs:(ProdModProdDesc,ProdModProdDesc) | target node:tAdvancedHash_ProdModProdDesc - inputs:(ProdModProdDesc) outputs:()
+			   		// linked node: tMap_1 - inputs:(ProductModel,ProdModProdDesc,ProductDescription) outputs:(ProductModelMain,ProductModelMain)
 			   
 			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_ProdModProdDesc = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
@@ -9088,7 +9097,7 @@ ProdModProdDescStruct ProdModProdDesc = new ProdModProdDescStruct();
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row4");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"ProdModProdDescOrin");
 					}
 				
 		int tos_count_tMap_3 = 0;
@@ -9195,10 +9204,10 @@ globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_4!=null && fid_tFileInputDelimited_4.nextRecord()) {
 						rowstate_tFileInputDelimited_4.reset();
 						
-			    						row4 = null;			
+			    						ProdModProdDescOrin = null;			
 												
 									boolean whetherReject_tFileInputDelimited_4 = false;
-									row4 = new row4Struct();
+									ProdModProdDescOrin = new ProdModProdDescOrinStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_4 = 0;
@@ -9212,17 +9221,17 @@ globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row4.ProductModelID = ParserUtils.parseTo_int(temp);
+    								ProdModProdDescOrin.ProductModelID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_4) {
 globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",ex_tFileInputDelimited_4.getMessage());
 									rowstate_tFileInputDelimited_4.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductModelID", "row4", temp, ex_tFileInputDelimited_4), ex_tFileInputDelimited_4));
+										"ProductModelID", "ProdModProdDescOrin", temp, ex_tFileInputDelimited_4), ex_tFileInputDelimited_4));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_4.setException(new RuntimeException("Value is empty for column : 'ProductModelID' in 'row4' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_4.setException(new RuntimeException("Value is empty for column : 'ProductModelID' in 'ProdModProdDescOrin' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -9234,29 +9243,29 @@ globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",ex_tFileInputDelimited_4.get
 							
 								try {
 								
-    								row4.ProductDescriptionID = ParserUtils.parseTo_int(temp);
+    								ProdModProdDescOrin.ProductDescriptionID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_4) {
 globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",ex_tFileInputDelimited_4.getMessage());
 									rowstate_tFileInputDelimited_4.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductDescriptionID", "row4", temp, ex_tFileInputDelimited_4), ex_tFileInputDelimited_4));
+										"ProductDescriptionID", "ProdModProdDescOrin", temp, ex_tFileInputDelimited_4), ex_tFileInputDelimited_4));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_4.setException(new RuntimeException("Value is empty for column : 'ProductDescriptionID' in 'row4' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_4.setException(new RuntimeException("Value is empty for column : 'ProductDescriptionID' in 'ProdModProdDescOrin' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_4 = 2;
 					
-							row4.Culture = fid_tFileInputDelimited_4.get(columnIndexWithD_tFileInputDelimited_4).trim();
+							ProdModProdDescOrin.Culture = fid_tFileInputDelimited_4.get(columnIndexWithD_tFileInputDelimited_4).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_4 = 3;
 					
-							row4.rowguid = fid_tFileInputDelimited_4.get(columnIndexWithD_tFileInputDelimited_4);
+							ProdModProdDescOrin.rowguid = fid_tFileInputDelimited_4.get(columnIndexWithD_tFileInputDelimited_4);
 						
 				
 					columnIndexWithD_tFileInputDelimited_4 = 4;
@@ -9266,18 +9275,18 @@ globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",ex_tFileInputDelimited_4.get
 							
 								try {
 								
-    									row4.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									ProdModProdDescOrin.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_4) {
 globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",ex_tFileInputDelimited_4.getMessage());
 									rowstate_tFileInputDelimited_4.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row4", temp, ex_tFileInputDelimited_4), ex_tFileInputDelimited_4));
+										"ModifiedDate", "ProdModProdDescOrin", temp, ex_tFileInputDelimited_4), ex_tFileInputDelimited_4));
 								}
     							
 						} else {						
 							
 								
-									row4.ModifiedDate = null;
+									ProdModProdDescOrin.ModifiedDate = null;
 								
 							
 						}
@@ -9296,7 +9305,7 @@ globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_4 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row4 = null;
+			                					ProdModProdDescOrin = null;
 			                				
 										
 			    					}
@@ -9350,8 +9359,8 @@ globalMap.put("tFileInputDelimited_4_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_4 process_data_begin ] stop
  */
-// Start of branch "row4"
-if(row4 != null) { 
+// Start of branch "ProdModProdDescOrin"
+if(ProdModProdDescOrin != null) { 
 
 
 
@@ -9370,7 +9379,7 @@ if(row4 != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row4"
+							,"ProdModProdDescOrin"
 						
 						);
 					}
@@ -9403,12 +9412,12 @@ ProdModProdDesc = null;
 // # Filter conditions 
 if( 
 
-row4.Culture.equals("en")
+ProdModProdDescOrin.Culture.equals("en")
 
  ) {
-ProdModProdDesc_tmp.ProductModelID = row4.ProductModelID ;
-ProdModProdDesc_tmp.ProductDescriptionID = row4.ProductDescriptionID ;
-ProdModProdDesc_tmp.Culture = row4.Culture;
+ProdModProdDesc_tmp.ProductModelID = ProdModProdDescOrin.ProductModelID ;
+ProdModProdDesc_tmp.ProductDescriptionID = ProdModProdDescOrin.ProductDescriptionID ;
+ProdModProdDesc_tmp.Culture = ProdModProdDescOrin.Culture;
 ProdModProdDesc = ProdModProdDesc_tmp;
 } // closing filter/reject
 // ###############################
@@ -9575,7 +9584,7 @@ if(ProdModProdDesc != null) {
  * [tMap_3 process_data_end ] stop
  */
 
-} // End of branch "row4"
+} // End of branch "ProdModProdDescOrin"
 
 
 
@@ -9664,7 +9673,7 @@ end_Hash.put("tFileInputDelimited_4", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row4");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"ProdModProdDescOrin");
 			  	}
 			  	
  
@@ -9818,7 +9827,7 @@ end_Hash.put("tAdvancedHash_ProdModProdDesc", System.currentTimeMillis());
 	
 
 
-public static class row5Struct implements routines.system.IPersistableComparableLookupRow<row5Struct> {
+public static class ProductDescriptionStruct implements routines.system.IPersistableComparableLookupRow<ProductDescriptionStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -9876,7 +9885,7 @@ public static class row5Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row5Struct other = (row5Struct) obj;
+		final ProductDescriptionStruct other = (ProductDescriptionStruct) obj;
 		
 						if (this.ProductDescriptionID != other.ProductDescriptionID)
 							return false;
@@ -9885,7 +9894,7 @@ public static class row5Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row5Struct other) {
+	public void copyDataTo(ProductDescriptionStruct other) {
 
 		other.ProductDescriptionID = this.ProductDescriptionID;
 	            other.Description = this.Description;
@@ -9894,7 +9903,7 @@ public static class row5Struct implements routines.system.IPersistableComparable
 	            
 	}
 
-	public void copyKeysDataTo(row5Struct other) {
+	public void copyKeysDataTo(ProductDescriptionStruct other) {
 
 		other.ProductDescriptionID = this.ProductDescriptionID;
 	            	
@@ -10183,7 +10192,7 @@ public static class row5Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row5Struct other) {
+    public int compareTo(ProductDescriptionStruct other) {
 
 		int returnValue = -1;
 		
@@ -10243,46 +10252,46 @@ public void tFileInputDelimited_6Process(final java.util.Map<String, Object> glo
 
 
 
-		row5Struct row5 = new row5Struct();
+		ProductDescriptionStruct ProductDescription = new ProductDescriptionStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row5 begin ] start
+	 * [tAdvancedHash_ProductDescription begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row5", false);
-		start_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_ProductDescription", false);
+		start_Hash.put("tAdvancedHash_ProductDescription", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_ProductDescription";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row5");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"ProductDescription");
 					}
 				
-		int tos_count_tAdvancedHash_row5 = 0;
+		int tos_count_tAdvancedHash_ProductDescription = 0;
 		
 
-			   		// connection name:row5
-			   		// source node:tFileInputDelimited_6 - inputs:(after_tFileInputDelimited_5) outputs:(row5,row5) | target node:tAdvancedHash_row5 - inputs:(row5) outputs:()
-			   		// linked node: tMap_1 - inputs:(row6,ProdModProdDesc,row5) outputs:(ProductModelMain,ProductModelMain)
+			   		// connection name:ProductDescription
+			   		// source node:tFileInputDelimited_6 - inputs:(after_tFileInputDelimited_5) outputs:(ProductDescription,ProductDescription) | target node:tAdvancedHash_ProductDescription - inputs:(ProductDescription) outputs:()
+			   		// linked node: tMap_1 - inputs:(ProductModel,ProdModProdDesc,ProductDescription) outputs:(ProductModelMain,ProductModelMain)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row5 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_ProductDescription = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.UNIQUE_MATCH;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row5Struct> tHash_Lookup_row5 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row5Struct>getLookup(matchingModeEnum_row5);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<ProductDescriptionStruct> tHash_Lookup_ProductDescription =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<ProductDescriptionStruct>getLookup(matchingModeEnum_ProductDescription);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row5", tHash_Lookup_row5);
+		   	   	   globalMap.put("tHash_Lookup_ProductDescription", tHash_Lookup_ProductDescription);
 		   	   	   
 				
            
@@ -10292,7 +10301,7 @@ public void tFileInputDelimited_6Process(final java.util.Map<String, Object> glo
 
 
 /**
- * [tAdvancedHash_row5 begin ] stop
+ * [tAdvancedHash_ProductDescription begin ] stop
  */
 
 
@@ -10354,12 +10363,12 @@ globalMap.put("tFileInputDelimited_6_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_6!=null && fid_tFileInputDelimited_6.nextRecord()) {
 						rowstate_tFileInputDelimited_6.reset();
 						
-			    						row5 = null;			
+			    						ProductDescription = null;			
 									
-			    						row5 = null;			
+			    						ProductDescription = null;			
 												
 									boolean whetherReject_tFileInputDelimited_6 = false;
-									row5 = new row5Struct();
+									ProductDescription = new ProductDescriptionStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_6 = 0;
@@ -10373,29 +10382,29 @@ globalMap.put("tFileInputDelimited_6_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row5.ProductDescriptionID = ParserUtils.parseTo_int(temp);
+    								ProductDescription.ProductDescriptionID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_6) {
 globalMap.put("tFileInputDelimited_6_ERROR_MESSAGE",ex_tFileInputDelimited_6.getMessage());
 									rowstate_tFileInputDelimited_6.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductDescriptionID", "row5", temp, ex_tFileInputDelimited_6), ex_tFileInputDelimited_6));
+										"ProductDescriptionID", "ProductDescription", temp, ex_tFileInputDelimited_6), ex_tFileInputDelimited_6));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_6.setException(new RuntimeException("Value is empty for column : 'ProductDescriptionID' in 'row5' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_6.setException(new RuntimeException("Value is empty for column : 'ProductDescriptionID' in 'ProductDescription' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_6 = 1;
 					
-							row5.Description = fid_tFileInputDelimited_6.get(columnIndexWithD_tFileInputDelimited_6).trim();
+							ProductDescription.Description = fid_tFileInputDelimited_6.get(columnIndexWithD_tFileInputDelimited_6).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_6 = 2;
 					
-							row5.rowguid = fid_tFileInputDelimited_6.get(columnIndexWithD_tFileInputDelimited_6);
+							ProductDescription.rowguid = fid_tFileInputDelimited_6.get(columnIndexWithD_tFileInputDelimited_6);
 						
 				
 					columnIndexWithD_tFileInputDelimited_6 = 3;
@@ -10405,18 +10414,18 @@ globalMap.put("tFileInputDelimited_6_ERROR_MESSAGE",ex_tFileInputDelimited_6.get
 							
 								try {
 								
-    									row5.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									ProductDescription.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_6) {
 globalMap.put("tFileInputDelimited_6_ERROR_MESSAGE",ex_tFileInputDelimited_6.getMessage());
 									rowstate_tFileInputDelimited_6.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row5", temp, ex_tFileInputDelimited_6), ex_tFileInputDelimited_6));
+										"ModifiedDate", "ProductDescription", temp, ex_tFileInputDelimited_6), ex_tFileInputDelimited_6));
 								}
     							
 						} else {						
 							
 								
-									row5.ModifiedDate = null;
+									ProductDescription.ModifiedDate = null;
 								
 							
 						}
@@ -10435,7 +10444,7 @@ globalMap.put("tFileInputDelimited_6_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_6 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row5 = null;
+			                					ProductDescription = null;
 			                				
 										
 			    					}
@@ -10489,27 +10498,27 @@ globalMap.put("tFileInputDelimited_6_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_6 process_data_begin ] stop
  */
-// Start of branch "row5"
-if(row5 != null) { 
+// Start of branch "ProductDescription"
+if(ProductDescription != null) { 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row5 main ] start
+	 * [tAdvancedHash_ProductDescription main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_ProductDescription";
 
 	
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row5"
+							,"ProductDescription"
 						
 						);
 					}
@@ -10519,18 +10528,18 @@ if(row5 != null) {
 			   
 			   
 
-					row5Struct row5_HashRow = new row5Struct();
+					ProductDescriptionStruct ProductDescription_HashRow = new ProductDescriptionStruct();
 		   	   	   
 				
-				row5_HashRow.ProductDescriptionID = row5.ProductDescriptionID;
+				ProductDescription_HashRow.ProductDescriptionID = ProductDescription.ProductDescriptionID;
 				
-				row5_HashRow.Description = row5.Description;
+				ProductDescription_HashRow.Description = ProductDescription.Description;
 				
-				row5_HashRow.rowguid = row5.rowguid;
+				ProductDescription_HashRow.rowguid = ProductDescription.rowguid;
 				
-				row5_HashRow.ModifiedDate = row5.ModifiedDate;
+				ProductDescription_HashRow.ModifiedDate = ProductDescription.ModifiedDate;
 				
-			tHash_Lookup_row5.put(row5_HashRow);
+			tHash_Lookup_ProductDescription.put(ProductDescription_HashRow);
 			
             
 
@@ -10540,21 +10549,21 @@ if(row5 != null) {
  
 
 
-	tos_count_tAdvancedHash_row5++;
+	tos_count_tAdvancedHash_ProductDescription++;
 
 /**
- * [tAdvancedHash_row5 main ] stop
+ * [tAdvancedHash_ProductDescription main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row5 process_data_begin ] start
+	 * [tAdvancedHash_ProductDescription process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_ProductDescription";
 
 	
 
@@ -10563,18 +10572,18 @@ if(row5 != null) {
 
 
 /**
- * [tAdvancedHash_row5 process_data_begin ] stop
+ * [tAdvancedHash_ProductDescription process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row5 process_data_end ] start
+	 * [tAdvancedHash_ProductDescription process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_ProductDescription";
 
 	
 
@@ -10583,10 +10592,10 @@ if(row5 != null) {
 
 
 /**
- * [tAdvancedHash_row5 process_data_end ] stop
+ * [tAdvancedHash_ProductDescription process_data_end ] stop
  */
 
-} // End of branch "row5"
+} // End of branch "ProductDescription"
 
 
 
@@ -10654,33 +10663,33 @@ end_Hash.put("tFileInputDelimited_6", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row5 end ] start
+	 * [tAdvancedHash_ProductDescription end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_ProductDescription";
 
 	
 
-tHash_Lookup_row5.endPut();
+tHash_Lookup_ProductDescription.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row5");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"ProductDescription");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row5", true);
-end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_ProductDescription", true);
+end_Hash.put("tAdvancedHash_ProductDescription", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row5 end ] stop
+ * [tAdvancedHash_ProductDescription end ] stop
  */
 
 
@@ -10729,14 +10738,14 @@ end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row5 finally ] start
+	 * [tAdvancedHash_ProductDescription finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row5";
+	currentComponent="tAdvancedHash_ProductDescription";
 
 	
 
@@ -10745,7 +10754,7 @@ end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row5 finally ] stop
+ * [tAdvancedHash_ProductDescription finally ] stop
  */
 
 
@@ -10763,6 +10772,643 @@ end_Hash.put("tAdvancedHash_row5", System.currentTimeMillis());
 	}
 	
 
+
+public static class row1Struct implements routines.system.IPersistableRow<row1Struct> {
+    final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
+    static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
+	protected static final int DEFAULT_HASHCODE = 1;
+    protected static final int PRIME = 31;
+    protected int hashCode = DEFAULT_HASHCODE;
+    public boolean hashCodeDirty = true;
+
+    public String loopKey;
+
+
+
+	
+			    public int CustomerID;
+
+				public int getCustomerID () {
+					return this.CustomerID;
+				}
+				
+			    public String Title;
+
+				public String getTitle () {
+					return this.Title;
+				}
+				
+			    public String MiddleName;
+
+				public String getMiddleName () {
+					return this.MiddleName;
+				}
+				
+			    public String FirstName;
+
+				public String getFirstName () {
+					return this.FirstName;
+				}
+				
+			    public String LastName;
+
+				public String getLastName () {
+					return this.LastName;
+				}
+				
+			    public String Suffix;
+
+				public String getSuffix () {
+					return this.Suffix;
+				}
+				
+			    public String CompanyName;
+
+				public String getCompanyName () {
+					return this.CompanyName;
+				}
+				
+			    public String SalesPerson;
+
+				public String getSalesPerson () {
+					return this.SalesPerson;
+				}
+				
+			    public String EmailAddress;
+
+				public String getEmailAddress () {
+					return this.EmailAddress;
+				}
+				
+			    public String Phone;
+
+				public String getPhone () {
+					return this.Phone;
+				}
+				
+			    public String AddressType;
+
+				public String getAddressType () {
+					return this.AddressType;
+				}
+				
+			    public String AddressLine1;
+
+				public String getAddressLine1 () {
+					return this.AddressLine1;
+				}
+				
+			    public String AddressLine2;
+
+				public String getAddressLine2 () {
+					return this.AddressLine2;
+				}
+				
+			    public String City;
+
+				public String getCity () {
+					return this.City;
+				}
+				
+			    public String StateProvince;
+
+				public String getStateProvince () {
+					return this.StateProvince;
+				}
+				
+			    public String CountryRegion;
+
+				public String getCountryRegion () {
+					return this.CountryRegion;
+				}
+				
+			    public String PostalCode;
+
+				public String getPostalCode () {
+					return this.PostalCode;
+				}
+				
+			    public java.util.Date ModifiedDate_1;
+
+				public java.util.Date getModifiedDate_1 () {
+					return this.ModifiedDate_1;
+				}
+				
+
+
+	@Override
+	public int hashCode() {
+		if (this.hashCodeDirty) {
+			final int prime = PRIME;
+			int result = DEFAULT_HASHCODE;
+	
+							result = prime * result + (int) this.CustomerID;
+						
+    		this.hashCode = result;
+    		this.hashCodeDirty = false;
+		}
+		return this.hashCode;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null) return false;
+		if (getClass() != obj.getClass()) return false;
+		final row1Struct other = (row1Struct) obj;
+		
+						if (this.CustomerID != other.CustomerID)
+							return false;
+					
+
+		return true;
+    }
+
+	public void copyDataTo(row1Struct other) {
+
+		other.CustomerID = this.CustomerID;
+	            other.Title = this.Title;
+	            other.MiddleName = this.MiddleName;
+	            other.FirstName = this.FirstName;
+	            other.LastName = this.LastName;
+	            other.Suffix = this.Suffix;
+	            other.CompanyName = this.CompanyName;
+	            other.SalesPerson = this.SalesPerson;
+	            other.EmailAddress = this.EmailAddress;
+	            other.Phone = this.Phone;
+	            other.AddressType = this.AddressType;
+	            other.AddressLine1 = this.AddressLine1;
+	            other.AddressLine2 = this.AddressLine2;
+	            other.City = this.City;
+	            other.StateProvince = this.StateProvince;
+	            other.CountryRegion = this.CountryRegion;
+	            other.PostalCode = this.PostalCode;
+	            other.ModifiedDate_1 = this.ModifiedDate_1;
+	            
+	}
+
+	public void copyKeysDataTo(row1Struct other) {
+
+		other.CustomerID = this.CustomerID;
+	            	
+	}
+
+
+
+
+	private String readString(ObjectInputStream dis) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = dis.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LOCAL_PROJECT_HARMONIZED.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_HARMONIZED.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[2 * length];
+   				}
+			}
+			dis.readFully(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+	
+	private String readString(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
+		String strReturn = null;
+		int length = 0;
+        length = unmarshaller.readInt();
+		if (length == -1) {
+			strReturn = null;
+		} else {
+			if(length > commonByteArray_LOCAL_PROJECT_HARMONIZED.length) {
+				if(length < 1024 && commonByteArray_LOCAL_PROJECT_HARMONIZED.length == 0) {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[1024];
+				} else {
+   					commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[2 * length];
+   				}
+			}
+			unmarshaller.readFully(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length);
+			strReturn = new String(commonByteArray_LOCAL_PROJECT_HARMONIZED, 0, length, utf8Charset);
+		}
+		return strReturn;
+	}
+
+    private void writeString(String str, ObjectOutputStream dos) throws IOException{
+		if(str == null) {
+            dos.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+	    	dos.writeInt(byteArray.length);
+			dos.write(byteArray);
+    	}
+    }
+    
+    private void writeString(String str, org.jboss.marshalling.Marshaller marshaller) throws IOException{
+		if(str == null) {
+			marshaller.writeInt(-1);
+		} else {
+            byte[] byteArray = str.getBytes(utf8Charset);
+            marshaller.writeInt(byteArray.length);
+            marshaller.write(byteArray);
+    	}
+    }
+
+	private java.util.Date readDate(ObjectInputStream dis) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = dis.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(dis.readLong());
+		}
+		return dateReturn;
+	}
+	
+	private java.util.Date readDate(org.jboss.marshalling.Unmarshaller unmarshaller) throws IOException{
+		java.util.Date dateReturn = null;
+        int length = 0;
+        length = unmarshaller.readByte();
+		if (length == -1) {
+			dateReturn = null;
+		} else {
+	    	dateReturn = new Date(unmarshaller.readLong());
+		}
+		return dateReturn;
+	}
+
+    private void writeDate(java.util.Date date1, ObjectOutputStream dos) throws IOException{
+		if(date1 == null) {
+            dos.writeByte(-1);
+		} else {
+			dos.writeByte(0);
+	    	dos.writeLong(date1.getTime());
+    	}
+    }
+    
+    private void writeDate(java.util.Date date1, org.jboss.marshalling.Marshaller marshaller) throws IOException{
+		if(date1 == null) {
+			marshaller.writeByte(-1);
+		} else {
+			marshaller.writeByte(0);
+			marshaller.writeLong(date1.getTime());
+    	}
+    }
+
+    public void readData(ObjectInputStream dis) {
+
+		synchronized(commonByteArrayLock_LOCAL_PROJECT_HARMONIZED) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.CustomerID = dis.readInt();
+					
+					this.Title = readString(dis);
+					
+					this.MiddleName = readString(dis);
+					
+					this.FirstName = readString(dis);
+					
+					this.LastName = readString(dis);
+					
+					this.Suffix = readString(dis);
+					
+					this.CompanyName = readString(dis);
+					
+					this.SalesPerson = readString(dis);
+					
+					this.EmailAddress = readString(dis);
+					
+					this.Phone = readString(dis);
+					
+					this.AddressType = readString(dis);
+					
+					this.AddressLine1 = readString(dis);
+					
+					this.AddressLine2 = readString(dis);
+					
+					this.City = readString(dis);
+					
+					this.StateProvince = readString(dis);
+					
+					this.CountryRegion = readString(dis);
+					
+					this.PostalCode = readString(dis);
+					
+					this.ModifiedDate_1 = readDate(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+    
+    public void readData(org.jboss.marshalling.Unmarshaller dis) {
+
+		synchronized(commonByteArrayLock_LOCAL_PROJECT_HARMONIZED) {
+
+        	try {
+
+        		int length = 0;
+		
+			        this.CustomerID = dis.readInt();
+					
+					this.Title = readString(dis);
+					
+					this.MiddleName = readString(dis);
+					
+					this.FirstName = readString(dis);
+					
+					this.LastName = readString(dis);
+					
+					this.Suffix = readString(dis);
+					
+					this.CompanyName = readString(dis);
+					
+					this.SalesPerson = readString(dis);
+					
+					this.EmailAddress = readString(dis);
+					
+					this.Phone = readString(dis);
+					
+					this.AddressType = readString(dis);
+					
+					this.AddressLine1 = readString(dis);
+					
+					this.AddressLine2 = readString(dis);
+					
+					this.City = readString(dis);
+					
+					this.StateProvince = readString(dis);
+					
+					this.CountryRegion = readString(dis);
+					
+					this.PostalCode = readString(dis);
+					
+					this.ModifiedDate_1 = readDate(dis);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+
+		
+
+        }
+
+		
+
+      }
+
+
+    }
+
+    public void writeData(ObjectOutputStream dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.CustomerID);
+					
+					// String
+				
+						writeString(this.Title,dos);
+					
+					// String
+				
+						writeString(this.MiddleName,dos);
+					
+					// String
+				
+						writeString(this.FirstName,dos);
+					
+					// String
+				
+						writeString(this.LastName,dos);
+					
+					// String
+				
+						writeString(this.Suffix,dos);
+					
+					// String
+				
+						writeString(this.CompanyName,dos);
+					
+					// String
+				
+						writeString(this.SalesPerson,dos);
+					
+					// String
+				
+						writeString(this.EmailAddress,dos);
+					
+					// String
+				
+						writeString(this.Phone,dos);
+					
+					// String
+				
+						writeString(this.AddressType,dos);
+					
+					// String
+				
+						writeString(this.AddressLine1,dos);
+					
+					// String
+				
+						writeString(this.AddressLine2,dos);
+					
+					// String
+				
+						writeString(this.City,dos);
+					
+					// String
+				
+						writeString(this.StateProvince,dos);
+					
+					// String
+				
+						writeString(this.CountryRegion,dos);
+					
+					// String
+				
+						writeString(this.PostalCode,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.ModifiedDate_1,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+    
+    public void writeData(org.jboss.marshalling.Marshaller dos) {
+        try {
+
+		
+					// int
+				
+		            	dos.writeInt(this.CustomerID);
+					
+					// String
+				
+						writeString(this.Title,dos);
+					
+					// String
+				
+						writeString(this.MiddleName,dos);
+					
+					// String
+				
+						writeString(this.FirstName,dos);
+					
+					// String
+				
+						writeString(this.LastName,dos);
+					
+					// String
+				
+						writeString(this.Suffix,dos);
+					
+					// String
+				
+						writeString(this.CompanyName,dos);
+					
+					// String
+				
+						writeString(this.SalesPerson,dos);
+					
+					// String
+				
+						writeString(this.EmailAddress,dos);
+					
+					// String
+				
+						writeString(this.Phone,dos);
+					
+					// String
+				
+						writeString(this.AddressType,dos);
+					
+					// String
+				
+						writeString(this.AddressLine1,dos);
+					
+					// String
+				
+						writeString(this.AddressLine2,dos);
+					
+					// String
+				
+						writeString(this.City,dos);
+					
+					// String
+				
+						writeString(this.StateProvince,dos);
+					
+					// String
+				
+						writeString(this.CountryRegion,dos);
+					
+					// String
+				
+						writeString(this.PostalCode,dos);
+					
+					// java.util.Date
+				
+						writeDate(this.ModifiedDate_1,dos);
+					
+        	} catch (IOException e) {
+	            throw new RuntimeException(e);
+        }
+
+
+    }
+
+
+    public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString());
+		sb.append("[");
+		sb.append("CustomerID="+String.valueOf(CustomerID));
+		sb.append(",Title="+Title);
+		sb.append(",MiddleName="+MiddleName);
+		sb.append(",FirstName="+FirstName);
+		sb.append(",LastName="+LastName);
+		sb.append(",Suffix="+Suffix);
+		sb.append(",CompanyName="+CompanyName);
+		sb.append(",SalesPerson="+SalesPerson);
+		sb.append(",EmailAddress="+EmailAddress);
+		sb.append(",Phone="+Phone);
+		sb.append(",AddressType="+AddressType);
+		sb.append(",AddressLine1="+AddressLine1);
+		sb.append(",AddressLine2="+AddressLine2);
+		sb.append(",City="+City);
+		sb.append(",StateProvince="+StateProvince);
+		sb.append(",CountryRegion="+CountryRegion);
+		sb.append(",PostalCode="+PostalCode);
+		sb.append(",ModifiedDate_1="+String.valueOf(ModifiedDate_1));
+	    sb.append("]");
+
+	    return sb.toString();
+    }
+
+    /**
+     * Compare keys
+     */
+    public int compareTo(row1Struct other) {
+
+		int returnValue = -1;
+		
+						returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
+						if(returnValue != 0) {
+							return returnValue;
+						}
+
+					
+	    return returnValue;
+    }
+
+
+    private int checkNullsAndCompare(Object object1, Object object2) {
+        int returnValue = 0;
+		if (object1 instanceof Comparable && object2 instanceof Comparable) {
+            returnValue = ((Comparable) object1).compareTo(object2);
+        } else if (object1 != null && object2 != null) {
+            returnValue = compareStrings(object1.toString(), object2.toString());
+        } else if (object1 == null && object2 != null) {
+            returnValue = 1;
+        } else if (object1 != null && object2 == null) {
+            returnValue = -1;
+        } else {
+            returnValue = 0;
+        }
+
+        return returnValue;
+    }
+
+    private int compareStrings(String string1, String string2) {
+        return string1.compareTo(string2);
+    }
+
+
+}
 
 public static class CustomerMainStruct implements routines.system.IPersistableRow<CustomerMainStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
@@ -11401,7 +12047,7 @@ public static class CustomerMainStruct implements routines.system.IPersistableRo
 
 }
 
-public static class row7Struct implements routines.system.IPersistableRow<row7Struct> {
+public static class CustomerStruct implements routines.system.IPersistableRow<CustomerStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 
@@ -11882,7 +12528,7 @@ public static class row7Struct implements routines.system.IPersistableRow<row7St
     /**
      * Compare keys
      */
-    public int compareTo(row7Struct other) {
+    public int compareTo(CustomerStruct other) {
 
 		int returnValue = -1;
 		
@@ -12521,8 +13167,10 @@ public void tFileInputDelimited_3Process(final java.util.Map<String, Object> glo
 		tFileInputDelimited_7Process(globalMap);
 		tFileInputDelimited_9Process(globalMap);
 
-		row7Struct row7 = new row7Struct();
+		CustomerStruct Customer = new CustomerStruct();
 CustomerMainStruct CustomerMain = new CustomerMainStruct();
+row1Struct row1 = new row1Struct();
+
 
 
 
@@ -12545,7 +13193,7 @@ CustomerMainStruct CustomerMain = new CustomerMainStruct();
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"CustomerMain");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row1");
 					}
 				
 		int tos_count_tFileOutputDelimited_2 = 0;
@@ -12659,6 +13307,41 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
 
 	
 	/**
+	 * [tReplace_1 begin ] start
+	 */
+
+	
+
+	
+		
+		ok_Hash.put("tReplace_1", false);
+		start_Hash.put("tReplace_1", System.currentTimeMillis());
+		
+	
+	currentComponent="tReplace_1";
+
+	
+					if(execStat) {
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"CustomerMain");
+					}
+				
+		int tos_count_tReplace_1 = 0;
+		
+
+
+int nb_line_tReplace_1 = 0;
+ 
+
+
+
+/**
+ * [tReplace_1 begin ] stop
+ */
+
+
+
+	
+	/**
 	 * [tMap_4 begin ] start
 	 */
 
@@ -12674,7 +13357,7 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row7");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Customer");
 					}
 				
 		int tos_count_tMap_4 = 0;
@@ -12686,25 +13369,25 @@ resourceMap.put("nb_line_tFileOutputDelimited_2", nb_line_tFileOutputDelimited_2
 // ###############################
 // # Lookup's keys initialization
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct>) 
-					globalMap.get( "tHash_Lookup_row8" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<CustomerAddressStruct> tHash_Lookup_CustomerAddress = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<CustomerAddressStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<CustomerAddressStruct>) 
+					globalMap.get( "tHash_Lookup_CustomerAddress" ))
 					;					
 					
 	
 
-row8Struct row8HashKey = new row8Struct();
-row8Struct row8Default = new row8Struct();
+CustomerAddressStruct CustomerAddressHashKey = new CustomerAddressStruct();
+CustomerAddressStruct CustomerAddressDefault = new CustomerAddressStruct();
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct> tHash_Lookup_row9 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct>) 
-					globalMap.get( "tHash_Lookup_row9" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<AddressStruct> tHash_Lookup_Address = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<AddressStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<AddressStruct>) 
+					globalMap.get( "tHash_Lookup_Address" ))
 					;					
 					
 	
 
-row9Struct row9HashKey = new row9Struct();
-row9Struct row9Default = new row9Struct();
+AddressStruct AddressHashKey = new AddressStruct();
+AddressStruct AddressDefault = new AddressStruct();
 // ###############################        
 
 // ###############################
@@ -12801,10 +13484,10 @@ globalMap.put("tFileInputDelimited_3_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_3!=null && fid_tFileInputDelimited_3.nextRecord()) {
 						rowstate_tFileInputDelimited_3.reset();
 						
-			    						row7 = null;			
+			    						Customer = null;			
 												
 									boolean whetherReject_tFileInputDelimited_3 = false;
-									row7 = new row7Struct();
+									Customer = new CustomerStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_3 = 0;
@@ -12818,84 +13501,84 @@ globalMap.put("tFileInputDelimited_3_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row7.CustomerID = ParserUtils.parseTo_int(temp);
+    								Customer.CustomerID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_3) {
 globalMap.put("tFileInputDelimited_3_ERROR_MESSAGE",ex_tFileInputDelimited_3.getMessage());
 									rowstate_tFileInputDelimited_3.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"CustomerID", "row7", temp, ex_tFileInputDelimited_3), ex_tFileInputDelimited_3));
+										"CustomerID", "Customer", temp, ex_tFileInputDelimited_3), ex_tFileInputDelimited_3));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_3.setException(new RuntimeException("Value is empty for column : 'CustomerID' in 'row7' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_3.setException(new RuntimeException("Value is empty for column : 'CustomerID' in 'Customer' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_3 = 1;
 					
-							row7.NameStyle = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
+							Customer.NameStyle = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 2;
 					
-							row7.Title = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.Title = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 3;
 					
-							row7.FirstName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.FirstName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 4;
 					
-							row7.MiddleName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.MiddleName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 5;
 					
-							row7.LastName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.LastName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 6;
 					
-							row7.Suffix = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.Suffix = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 7;
 					
-							row7.CompanyName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.CompanyName = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 8;
 					
-							row7.SalesPerson = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.SalesPerson = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 9;
 					
-							row7.EmailAddress = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.EmailAddress = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 10;
 					
-							row7.Phone = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
+							Customer.Phone = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 11;
 					
-							row7.PasswordHash = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
+							Customer.PasswordHash = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 12;
 					
-							row7.PasswordSalt = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
+							Customer.PasswordSalt = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 13;
 					
-							row7.rowguid = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
+							Customer.rowguid = fid_tFileInputDelimited_3.get(columnIndexWithD_tFileInputDelimited_3);
 						
 				
 					columnIndexWithD_tFileInputDelimited_3 = 14;
@@ -12905,18 +13588,18 @@ globalMap.put("tFileInputDelimited_3_ERROR_MESSAGE",ex_tFileInputDelimited_3.get
 							
 								try {
 								
-    									row7.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									Customer.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_3) {
 globalMap.put("tFileInputDelimited_3_ERROR_MESSAGE",ex_tFileInputDelimited_3.getMessage());
 									rowstate_tFileInputDelimited_3.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row7", temp, ex_tFileInputDelimited_3), ex_tFileInputDelimited_3));
+										"ModifiedDate", "Customer", temp, ex_tFileInputDelimited_3), ex_tFileInputDelimited_3));
 								}
     							
 						} else {						
 							
 								
-									row7.ModifiedDate = null;
+									Customer.ModifiedDate = null;
 								
 							
 						}
@@ -12935,7 +13618,7 @@ globalMap.put("tFileInputDelimited_3_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_3 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row7 = null;
+			                					Customer = null;
 			                				
 										
 			    					}
@@ -12989,8 +13672,8 @@ globalMap.put("tFileInputDelimited_3_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_3 process_data_begin ] stop
  */
-// Start of branch "row7"
-if(row7 != null) { 
+// Start of branch "Customer"
+if(Customer != null) { 
 
 
 
@@ -13009,7 +13692,7 @@ if(row7 != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row7"
+							,"Customer"
 						
 						);
 					}
@@ -13028,33 +13711,33 @@ if(row7 != null) {
 		
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row8" 
+				// Starting Lookup Table "CustomerAddress" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow8 = false;
+ 					    boolean forceLoopCustomerAddress = false;
        		  	    	
        		  	    	
- 							row8Struct row8ObjectFromLookup = null;
+ 							CustomerAddressStruct CustomerAddressObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_4) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_4 = false;
 								
-	                        		    	Object exprKeyValue_row8__CustomerID = row7.CustomerID ;
-	                        		    	if(exprKeyValue_row8__CustomerID == null) {
+	                        		    	Object exprKeyValue_CustomerAddress__CustomerID = Customer.CustomerID ;
+	                        		    	if(exprKeyValue_CustomerAddress__CustomerID == null) {
 	                        		    		hasCasePrimitiveKeyWithNull_tMap_4 = true;
 	                        		    	} else {
-                        		    			row8HashKey.CustomerID = (int)(Integer) exprKeyValue_row8__CustomerID;
+                        		    			CustomerAddressHashKey.CustomerID = (int)(Integer) exprKeyValue_CustomerAddress__CustomerID;
                         		    		}
                         		    		
 
 								
-		                        	row8HashKey.hashCodeDirty = true;
+		                        	CustomerAddressHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
@@ -13065,7 +13748,7 @@ if(row7 != null) {
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row8.lookup( row8HashKey );
+		  							tHash_Lookup_CustomerAddress.lookup( CustomerAddressHashKey );
 
 	  							
 
@@ -13077,7 +13760,7 @@ if(row7 != null) {
 
  								
 								  
-								  if(hasCasePrimitiveKeyWithNull_tMap_4 || !tHash_Lookup_row8.hasNext()) { // G_TM_M_090
+								  if(hasCasePrimitiveKeyWithNull_tMap_4 || !tHash_Lookup_CustomerAddress.hasNext()) { // G_TM_M_090
 
   								
 		  				
@@ -13085,7 +13768,7 @@ if(row7 != null) {
 						
 									
 	
-		  								forceLooprow8 = true;
+		  								forceLoopCustomerAddress = true;
 	  					
   									
   									  		
@@ -13102,40 +13785,40 @@ if(row7 != null) {
 							
 								
 								else { // G 20 - G 21
-   									forceLooprow8 = true;
+   									forceLoopCustomerAddress = true;
 			           		  	} // G 21
                     		  	
                     		
 
-							row8Struct row8 = null;
+							CustomerAddressStruct CustomerAddress = null;
                     		  	 
 							
 
-								while ((tHash_Lookup_row8 != null && tHash_Lookup_row8.hasNext()) || forceLooprow8) { // G_TM_M_043
+								while ((tHash_Lookup_CustomerAddress != null && tHash_Lookup_CustomerAddress.hasNext()) || forceLoopCustomerAddress) { // G_TM_M_043
 
 								
-									 // CALL close loop of lookup 'row8'
+									 // CALL close loop of lookup 'CustomerAddress'
 									
                     		  	 
 							   
                     		  	 
-	       		  	    	row8Struct fromLookup_row8 = null;
-							row8 = row8Default;
+	       		  	    	CustomerAddressStruct fromLookup_CustomerAddress = null;
+							CustomerAddress = CustomerAddressDefault;
 										 
 							
 								
-								if(!forceLooprow8) { // G 46
+								if(!forceLoopCustomerAddress) { // G 46
 								
 							
 								 
 							
 								
-								fromLookup_row8 = tHash_Lookup_row8.next();
+								fromLookup_CustomerAddress = tHash_Lookup_CustomerAddress.next();
 
 							
 
-							if(fromLookup_row8 != null) {
-								row8 = fromLookup_row8;
+							if(fromLookup_CustomerAddress != null) {
+								CustomerAddress = fromLookup_CustomerAddress;
 							}
 							
 							
@@ -13147,7 +13830,7 @@ if(row7 != null) {
 	                    	
 	                    		} // G 46
 	                    		  	
-								forceLooprow8 = false;
+								forceLoopCustomerAddress = false;
 									 	
 							
 	            	
@@ -13157,33 +13840,33 @@ if(row7 != null) {
 	            
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row9" 
+				// Starting Lookup Table "Address" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow9 = false;
+ 					    boolean forceLoopAddress = false;
        		  	    	
        		  	    	
- 							row9Struct row9ObjectFromLookup = null;
+ 							AddressStruct AddressObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_4) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_4 = false;
 								
-	                        		    	Object exprKeyValue_row9__AddressID = row8.AddressID ;
-	                        		    	if(exprKeyValue_row9__AddressID == null) {
+	                        		    	Object exprKeyValue_Address__AddressID = CustomerAddress.AddressID ;
+	                        		    	if(exprKeyValue_Address__AddressID == null) {
 	                        		    		hasCasePrimitiveKeyWithNull_tMap_4 = true;
 	                        		    	} else {
-                        		    			row9HashKey.AddressID = (int)(Integer) exprKeyValue_row9__AddressID;
+                        		    			AddressHashKey.AddressID = (int)(Integer) exprKeyValue_Address__AddressID;
                         		    		}
                         		    		
 
 								
-		                        	row9HashKey.hashCodeDirty = true;
+		                        	AddressHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
@@ -13194,7 +13877,7 @@ if(row7 != null) {
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row9.lookup( row9HashKey );
+		  							tHash_Lookup_Address.lookup( AddressHashKey );
 
 	  							
 
@@ -13206,7 +13889,7 @@ if(row7 != null) {
 
  								
 								  
-								  if(hasCasePrimitiveKeyWithNull_tMap_4 || !tHash_Lookup_row9.hasNext()) { // G_TM_M_090
+								  if(hasCasePrimitiveKeyWithNull_tMap_4 || !tHash_Lookup_Address.hasNext()) { // G_TM_M_090
 
   								
 		  				
@@ -13214,7 +13897,7 @@ if(row7 != null) {
 						
 									
 	
-		  								forceLooprow9 = true;
+		  								forceLoopAddress = true;
 	  					
   									
   									  		
@@ -13231,40 +13914,40 @@ if(row7 != null) {
 							
 								
 								else { // G 20 - G 21
-   									forceLooprow9 = true;
+   									forceLoopAddress = true;
 			           		  	} // G 21
                     		  	
                     		
 
-							row9Struct row9 = null;
+							AddressStruct Address = null;
                     		  	 
 							
 
-								while ((tHash_Lookup_row9 != null && tHash_Lookup_row9.hasNext()) || forceLooprow9) { // G_TM_M_043
+								while ((tHash_Lookup_Address != null && tHash_Lookup_Address.hasNext()) || forceLoopAddress) { // G_TM_M_043
 
 								
-									 // CALL close loop of lookup 'row9'
+									 // CALL close loop of lookup 'Address'
 									
                     		  	 
 							   
                     		  	 
-	       		  	    	row9Struct fromLookup_row9 = null;
-							row9 = row9Default;
+	       		  	    	AddressStruct fromLookup_Address = null;
+							Address = AddressDefault;
 										 
 							
 								
-								if(!forceLooprow9) { // G 46
+								if(!forceLoopAddress) { // G 46
 								
 							
 								 
 							
 								
-								fromLookup_row9 = tHash_Lookup_row9.next();
+								fromLookup_Address = tHash_Lookup_Address.next();
 
 							
 
-							if(fromLookup_row9 != null) {
-								row9 = fromLookup_row9;
+							if(fromLookup_Address != null) {
+								Address = fromLookup_Address;
 							}
 							
 							
@@ -13276,7 +13959,7 @@ if(row7 != null) {
 	                    	
 	                    		} // G 46
 	                    		  	
-								forceLooprow9 = false;
+								forceLoopAddress = false;
 									 	
 							
 	            	
@@ -13295,24 +13978,24 @@ CustomerMain = null;
 
 
 // # Output table : 'CustomerMain'
-CustomerMain_tmp.CustomerID = row7.CustomerID ;
-CustomerMain_tmp.Title = row7.Title ;
-CustomerMain_tmp.MiddleName = row7.MiddleName ;
-CustomerMain_tmp.FirstName = row7.FirstName ;
-CustomerMain_tmp.LastName = row7.LastName ;
-CustomerMain_tmp.Suffix = row7.Suffix ;
-CustomerMain_tmp.CompanyName = row7.CompanyName ;
-CustomerMain_tmp.SalesPerson = row7.SalesPerson ;
-CustomerMain_tmp.EmailAddress = row7.EmailAddress ;
-CustomerMain_tmp.Phone = row7.Phone ;
-CustomerMain_tmp.AddressType = row8.AddressType ;
-CustomerMain_tmp.AddressLine1 = row9.AddressLine1 ;
-CustomerMain_tmp.AddressLine2 = row9.AddressLine2 ;
-CustomerMain_tmp.City = row9.City ;
-CustomerMain_tmp.StateProvince = row9.StateProvince ;
-CustomerMain_tmp.CountryRegion = row9.CountryRegion ;
-CustomerMain_tmp.PostalCode = row9.PostalCode ;
-CustomerMain_tmp.ModifiedDate_1 = row9.ModifiedDate ;
+CustomerMain_tmp.CustomerID = Customer.CustomerID ;
+CustomerMain_tmp.Title = Customer.Title ;
+CustomerMain_tmp.MiddleName = Customer.MiddleName ;
+CustomerMain_tmp.FirstName = Customer.FirstName ;
+CustomerMain_tmp.LastName = Customer.LastName ;
+CustomerMain_tmp.Suffix = Customer.Suffix ;
+CustomerMain_tmp.CompanyName = Customer.CompanyName ;
+CustomerMain_tmp.SalesPerson = Customer.SalesPerson;
+CustomerMain_tmp.EmailAddress = Customer.EmailAddress ;
+CustomerMain_tmp.Phone = Customer.Phone ;
+CustomerMain_tmp.AddressType = CustomerAddress.AddressType ;
+CustomerMain_tmp.AddressLine1 = Address.AddressLine1 ;
+CustomerMain_tmp.AddressLine2 = Address.AddressLine2 ;
+CustomerMain_tmp.City = Address.City ;
+CustomerMain_tmp.StateProvince = Address.StateProvince ;
+CustomerMain_tmp.CountryRegion = Address.CountryRegion ;
+CustomerMain_tmp.PostalCode = Address.PostalCode ;
+CustomerMain_tmp.ModifiedDate_1 = Address.ModifiedDate ;
 CustomerMain = CustomerMain_tmp;
 // ###############################
 
@@ -13364,6 +14047,97 @@ if(CustomerMain != null) {
 
 	
 	/**
+	 * [tReplace_1 main ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+					if(execStat){
+						runStat.updateStatOnConnection(iterateId,1,1
+						
+							,"CustomerMain"
+						
+						);
+					}
+					
+
+						String searchStr_tReplace_1_1 = "adventure-works\\" + "";
+							CustomerMain.SalesPerson = StringUtils.replaceAllStrictly(CustomerMain.SalesPerson, searchStr_tReplace_1_1, "" + "", false, false);
+                    CustomerMain.SalesPerson = StringUtils.replaceAll(CustomerMain.SalesPerson, "[0-9]", "" + "");                
+	        row1.CustomerID = CustomerMain.CustomerID;
+	        
+	        row1.Title = CustomerMain.Title;
+	        
+	        row1.MiddleName = CustomerMain.MiddleName;
+	        
+	        row1.FirstName = CustomerMain.FirstName;
+	        
+	        row1.LastName = CustomerMain.LastName;
+	        
+	        row1.Suffix = CustomerMain.Suffix;
+	        
+	        row1.CompanyName = CustomerMain.CompanyName;
+	        
+	        row1.SalesPerson = CustomerMain.SalesPerson;
+	        
+	        row1.EmailAddress = CustomerMain.EmailAddress;
+	        
+	        row1.Phone = CustomerMain.Phone;
+	        
+	        row1.AddressType = CustomerMain.AddressType;
+	        
+	        row1.AddressLine1 = CustomerMain.AddressLine1;
+	        
+	        row1.AddressLine2 = CustomerMain.AddressLine2;
+	        
+	        row1.City = CustomerMain.City;
+	        
+	        row1.StateProvince = CustomerMain.StateProvince;
+	        
+	        row1.CountryRegion = CustomerMain.CountryRegion;
+	        
+	        row1.PostalCode = CustomerMain.PostalCode;
+	        
+	        row1.ModifiedDate_1 = CustomerMain.ModifiedDate_1;
+	        
+    nb_line_tReplace_1++;
+
+ 
+
+
+	tos_count_tReplace_1++;
+
+/**
+ * [tReplace_1 main ] stop
+ */
+	
+	/**
+	 * [tReplace_1 process_data_begin ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tReplace_1 process_data_begin ] stop
+ */
+
+	
+	/**
 	 * [tFileOutputDelimited_2 main ] start
 	 */
 
@@ -13377,7 +14151,7 @@ if(CustomerMain != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"CustomerMain"
+							,"row1"
 						
 						);
 					}
@@ -13386,108 +14160,108 @@ if(CustomerMain != null) {
 
                     StringBuilder sb_tFileOutputDelimited_2 = new StringBuilder();
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.CustomerID
+                            row1.CustomerID
                         );
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.Title != null) {
+                            if(row1.Title != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.Title
-                        );
-                            }
-                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.MiddleName != null) {
-                        sb_tFileOutputDelimited_2.append(
-                            CustomerMain.MiddleName
+                            row1.Title
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.FirstName != null) {
+                            if(row1.MiddleName != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.FirstName
+                            row1.MiddleName
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.LastName != null) {
+                            if(row1.FirstName != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.LastName
+                            row1.FirstName
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.Suffix != null) {
+                            if(row1.LastName != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.Suffix
+                            row1.LastName
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.CompanyName != null) {
+                            if(row1.Suffix != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.CompanyName
+                            row1.Suffix
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.SalesPerson != null) {
+                            if(row1.CompanyName != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.SalesPerson
+                            row1.CompanyName
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.EmailAddress != null) {
+                            if(row1.SalesPerson != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.EmailAddress
+                            row1.SalesPerson
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.Phone != null) {
+                            if(row1.EmailAddress != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.Phone
+                            row1.EmailAddress
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.AddressType != null) {
+                            if(row1.Phone != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.AddressType
+                            row1.Phone
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.AddressLine1 != null) {
+                            if(row1.AddressType != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.AddressLine1
+                            row1.AddressType
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.AddressLine2 != null) {
+                            if(row1.AddressLine1 != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.AddressLine2
+                            row1.AddressLine1
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.City != null) {
+                            if(row1.AddressLine2 != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.City
+                            row1.AddressLine2
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.StateProvince != null) {
+                            if(row1.City != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.StateProvince
+                            row1.City
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.CountryRegion != null) {
+                            if(row1.StateProvince != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.CountryRegion
+                            row1.StateProvince
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.PostalCode != null) {
+                            if(row1.CountryRegion != null) {
                         sb_tFileOutputDelimited_2.append(
-                            CustomerMain.PostalCode
+                            row1.CountryRegion
                         );
                             }
                             sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
-                            if(CustomerMain.ModifiedDate_1 != null) {
+                            if(row1.PostalCode != null) {
                         sb_tFileOutputDelimited_2.append(
-                            FormatterUtils.format_Date(CustomerMain.ModifiedDate_1, "dd-MM-yyyy")
+                            row1.PostalCode
+                        );
+                            }
+                            sb_tFileOutputDelimited_2.append(OUT_DELIM_tFileOutputDelimited_2);
+                            if(row1.ModifiedDate_1 != null) {
+                        sb_tFileOutputDelimited_2.append(
+                            FormatterUtils.format_Date(row1.ModifiedDate_1, "dd-MM-yyyy")
                         );
                             }
                     sb_tFileOutputDelimited_2.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_2);
@@ -13550,14 +14324,37 @@ if(CustomerMain != null) {
  * [tFileOutputDelimited_2 process_data_end ] stop
  */
 
+
+
+	
+	/**
+	 * [tReplace_1 process_data_end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tReplace_1 process_data_end ] stop
+ */
+
 } // End of branch "CustomerMain"
 
 
 
 	
-		} // close loop of lookup 'row9' // G_TM_M_043
+		} // close loop of lookup 'Address' // G_TM_M_043
 		
-		} // close loop of lookup 'row8' // G_TM_M_043
+		} // close loop of lookup 'CustomerAddress' // G_TM_M_043
 	
 	
 	/**
@@ -13580,7 +14377,7 @@ if(CustomerMain != null) {
  * [tMap_4 process_data_end ] stop
  */
 
-} // End of branch "row7"
+} // End of branch "Customer"
 
 
 
@@ -13662,18 +14459,18 @@ end_Hash.put("tFileInputDelimited_3", System.currentTimeMillis());
 
 // ###############################
 // # Lookup hashes releasing
-					if(tHash_Lookup_row8 != null) {
-						tHash_Lookup_row8.endGet();
+					if(tHash_Lookup_CustomerAddress != null) {
+						tHash_Lookup_CustomerAddress.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row8" );
+					globalMap.remove( "tHash_Lookup_CustomerAddress" );
 
 					
 					
 				
-					if(tHash_Lookup_row9 != null) {
-						tHash_Lookup_row9.endGet();
+					if(tHash_Lookup_Address != null) {
+						tHash_Lookup_Address.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row9" );
+					globalMap.remove( "tHash_Lookup_Address" );
 
 					
 					
@@ -13685,7 +14482,7 @@ end_Hash.put("tFileInputDelimited_3", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row7");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Customer");
 			  	}
 			  	
  
@@ -13698,6 +14495,37 @@ end_Hash.put("tMap_4", System.currentTimeMillis());
 
 /**
  * [tMap_4 end ] stop
+ */
+
+	
+	/**
+	 * [tReplace_1 end ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+
+
+globalMap.put("tReplace_1_NB_LINE",nb_line_tReplace_1);
+				if(execStat){
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"CustomerMain");
+			  	}
+			  	
+ 
+
+ok_Hash.put("tReplace_1", true);
+end_Hash.put("tReplace_1", System.currentTimeMillis());
+
+
+
+
+/**
+ * [tReplace_1 end ] stop
  */
 
 	
@@ -13731,7 +14559,7 @@ end_Hash.put("tMap_4", System.currentTimeMillis());
 	
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"CustomerMain");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"row1");
 			  	}
 			  	
  
@@ -13745,6 +14573,9 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 /**
  * [tFileOutputDelimited_2 end ] stop
  */
+
+
+
 
 
 
@@ -13771,10 +14602,10 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 			}finally{
 				
 					     			//free memory for "tMap_4"
-					     			globalMap.remove("tHash_Lookup_row8"); 
+					     			globalMap.remove("tHash_Lookup_CustomerAddress"); 
 				     			
 					     			//free memory for "tMap_4"
-					     			globalMap.remove("tHash_Lookup_row9"); 
+					     			globalMap.remove("tHash_Lookup_Address"); 
 				     			
 				try{
 					
@@ -13822,6 +14653,27 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 
 	
 	/**
+	 * [tReplace_1 finally ] start
+	 */
+
+	
+
+	
+	
+	currentComponent="tReplace_1";
+
+	
+
+ 
+
+
+
+/**
+ * [tReplace_1 finally ] stop
+ */
+
+	
+	/**
 	 * [tFileOutputDelimited_2 finally ] start
 	 */
 
@@ -13861,6 +14713,9 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 
 
 
+
+
+
 				}catch(java.lang.Exception e){	
 					//ignore
 				}catch(java.lang.Error error){
@@ -13875,7 +14730,7 @@ end_Hash.put("tFileOutputDelimited_2", System.currentTimeMillis());
 	
 
 
-public static class row8Struct implements routines.system.IPersistableComparableLookupRow<row8Struct> {
+public static class CustomerAddressStruct implements routines.system.IPersistableComparableLookupRow<CustomerAddressStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -13939,7 +14794,7 @@ public static class row8Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row8Struct other = (row8Struct) obj;
+		final CustomerAddressStruct other = (CustomerAddressStruct) obj;
 		
 						if (this.CustomerID != other.CustomerID)
 							return false;
@@ -13948,7 +14803,7 @@ public static class row8Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row8Struct other) {
+	public void copyDataTo(CustomerAddressStruct other) {
 
 		other.CustomerID = this.CustomerID;
 	            other.AddressID = this.AddressID;
@@ -13958,7 +14813,7 @@ public static class row8Struct implements routines.system.IPersistableComparable
 	            
 	}
 
-	public void copyKeysDataTo(row8Struct other) {
+	public void copyKeysDataTo(CustomerAddressStruct other) {
 
 		other.CustomerID = this.CustomerID;
 	            	
@@ -14256,7 +15111,7 @@ public static class row8Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row8Struct other) {
+    public int compareTo(CustomerAddressStruct other) {
 
 		int returnValue = -1;
 		
@@ -14316,46 +15171,46 @@ public void tFileInputDelimited_7Process(final java.util.Map<String, Object> glo
 
 
 
-		row8Struct row8 = new row8Struct();
+		CustomerAddressStruct CustomerAddress = new CustomerAddressStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row8 begin ] start
+	 * [tAdvancedHash_CustomerAddress begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row8", false);
-		start_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_CustomerAddress", false);
+		start_Hash.put("tAdvancedHash_CustomerAddress", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row8";
+	currentComponent="tAdvancedHash_CustomerAddress";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row8");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"CustomerAddress");
 					}
 				
-		int tos_count_tAdvancedHash_row8 = 0;
+		int tos_count_tAdvancedHash_CustomerAddress = 0;
 		
 
-			   		// connection name:row8
-			   		// source node:tFileInputDelimited_7 - inputs:(after_tFileInputDelimited_3) outputs:(row8,row8) | target node:tAdvancedHash_row8 - inputs:(row8) outputs:()
-			   		// linked node: tMap_4 - inputs:(row7,row8,row9) outputs:(CustomerMain)
+			   		// connection name:CustomerAddress
+			   		// source node:tFileInputDelimited_7 - inputs:(after_tFileInputDelimited_3) outputs:(CustomerAddress,CustomerAddress) | target node:tAdvancedHash_CustomerAddress - inputs:(CustomerAddress) outputs:()
+			   		// linked node: tMap_4 - inputs:(Customer,CustomerAddress,Address) outputs:(CustomerMain)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row8 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_CustomerAddress = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row8Struct> tHash_Lookup_row8 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row8Struct>getLookup(matchingModeEnum_row8);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<CustomerAddressStruct> tHash_Lookup_CustomerAddress =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<CustomerAddressStruct>getLookup(matchingModeEnum_CustomerAddress);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row8", tHash_Lookup_row8);
+		   	   	   globalMap.put("tHash_Lookup_CustomerAddress", tHash_Lookup_CustomerAddress);
 		   	   	   
 				
            
@@ -14365,7 +15220,7 @@ public void tFileInputDelimited_7Process(final java.util.Map<String, Object> glo
 
 
 /**
- * [tAdvancedHash_row8 begin ] stop
+ * [tAdvancedHash_CustomerAddress begin ] stop
  */
 
 
@@ -14427,12 +15282,12 @@ globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_7!=null && fid_tFileInputDelimited_7.nextRecord()) {
 						rowstate_tFileInputDelimited_7.reset();
 						
-			    						row8 = null;			
+			    						CustomerAddress = null;			
 									
-			    						row8 = null;			
+			    						CustomerAddress = null;			
 												
 									boolean whetherReject_tFileInputDelimited_7 = false;
-									row8 = new row8Struct();
+									CustomerAddress = new CustomerAddressStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_7 = 0;
@@ -14446,17 +15301,17 @@ globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row8.CustomerID = ParserUtils.parseTo_int(temp);
+    								CustomerAddress.CustomerID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_7) {
 globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",ex_tFileInputDelimited_7.getMessage());
 									rowstate_tFileInputDelimited_7.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"CustomerID", "row8", temp, ex_tFileInputDelimited_7), ex_tFileInputDelimited_7));
+										"CustomerID", "CustomerAddress", temp, ex_tFileInputDelimited_7), ex_tFileInputDelimited_7));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_7.setException(new RuntimeException("Value is empty for column : 'CustomerID' in 'row8' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_7.setException(new RuntimeException("Value is empty for column : 'CustomerID' in 'CustomerAddress' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -14468,29 +15323,29 @@ globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",ex_tFileInputDelimited_7.get
 							
 								try {
 								
-    								row8.AddressID = ParserUtils.parseTo_int(temp);
+    								CustomerAddress.AddressID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_7) {
 globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",ex_tFileInputDelimited_7.getMessage());
 									rowstate_tFileInputDelimited_7.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"AddressID", "row8", temp, ex_tFileInputDelimited_7), ex_tFileInputDelimited_7));
+										"AddressID", "CustomerAddress", temp, ex_tFileInputDelimited_7), ex_tFileInputDelimited_7));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_7.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'row8' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_7.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'CustomerAddress' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_7 = 2;
 					
-							row8.AddressType = fid_tFileInputDelimited_7.get(columnIndexWithD_tFileInputDelimited_7).trim();
+							CustomerAddress.AddressType = fid_tFileInputDelimited_7.get(columnIndexWithD_tFileInputDelimited_7).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_7 = 3;
 					
-							row8.rowguid = fid_tFileInputDelimited_7.get(columnIndexWithD_tFileInputDelimited_7);
+							CustomerAddress.rowguid = fid_tFileInputDelimited_7.get(columnIndexWithD_tFileInputDelimited_7);
 						
 				
 					columnIndexWithD_tFileInputDelimited_7 = 4;
@@ -14500,18 +15355,18 @@ globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",ex_tFileInputDelimited_7.get
 							
 								try {
 								
-    									row8.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									CustomerAddress.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_7) {
 globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",ex_tFileInputDelimited_7.getMessage());
 									rowstate_tFileInputDelimited_7.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row8", temp, ex_tFileInputDelimited_7), ex_tFileInputDelimited_7));
+										"ModifiedDate", "CustomerAddress", temp, ex_tFileInputDelimited_7), ex_tFileInputDelimited_7));
 								}
     							
 						} else {						
 							
 								
-									row8.ModifiedDate = null;
+									CustomerAddress.ModifiedDate = null;
 								
 							
 						}
@@ -14530,7 +15385,7 @@ globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_7 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row8 = null;
+			                					CustomerAddress = null;
 			                				
 										
 			    					}
@@ -14584,27 +15439,27 @@ globalMap.put("tFileInputDelimited_7_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_7 process_data_begin ] stop
  */
-// Start of branch "row8"
-if(row8 != null) { 
+// Start of branch "CustomerAddress"
+if(CustomerAddress != null) { 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row8 main ] start
+	 * [tAdvancedHash_CustomerAddress main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row8";
+	currentComponent="tAdvancedHash_CustomerAddress";
 
 	
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row8"
+							,"CustomerAddress"
 						
 						);
 					}
@@ -14614,20 +15469,20 @@ if(row8 != null) {
 			   
 			   
 
-					row8Struct row8_HashRow = new row8Struct();
+					CustomerAddressStruct CustomerAddress_HashRow = new CustomerAddressStruct();
 		   	   	   
 				
-				row8_HashRow.CustomerID = row8.CustomerID;
+				CustomerAddress_HashRow.CustomerID = CustomerAddress.CustomerID;
 				
-				row8_HashRow.AddressID = row8.AddressID;
+				CustomerAddress_HashRow.AddressID = CustomerAddress.AddressID;
 				
-				row8_HashRow.AddressType = row8.AddressType;
+				CustomerAddress_HashRow.AddressType = CustomerAddress.AddressType;
 				
-				row8_HashRow.rowguid = row8.rowguid;
+				CustomerAddress_HashRow.rowguid = CustomerAddress.rowguid;
 				
-				row8_HashRow.ModifiedDate = row8.ModifiedDate;
+				CustomerAddress_HashRow.ModifiedDate = CustomerAddress.ModifiedDate;
 				
-			tHash_Lookup_row8.put(row8_HashRow);
+			tHash_Lookup_CustomerAddress.put(CustomerAddress_HashRow);
 			
             
 
@@ -14637,21 +15492,21 @@ if(row8 != null) {
  
 
 
-	tos_count_tAdvancedHash_row8++;
+	tos_count_tAdvancedHash_CustomerAddress++;
 
 /**
- * [tAdvancedHash_row8 main ] stop
+ * [tAdvancedHash_CustomerAddress main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row8 process_data_begin ] start
+	 * [tAdvancedHash_CustomerAddress process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row8";
+	currentComponent="tAdvancedHash_CustomerAddress";
 
 	
 
@@ -14660,18 +15515,18 @@ if(row8 != null) {
 
 
 /**
- * [tAdvancedHash_row8 process_data_begin ] stop
+ * [tAdvancedHash_CustomerAddress process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row8 process_data_end ] start
+	 * [tAdvancedHash_CustomerAddress process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row8";
+	currentComponent="tAdvancedHash_CustomerAddress";
 
 	
 
@@ -14680,10 +15535,10 @@ if(row8 != null) {
 
 
 /**
- * [tAdvancedHash_row8 process_data_end ] stop
+ * [tAdvancedHash_CustomerAddress process_data_end ] stop
  */
 
-} // End of branch "row8"
+} // End of branch "CustomerAddress"
 
 
 
@@ -14751,33 +15606,33 @@ end_Hash.put("tFileInputDelimited_7", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row8 end ] start
+	 * [tAdvancedHash_CustomerAddress end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row8";
+	currentComponent="tAdvancedHash_CustomerAddress";
 
 	
 
-tHash_Lookup_row8.endPut();
+tHash_Lookup_CustomerAddress.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row8");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"CustomerAddress");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row8", true);
-end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_CustomerAddress", true);
+end_Hash.put("tAdvancedHash_CustomerAddress", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row8 end ] stop
+ * [tAdvancedHash_CustomerAddress end ] stop
  */
 
 
@@ -14826,14 +15681,14 @@ end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row8 finally ] start
+	 * [tAdvancedHash_CustomerAddress finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row8";
+	currentComponent="tAdvancedHash_CustomerAddress";
 
 	
 
@@ -14842,7 +15697,7 @@ end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row8 finally ] stop
+ * [tAdvancedHash_CustomerAddress finally ] stop
  */
 
 
@@ -14861,7 +15716,7 @@ end_Hash.put("tAdvancedHash_row8", System.currentTimeMillis());
 	
 
 
-public static class row9Struct implements routines.system.IPersistableComparableLookupRow<row9Struct> {
+public static class AddressStruct implements routines.system.IPersistableComparableLookupRow<AddressStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -14949,7 +15804,7 @@ public static class row9Struct implements routines.system.IPersistableComparable
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row9Struct other = (row9Struct) obj;
+		final AddressStruct other = (AddressStruct) obj;
 		
 						if (this.AddressID != other.AddressID)
 							return false;
@@ -14958,7 +15813,7 @@ public static class row9Struct implements routines.system.IPersistableComparable
 		return true;
     }
 
-	public void copyDataTo(row9Struct other) {
+	public void copyDataTo(AddressStruct other) {
 
 		other.AddressID = this.AddressID;
 	            other.AddressLine1 = this.AddressLine1;
@@ -14972,7 +15827,7 @@ public static class row9Struct implements routines.system.IPersistableComparable
 	            
 	}
 
-	public void copyKeysDataTo(row9Struct other) {
+	public void copyKeysDataTo(AddressStruct other) {
 
 		other.AddressID = this.AddressID;
 	            	
@@ -15306,7 +16161,7 @@ public static class row9Struct implements routines.system.IPersistableComparable
     /**
      * Compare keys
      */
-    public int compareTo(row9Struct other) {
+    public int compareTo(AddressStruct other) {
 
 		int returnValue = -1;
 		
@@ -15366,46 +16221,46 @@ public void tFileInputDelimited_9Process(final java.util.Map<String, Object> glo
 
 
 
-		row9Struct row9 = new row9Struct();
+		AddressStruct Address = new AddressStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row9 begin ] start
+	 * [tAdvancedHash_Address begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row9", false);
-		start_Hash.put("tAdvancedHash_row9", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_Address", false);
+		start_Hash.put("tAdvancedHash_Address", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row9";
+	currentComponent="tAdvancedHash_Address";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row9");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"Address");
 					}
 				
-		int tos_count_tAdvancedHash_row9 = 0;
+		int tos_count_tAdvancedHash_Address = 0;
 		
 
-			   		// connection name:row9
-			   		// source node:tFileInputDelimited_9 - inputs:(after_tFileInputDelimited_3) outputs:(row9,row9) | target node:tAdvancedHash_row9 - inputs:(row9) outputs:()
-			   		// linked node: tMap_4 - inputs:(row7,row8,row9) outputs:(CustomerMain)
+			   		// connection name:Address
+			   		// source node:tFileInputDelimited_9 - inputs:(after_tFileInputDelimited_3) outputs:(Address,Address) | target node:tAdvancedHash_Address - inputs:(Address) outputs:()
+			   		// linked node: tMap_4 - inputs:(Customer,CustomerAddress,Address) outputs:(CustomerMain)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row9 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_Address = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row9Struct> tHash_Lookup_row9 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row9Struct>getLookup(matchingModeEnum_row9);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<AddressStruct> tHash_Lookup_Address =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<AddressStruct>getLookup(matchingModeEnum_Address);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row9", tHash_Lookup_row9);
+		   	   	   globalMap.put("tHash_Lookup_Address", tHash_Lookup_Address);
 		   	   	   
 				
            
@@ -15415,7 +16270,7 @@ public void tFileInputDelimited_9Process(final java.util.Map<String, Object> glo
 
 
 /**
- * [tAdvancedHash_row9 begin ] stop
+ * [tAdvancedHash_Address begin ] stop
  */
 
 
@@ -15477,12 +16332,12 @@ globalMap.put("tFileInputDelimited_9_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_9!=null && fid_tFileInputDelimited_9.nextRecord()) {
 						rowstate_tFileInputDelimited_9.reset();
 						
-			    						row9 = null;			
+			    						Address = null;			
 									
-			    						row9 = null;			
+			    						Address = null;			
 												
 									boolean whetherReject_tFileInputDelimited_9 = false;
-									row9 = new row9Struct();
+									Address = new AddressStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_9 = 0;
@@ -15496,54 +16351,54 @@ globalMap.put("tFileInputDelimited_9_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row9.AddressID = ParserUtils.parseTo_int(temp);
+    								Address.AddressID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_9) {
 globalMap.put("tFileInputDelimited_9_ERROR_MESSAGE",ex_tFileInputDelimited_9.getMessage());
 									rowstate_tFileInputDelimited_9.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"AddressID", "row9", temp, ex_tFileInputDelimited_9), ex_tFileInputDelimited_9));
+										"AddressID", "Address", temp, ex_tFileInputDelimited_9), ex_tFileInputDelimited_9));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_9.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'row9' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_9.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'Address' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_9 = 1;
 					
-							row9.AddressLine1 = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
+							Address.AddressLine1 = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_9 = 2;
 					
-							row9.AddressLine2 = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
+							Address.AddressLine2 = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_9 = 3;
 					
-							row9.City = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
+							Address.City = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_9 = 4;
 					
-							row9.StateProvince = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
+							Address.StateProvince = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_9 = 5;
 					
-							row9.CountryRegion = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
+							Address.CountryRegion = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_9 = 6;
 					
-							row9.PostalCode = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
+							Address.PostalCode = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9).trim();
 						
 				
 					columnIndexWithD_tFileInputDelimited_9 = 7;
 					
-							row9.rowguid = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9);
+							Address.rowguid = fid_tFileInputDelimited_9.get(columnIndexWithD_tFileInputDelimited_9);
 						
 				
 					columnIndexWithD_tFileInputDelimited_9 = 8;
@@ -15553,18 +16408,18 @@ globalMap.put("tFileInputDelimited_9_ERROR_MESSAGE",ex_tFileInputDelimited_9.get
 							
 								try {
 								
-    									row9.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									Address.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_9) {
 globalMap.put("tFileInputDelimited_9_ERROR_MESSAGE",ex_tFileInputDelimited_9.getMessage());
 									rowstate_tFileInputDelimited_9.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row9", temp, ex_tFileInputDelimited_9), ex_tFileInputDelimited_9));
+										"ModifiedDate", "Address", temp, ex_tFileInputDelimited_9), ex_tFileInputDelimited_9));
 								}
     							
 						} else {						
 							
 								
-									row9.ModifiedDate = null;
+									Address.ModifiedDate = null;
 								
 							
 						}
@@ -15583,7 +16438,7 @@ globalMap.put("tFileInputDelimited_9_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_9 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row9 = null;
+			                					Address = null;
 			                				
 										
 			    					}
@@ -15637,27 +16492,27 @@ globalMap.put("tFileInputDelimited_9_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_9 process_data_begin ] stop
  */
-// Start of branch "row9"
-if(row9 != null) { 
+// Start of branch "Address"
+if(Address != null) { 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row9 main ] start
+	 * [tAdvancedHash_Address main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row9";
+	currentComponent="tAdvancedHash_Address";
 
 	
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row9"
+							,"Address"
 						
 						);
 					}
@@ -15667,28 +16522,28 @@ if(row9 != null) {
 			   
 			   
 
-					row9Struct row9_HashRow = new row9Struct();
+					AddressStruct Address_HashRow = new AddressStruct();
 		   	   	   
 				
-				row9_HashRow.AddressID = row9.AddressID;
+				Address_HashRow.AddressID = Address.AddressID;
 				
-				row9_HashRow.AddressLine1 = row9.AddressLine1;
+				Address_HashRow.AddressLine1 = Address.AddressLine1;
 				
-				row9_HashRow.AddressLine2 = row9.AddressLine2;
+				Address_HashRow.AddressLine2 = Address.AddressLine2;
 				
-				row9_HashRow.City = row9.City;
+				Address_HashRow.City = Address.City;
 				
-				row9_HashRow.StateProvince = row9.StateProvince;
+				Address_HashRow.StateProvince = Address.StateProvince;
 				
-				row9_HashRow.CountryRegion = row9.CountryRegion;
+				Address_HashRow.CountryRegion = Address.CountryRegion;
 				
-				row9_HashRow.PostalCode = row9.PostalCode;
+				Address_HashRow.PostalCode = Address.PostalCode;
 				
-				row9_HashRow.rowguid = row9.rowguid;
+				Address_HashRow.rowguid = Address.rowguid;
 				
-				row9_HashRow.ModifiedDate = row9.ModifiedDate;
+				Address_HashRow.ModifiedDate = Address.ModifiedDate;
 				
-			tHash_Lookup_row9.put(row9_HashRow);
+			tHash_Lookup_Address.put(Address_HashRow);
 			
             
 
@@ -15698,21 +16553,21 @@ if(row9 != null) {
  
 
 
-	tos_count_tAdvancedHash_row9++;
+	tos_count_tAdvancedHash_Address++;
 
 /**
- * [tAdvancedHash_row9 main ] stop
+ * [tAdvancedHash_Address main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row9 process_data_begin ] start
+	 * [tAdvancedHash_Address process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row9";
+	currentComponent="tAdvancedHash_Address";
 
 	
 
@@ -15721,18 +16576,18 @@ if(row9 != null) {
 
 
 /**
- * [tAdvancedHash_row9 process_data_begin ] stop
+ * [tAdvancedHash_Address process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row9 process_data_end ] start
+	 * [tAdvancedHash_Address process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row9";
+	currentComponent="tAdvancedHash_Address";
 
 	
 
@@ -15741,10 +16596,10 @@ if(row9 != null) {
 
 
 /**
- * [tAdvancedHash_row9 process_data_end ] stop
+ * [tAdvancedHash_Address process_data_end ] stop
  */
 
-} // End of branch "row9"
+} // End of branch "Address"
 
 
 
@@ -15812,33 +16667,33 @@ end_Hash.put("tFileInputDelimited_9", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row9 end ] start
+	 * [tAdvancedHash_Address end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row9";
+	currentComponent="tAdvancedHash_Address";
 
 	
 
-tHash_Lookup_row9.endPut();
+tHash_Lookup_Address.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row9");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"Address");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row9", true);
-end_Hash.put("tAdvancedHash_row9", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_Address", true);
+end_Hash.put("tAdvancedHash_Address", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row9 end ] stop
+ * [tAdvancedHash_Address end ] stop
  */
 
 
@@ -15887,14 +16742,14 @@ end_Hash.put("tAdvancedHash_row9", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row9 finally ] start
+	 * [tAdvancedHash_Address finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row9";
+	currentComponent="tAdvancedHash_Address";
 
 	
 
@@ -15903,7 +16758,7 @@ end_Hash.put("tAdvancedHash_row9", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row9 finally ] stop
+ * [tAdvancedHash_Address finally ] stop
  */
 
 
@@ -16025,27 +16880,27 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					return this.CreditCardApprovalCode;
 				}
 				
-			    public Object SubTotal;
+			    public float SubTotal;
 
-				public Object getSubTotal () {
+				public float getSubTotal () {
 					return this.SubTotal;
 				}
 				
-			    public Object TaxAmt;
+			    public float TaxAmt;
 
-				public Object getTaxAmt () {
+				public float getTaxAmt () {
 					return this.TaxAmt;
 				}
 				
-			    public Object Freight;
+			    public float Freight;
 
-				public Object getFreight () {
+				public float getFreight () {
 					return this.Freight;
 				}
 				
-			    public Object TotalDue;
+			    public float TotalDue;
 
-				public Object getTotalDue () {
+				public float getTotalDue () {
 					return this.TotalDue;
 				}
 				
@@ -16079,21 +16934,21 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					return this.ProductID;
 				}
 				
-			    public Object UnitPrice;
+			    public float UnitPrice;
 
-				public Object getUnitPrice () {
+				public float getUnitPrice () {
 					return this.UnitPrice;
 				}
 				
-			    public Object UnitPriceDiscount;
+			    public float UnitPriceDiscount;
 
-				public Object getUnitPriceDiscount () {
+				public float getUnitPriceDiscount () {
 					return this.UnitPriceDiscount;
 				}
 				
-			    public BigDecimal LineTotal;
+			    public float LineTotal;
 
-				public BigDecimal getLineTotal () {
+				public float getLineTotal () {
 					return this.LineTotal;
 				}
 				
@@ -16355,13 +17210,13 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -16373,18 +17228,15 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					
 			        this.ProductID = dis.readInt();
 					
-						this.UnitPrice = (Object) dis.readObject();
+			        this.UnitPrice = dis.readFloat();
 					
-						this.UnitPriceDiscount = (Object) dis.readObject();
+			        this.UnitPriceDiscount = dis.readFloat();
 					
-						this.LineTotal = (BigDecimal) dis.readObject();
+			        this.LineTotal = dis.readFloat();
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -16434,13 +17286,13 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -16452,18 +17304,15 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 					
 			        this.ProductID = dis.readInt();
 					
-						this.UnitPrice = (Object) dis.readObject();
+			        this.UnitPrice = dis.readFloat();
 					
-						this.UnitPriceDiscount = (Object) dis.readObject();
+			        this.UnitPriceDiscount = dis.readFloat();
 					
-						this.LineTotal = (BigDecimal) dis.readObject();
+			        this.LineTotal = dis.readFloat();
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
 
-		
-			} catch(ClassNotFoundException eCNFE) {
-				 throw new RuntimeException(eCNFE);
 		
 
         }
@@ -16539,21 +17388,21 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -16575,17 +17424,17 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 				
 		            	dos.writeInt(this.ProductID);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.UnitPrice);
+		            	dos.writeFloat(this.UnitPrice);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.UnitPriceDiscount);
+		            	dos.writeFloat(this.UnitPriceDiscount);
 					
-					// BigDecimal
+					// float
 				
-       			    	dos.writeObject(this.LineTotal);
+		            	dos.writeFloat(this.LineTotal);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -16658,21 +17507,21 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -16694,17 +17543,17 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 				
 		            	dos.writeInt(this.ProductID);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.UnitPrice);
+		            	dos.writeFloat(this.UnitPrice);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.UnitPriceDiscount);
+		            	dos.writeFloat(this.UnitPriceDiscount);
 					
-					// BigDecimal
+					// float
 				
-       			    	dos.writeObject(this.LineTotal);
+		            	dos.writeFloat(this.LineTotal);
 					
         	} catch (IOException e) {
 	            throw new RuntimeException(e);
@@ -16798,7 +17647,7 @@ public static class SalesOrderMainStruct implements routines.system.IPersistable
 
 }
 
-public static class row10Struct implements routines.system.IPersistableRow<row10Struct> {
+public static class SalesOrderHeaderStruct implements routines.system.IPersistableRow<SalesOrderHeaderStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 
@@ -16893,27 +17742,27 @@ public static class row10Struct implements routines.system.IPersistableRow<row10
 					return this.CreditCardApprovalCode;
 				}
 				
-			    public Object SubTotal;
+			    public float SubTotal;
 
-				public Object getSubTotal () {
+				public float getSubTotal () {
 					return this.SubTotal;
 				}
 				
-			    public Object TaxAmt;
+			    public float TaxAmt;
 
-				public Object getTaxAmt () {
+				public float getTaxAmt () {
 					return this.TaxAmt;
 				}
 				
-			    public Object Freight;
+			    public float Freight;
 
-				public Object getFreight () {
+				public float getFreight () {
 					return this.Freight;
 				}
 				
-			    public Object TotalDue;
+			    public float TotalDue;
 
-				public Object getTotalDue () {
+				public float getTotalDue () {
 					return this.TotalDue;
 				}
 				
@@ -17119,13 +17968,13 @@ public static class row10Struct implements routines.system.IPersistableRow<row10
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -17188,13 +18037,13 @@ public static class row10Struct implements routines.system.IPersistableRow<row10
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -17283,21 +18132,21 @@ public static class row10Struct implements routines.system.IPersistableRow<row10
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -17382,21 +18231,21 @@ public static class row10Struct implements routines.system.IPersistableRow<row10
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -17453,7 +18302,7 @@ public static class row10Struct implements routines.system.IPersistableRow<row10
     /**
      * Compare keys
      */
-    public int compareTo(row10Struct other) {
+    public int compareTo(SalesOrderHeaderStruct other) {
 
 		int returnValue = -1;
 		
@@ -17588,27 +18437,27 @@ public static class after_tFileInputDelimited_10Struct implements routines.syste
 					return this.CreditCardApprovalCode;
 				}
 				
-			    public Object SubTotal;
+			    public float SubTotal;
 
-				public Object getSubTotal () {
+				public float getSubTotal () {
 					return this.SubTotal;
 				}
 				
-			    public Object TaxAmt;
+			    public float TaxAmt;
 
-				public Object getTaxAmt () {
+				public float getTaxAmt () {
 					return this.TaxAmt;
 				}
 				
-			    public Object Freight;
+			    public float Freight;
 
-				public Object getFreight () {
+				public float getFreight () {
 					return this.Freight;
 				}
 				
-			    public Object TotalDue;
+			    public float TotalDue;
 
-				public Object getTotalDue () {
+				public float getTotalDue () {
 					return this.TotalDue;
 				}
 				
@@ -17877,13 +18726,13 @@ public static class after_tFileInputDelimited_10Struct implements routines.syste
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -17946,13 +18795,13 @@ public static class after_tFileInputDelimited_10Struct implements routines.syste
 					
 					this.CreditCardApprovalCode = readString(dis);
 					
-						this.SubTotal = (Object) dis.readObject();
+			        this.SubTotal = dis.readFloat();
 					
-						this.TaxAmt = (Object) dis.readObject();
+			        this.TaxAmt = dis.readFloat();
 					
-						this.Freight = (Object) dis.readObject();
+			        this.Freight = dis.readFloat();
 					
-						this.TotalDue = (Object) dis.readObject();
+			        this.TotalDue = dis.readFloat();
 					
 					this.Comment = readString(dis);
 					
@@ -18041,21 +18890,21 @@ public static class after_tFileInputDelimited_10Struct implements routines.syste
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -18140,21 +18989,21 @@ public static class after_tFileInputDelimited_10Struct implements routines.syste
 				
 						writeString(this.CreditCardApprovalCode,dos);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.SubTotal);
+		            	dos.writeFloat(this.SubTotal);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TaxAmt);
+		            	dos.writeFloat(this.TaxAmt);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.Freight);
+		            	dos.writeFloat(this.Freight);
 					
-					// Object
+					// float
 				
-       			    	dos.writeObject(this.TotalDue);
+		            	dos.writeFloat(this.TotalDue);
 					
 					// String
 				
@@ -18272,7 +19121,7 @@ public void tFileInputDelimited_10Process(final java.util.Map<String, Object> gl
 
 		tFileInputDelimited_11Process(globalMap);
 
-		row10Struct row10 = new row10Struct();
+		SalesOrderHeaderStruct SalesOrderHeader = new SalesOrderHeaderStruct();
 SalesOrderMainStruct SalesOrderMain = new SalesOrderMainStruct();
 
 
@@ -18443,7 +19292,7 @@ resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row10");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"SalesOrderHeader");
 					}
 				
 		int tos_count_tMap_5 = 0;
@@ -18455,15 +19304,15 @@ resourceMap.put("nb_line_tFileOutputDelimited_3", nb_line_tFileOutputDelimited_3
 // ###############################
 // # Lookup's keys initialization
 	
-		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct> tHash_Lookup_row11 = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct>) 
-				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct>) 
-					globalMap.get( "tHash_Lookup_row11" ))
+		org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<SalesOrderDetailStruct> tHash_Lookup_SalesOrderDetail = (org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<SalesOrderDetailStruct>) 
+				((org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<SalesOrderDetailStruct>) 
+					globalMap.get( "tHash_Lookup_SalesOrderDetail" ))
 					;					
 					
 	
 
-row11Struct row11HashKey = new row11Struct();
-row11Struct row11Default = new row11Struct();
+SalesOrderDetailStruct SalesOrderDetailHashKey = new SalesOrderDetailStruct();
+SalesOrderDetailStruct SalesOrderDetailDefault = new SalesOrderDetailStruct();
 // ###############################        
 
 // ###############################
@@ -18560,10 +19409,10 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_10!=null && fid_tFileInputDelimited_10.nextRecord()) {
 						rowstate_tFileInputDelimited_10.reset();
 						
-			    						row10 = null;			
+			    						SalesOrderHeader = null;			
 												
 									boolean whetherReject_tFileInputDelimited_10 = false;
-									row10 = new row10Struct();
+									SalesOrderHeader = new SalesOrderHeaderStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_10 = 0;
@@ -18577,17 +19426,17 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row10.SalesOrderID = ParserUtils.parseTo_int(temp);
+    								SalesOrderHeader.SalesOrderID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"SalesOrderID", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"SalesOrderID", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'SalesOrderID' in 'row10' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'SalesOrderID' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -18599,17 +19448,17 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    								row10.RevisionNumber = ParserUtils.parseTo_short(temp);
+    								SalesOrderHeader.RevisionNumber = ParserUtils.parseTo_short(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"RevisionNumber", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"RevisionNumber", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'RevisionNumber' in 'row10' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'RevisionNumber' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -18621,18 +19470,18 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    									row10.OrderDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									SalesOrderHeader.OrderDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"OrderDate", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"OrderDate", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
 								
-									row10.OrderDate = null;
+									SalesOrderHeader.OrderDate = null;
 								
 							
 						}
@@ -18645,18 +19494,18 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    									row10.DueDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									SalesOrderHeader.DueDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"DueDate", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"DueDate", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
 								
-									row10.DueDate = null;
+									SalesOrderHeader.DueDate = null;
 								
 							
 						}
@@ -18669,18 +19518,18 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    									row10.ShipDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									SalesOrderHeader.ShipDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ShipDate", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"ShipDate", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
 								
-									row10.ShipDate = null;
+									SalesOrderHeader.ShipDate = null;
 								
 							
 						}
@@ -18693,39 +19542,39 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    								row10.Status = ParserUtils.parseTo_short(temp);
+    								SalesOrderHeader.Status = ParserUtils.parseTo_short(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"Status", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"Status", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'Status' in 'row10' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'Status' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_10 = 6;
 					
-							row10.OnlineOrderFlag = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.OnlineOrderFlag = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 7;
 					
-							row10.SalesOrderNumber = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.SalesOrderNumber = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 8;
 					
-							row10.PurchaseOrderNumber = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.PurchaseOrderNumber = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 9;
 					
-							row10.AccountNumber = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.AccountNumber = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 10;
@@ -18735,17 +19584,17 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    								row10.CustomerID = ParserUtils.parseTo_int(temp);
+    								SalesOrderHeader.CustomerID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"CustomerID", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"CustomerID", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'CustomerID' in 'row10' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'CustomerID' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -18757,18 +19606,18 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    								row10.ShipToAddressID = ParserUtils.parseTo_Integer(temp);
+    								SalesOrderHeader.ShipToAddressID = ParserUtils.parseTo_Integer(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ShipToAddressID", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"ShipToAddressID", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
 								
-									row10.ShipToAddressID = null;
+									SalesOrderHeader.ShipToAddressID = null;
 								
 							
 						}
@@ -18781,18 +19630,18 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    								row10.BillToAddressID = ParserUtils.parseTo_Integer(temp);
+    								SalesOrderHeader.BillToAddressID = ParserUtils.parseTo_Integer(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"BillToAddressID", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"BillToAddressID", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
 								
-									row10.BillToAddressID = null;
+									SalesOrderHeader.BillToAddressID = null;
 								
 							
 						}
@@ -18800,42 +19649,110 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 				
 					columnIndexWithD_tFileInputDelimited_10 = 13;
 					
-							row10.ShipMethod = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.ShipMethod = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 14;
 					
-							row10.CreditCardApprovalCode = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.CreditCardApprovalCode = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 15;
 					
-							row10.SubTotal = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
-						
+						temp = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    								SalesOrderHeader.SubTotal = ParserUtils.parseTo_float(temp);
+    							
+    							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
+globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
+									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"SubTotal", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+								}
+    							
+						} else {						
+							
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'SubTotal' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
+							
+						}
+					
 				
 					columnIndexWithD_tFileInputDelimited_10 = 16;
 					
-							row10.TaxAmt = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
-						
+						temp = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    								SalesOrderHeader.TaxAmt = ParserUtils.parseTo_float(temp);
+    							
+    							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
+globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
+									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"TaxAmt", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+								}
+    							
+						} else {						
+							
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'TaxAmt' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
+							
+						}
+					
 				
 					columnIndexWithD_tFileInputDelimited_10 = 17;
 					
-							row10.Freight = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
-						
+						temp = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    								SalesOrderHeader.Freight = ParserUtils.parseTo_float(temp);
+    							
+    							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
+globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
+									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"Freight", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+								}
+    							
+						} else {						
+							
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'Freight' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
+							
+						}
+					
 				
 					columnIndexWithD_tFileInputDelimited_10 = 18;
 					
-							row10.TotalDue = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
-						
+						temp = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    								SalesOrderHeader.TotalDue = ParserUtils.parseTo_float(temp);
+    							
+    							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
+globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
+									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"TotalDue", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+								}
+    							
+						} else {						
+							
+								rowstate_tFileInputDelimited_10.setException(new RuntimeException("Value is empty for column : 'TotalDue' in 'SalesOrderHeader' connection, value is invalid or this column should be nullable or have a default value."));
+							
+						}
+					
 				
 					columnIndexWithD_tFileInputDelimited_10 = 19;
 					
-							row10.Comment = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.Comment = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 20;
 					
-							row10.rowguid = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
+							SalesOrderHeader.rowguid = fid_tFileInputDelimited_10.get(columnIndexWithD_tFileInputDelimited_10);
 						
 				
 					columnIndexWithD_tFileInputDelimited_10 = 21;
@@ -18845,18 +19762,18 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.g
 							
 								try {
 								
-    									row10.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									SalesOrderHeader.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_10) {
 globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",ex_tFileInputDelimited_10.getMessage());
 									rowstate_tFileInputDelimited_10.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row10", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
+										"ModifiedDate", "SalesOrderHeader", temp, ex_tFileInputDelimited_10), ex_tFileInputDelimited_10));
 								}
     							
 						} else {						
 							
 								
-									row10.ModifiedDate = null;
+									SalesOrderHeader.ModifiedDate = null;
 								
 							
 						}
@@ -18875,7 +19792,7 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_10 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row10 = null;
+			                					SalesOrderHeader = null;
 			                				
 										
 			    					}
@@ -18929,8 +19846,8 @@ globalMap.put("tFileInputDelimited_10_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_10 process_data_begin ] stop
  */
-// Start of branch "row10"
-if(row10 != null) { 
+// Start of branch "SalesOrderHeader"
+if(SalesOrderHeader != null) { 
 
 
 
@@ -18949,7 +19866,7 @@ if(row10 != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row10"
+							,"SalesOrderHeader"
 						
 						);
 					}
@@ -18968,33 +19885,33 @@ if(row10 != null) {
 		
 
 				///////////////////////////////////////////////
-				// Starting Lookup Table "row11" 
+				// Starting Lookup Table "SalesOrderDetail" 
 				///////////////////////////////////////////////
 
 
 				
 				
                             
- 					    boolean forceLooprow11 = false;
+ 					    boolean forceLoopSalesOrderDetail = false;
        		  	    	
        		  	    	
- 							row11Struct row11ObjectFromLookup = null;
+ 							SalesOrderDetailStruct SalesOrderDetailObjectFromLookup = null;
                           
 		           		  	if(!rejectedInnerJoin_tMap_5) { // G_TM_M_020
 
 								
 								hasCasePrimitiveKeyWithNull_tMap_5 = false;
 								
-	                        		    	Object exprKeyValue_row11__SalesOrderID = row10.SalesOrderID ;
-	                        		    	if(exprKeyValue_row11__SalesOrderID == null) {
+	                        		    	Object exprKeyValue_SalesOrderDetail__SalesOrderID = SalesOrderHeader.SalesOrderID ;
+	                        		    	if(exprKeyValue_SalesOrderDetail__SalesOrderID == null) {
 	                        		    		hasCasePrimitiveKeyWithNull_tMap_5 = true;
 	                        		    	} else {
-                        		    			row11HashKey.SalesOrderID = (int)(Integer) exprKeyValue_row11__SalesOrderID;
+                        		    			SalesOrderDetailHashKey.SalesOrderID = (int)(Integer) exprKeyValue_SalesOrderDetail__SalesOrderID;
                         		    		}
                         		    		
 
 								
-		                        	row11HashKey.hashCodeDirty = true;
+		                        	SalesOrderDetailHashKey.hashCodeDirty = true;
                         		
 	  					
 	  							
@@ -19005,7 +19922,7 @@ if(row10 != null) {
 			  					
 			  					
 	  					
-		  							tHash_Lookup_row11.lookup( row11HashKey );
+		  							tHash_Lookup_SalesOrderDetail.lookup( SalesOrderDetailHashKey );
 
 	  							
 
@@ -19017,7 +19934,7 @@ if(row10 != null) {
 
  								
 								  
-								  if(hasCasePrimitiveKeyWithNull_tMap_5 || !tHash_Lookup_row11.hasNext()) { // G_TM_M_090
+								  if(hasCasePrimitiveKeyWithNull_tMap_5 || !tHash_Lookup_SalesOrderDetail.hasNext()) { // G_TM_M_090
 
   								
 		  				
@@ -19025,7 +19942,7 @@ if(row10 != null) {
 						
 									
 	
-		  								forceLooprow11 = true;
+		  								forceLoopSalesOrderDetail = true;
 	  					
   									
   									  		
@@ -19042,40 +19959,40 @@ if(row10 != null) {
 							
 								
 								else { // G 20 - G 21
-   									forceLooprow11 = true;
+   									forceLoopSalesOrderDetail = true;
 			           		  	} // G 21
                     		  	
                     		
 
-							row11Struct row11 = null;
+							SalesOrderDetailStruct SalesOrderDetail = null;
                     		  	 
 							
 
-								while ((tHash_Lookup_row11 != null && tHash_Lookup_row11.hasNext()) || forceLooprow11) { // G_TM_M_043
+								while ((tHash_Lookup_SalesOrderDetail != null && tHash_Lookup_SalesOrderDetail.hasNext()) || forceLoopSalesOrderDetail) { // G_TM_M_043
 
 								
-									 // CALL close loop of lookup 'row11'
+									 // CALL close loop of lookup 'SalesOrderDetail'
 									
                     		  	 
 							   
                     		  	 
-	       		  	    	row11Struct fromLookup_row11 = null;
-							row11 = row11Default;
+	       		  	    	SalesOrderDetailStruct fromLookup_SalesOrderDetail = null;
+							SalesOrderDetail = SalesOrderDetailDefault;
 										 
 							
 								
-								if(!forceLooprow11) { // G 46
+								if(!forceLoopSalesOrderDetail) { // G 46
 								
 							
 								 
 							
 								
-								fromLookup_row11 = tHash_Lookup_row11.next();
+								fromLookup_SalesOrderDetail = tHash_Lookup_SalesOrderDetail.next();
 
 							
 
-							if(fromLookup_row11 != null) {
-								row11 = fromLookup_row11;
+							if(fromLookup_SalesOrderDetail != null) {
+								SalesOrderDetail = fromLookup_SalesOrderDetail;
 							}
 							
 							
@@ -19087,7 +20004,7 @@ if(row10 != null) {
 	                    	
 	                    		} // G 46
 	                    		  	
-								forceLooprow11 = false;
+								forceLoopSalesOrderDetail = false;
 									 	
 							
 	            	
@@ -19106,33 +20023,33 @@ SalesOrderMain = null;
 
 
 // # Output table : 'SalesOrderMain'
-SalesOrderMain_tmp.SalesOrderID = row10.SalesOrderID ;
-SalesOrderMain_tmp.RevisionNumber = row10.RevisionNumber ;
-SalesOrderMain_tmp.OrderDate = row10.OrderDate ;
-SalesOrderMain_tmp.DueDate = row10.DueDate ;
-SalesOrderMain_tmp.ShipDate = row10.ShipDate ;
-SalesOrderMain_tmp.Status = row10.Status ;
-SalesOrderMain_tmp.OnlineOrderFlag = row10.OnlineOrderFlag ;
-SalesOrderMain_tmp.SalesOrderNumber = row10.SalesOrderNumber ;
-SalesOrderMain_tmp.PurchaseOrderNumber = row10.PurchaseOrderNumber ;
-SalesOrderMain_tmp.AccountNumber = row10.AccountNumber ;
-SalesOrderMain_tmp.CustomerID = row10.CustomerID ;
-SalesOrderMain_tmp.ShippingAddressID = row10.ShipToAddressID ;
-SalesOrderMain_tmp.BillingAddressID = row10.BillToAddressID;
-SalesOrderMain_tmp.ShipMethod = row10.ShipMethod ;
-SalesOrderMain_tmp.CreditCardApprovalCode = row10.CreditCardApprovalCode ;
-SalesOrderMain_tmp.SubTotal = row10.SubTotal ;
-SalesOrderMain_tmp.TaxAmt = row10.TaxAmt ;
-SalesOrderMain_tmp.Freight = row10.Freight ;
-SalesOrderMain_tmp.TotalDue = row10.TotalDue ;
-SalesOrderMain_tmp.Comment = row10.Comment ;
-SalesOrderMain_tmp.ModifiedDate = row10.ModifiedDate ;
-SalesOrderMain_tmp.SalesOrderDetailID = row11.SalesOrderDetailID ;
-SalesOrderMain_tmp.OrderQty = row11.OrderQty ;
-SalesOrderMain_tmp.ProductID = row11.ProductID ;
-SalesOrderMain_tmp.UnitPrice = row11.UnitPrice ;
-SalesOrderMain_tmp.UnitPriceDiscount = row11.UnitPriceDiscount ;
-SalesOrderMain_tmp.LineTotal = row11.LineTotal ;
+SalesOrderMain_tmp.SalesOrderID = SalesOrderHeader.SalesOrderID ;
+SalesOrderMain_tmp.RevisionNumber = SalesOrderHeader.RevisionNumber ;
+SalesOrderMain_tmp.OrderDate = SalesOrderHeader.OrderDate ;
+SalesOrderMain_tmp.DueDate = SalesOrderHeader.DueDate ;
+SalesOrderMain_tmp.ShipDate = SalesOrderHeader.ShipDate ;
+SalesOrderMain_tmp.Status = SalesOrderHeader.Status ;
+SalesOrderMain_tmp.OnlineOrderFlag = SalesOrderHeader.OnlineOrderFlag ;
+SalesOrderMain_tmp.SalesOrderNumber = SalesOrderHeader.SalesOrderNumber ;
+SalesOrderMain_tmp.PurchaseOrderNumber = SalesOrderHeader.PurchaseOrderNumber ;
+SalesOrderMain_tmp.AccountNumber = SalesOrderHeader.AccountNumber ;
+SalesOrderMain_tmp.CustomerID = SalesOrderHeader.CustomerID ;
+SalesOrderMain_tmp.ShippingAddressID = SalesOrderHeader.ShipToAddressID ;
+SalesOrderMain_tmp.BillingAddressID = SalesOrderHeader.BillToAddressID;
+SalesOrderMain_tmp.ShipMethod = SalesOrderHeader.ShipMethod ;
+SalesOrderMain_tmp.CreditCardApprovalCode = SalesOrderHeader.CreditCardApprovalCode ;
+SalesOrderMain_tmp.SubTotal = SalesOrderHeader.SubTotal ;
+SalesOrderMain_tmp.TaxAmt = SalesOrderHeader.TaxAmt ;
+SalesOrderMain_tmp.Freight = SalesOrderHeader.Freight ;
+SalesOrderMain_tmp.TotalDue = SalesOrderHeader.TotalDue ;
+SalesOrderMain_tmp.Comment = SalesOrderHeader.Comment ;
+SalesOrderMain_tmp.ModifiedDate = SalesOrderHeader.ModifiedDate ;
+SalesOrderMain_tmp.SalesOrderDetailID = SalesOrderDetail.SalesOrderDetailID ;
+SalesOrderMain_tmp.OrderQty = SalesOrderDetail.OrderQty ;
+SalesOrderMain_tmp.ProductID = SalesOrderDetail.ProductID ;
+SalesOrderMain_tmp.UnitPrice = SalesOrderDetail.UnitPrice ;
+SalesOrderMain_tmp.UnitPriceDiscount = SalesOrderDetail.UnitPriceDiscount ;
+SalesOrderMain_tmp.LineTotal = SalesOrderDetail.LineTotal ;
 SalesOrderMain = SalesOrderMain_tmp;
 // ###############################
 
@@ -19287,29 +20204,21 @@ if(SalesOrderMain != null) {
                         );
                             }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.SubTotal != null) {
                         sb_tFileOutputDelimited_3.append(
                             SalesOrderMain.SubTotal
                         );
-                            }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.TaxAmt != null) {
                         sb_tFileOutputDelimited_3.append(
                             SalesOrderMain.TaxAmt
                         );
-                            }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.Freight != null) {
                         sb_tFileOutputDelimited_3.append(
                             SalesOrderMain.Freight
                         );
-                            }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.TotalDue != null) {
                         sb_tFileOutputDelimited_3.append(
                             SalesOrderMain.TotalDue
                         );
-                            }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
                             if(SalesOrderMain.Comment != null) {
                         sb_tFileOutputDelimited_3.append(
@@ -19335,23 +20244,17 @@ if(SalesOrderMain != null) {
                             SalesOrderMain.ProductID
                         );
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.UnitPrice != null) {
                         sb_tFileOutputDelimited_3.append(
                             SalesOrderMain.UnitPrice
                         );
-                            }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.UnitPriceDiscount != null) {
                         sb_tFileOutputDelimited_3.append(
                             SalesOrderMain.UnitPriceDiscount
                         );
-                            }
                             sb_tFileOutputDelimited_3.append(OUT_DELIM_tFileOutputDelimited_3);
-                            if(SalesOrderMain.LineTotal != null) {
                         sb_tFileOutputDelimited_3.append(
-                            SalesOrderMain.LineTotal.setScale(6, java.math.RoundingMode.HALF_UP).toPlainString()
+                            SalesOrderMain.LineTotal
                         );
-                            }
                     sb_tFileOutputDelimited_3.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_3);
 
 
@@ -19417,7 +20320,7 @@ if(SalesOrderMain != null) {
 
 
 	
-		} // close loop of lookup 'row11' // G_TM_M_043
+		} // close loop of lookup 'SalesOrderDetail' // G_TM_M_043
 	
 	
 	/**
@@ -19440,7 +20343,7 @@ if(SalesOrderMain != null) {
  * [tMap_5 process_data_end ] stop
  */
 
-} // End of branch "row10"
+} // End of branch "SalesOrderHeader"
 
 
 
@@ -19522,10 +20425,10 @@ end_Hash.put("tFileInputDelimited_10", System.currentTimeMillis());
 
 // ###############################
 // # Lookup hashes releasing
-					if(tHash_Lookup_row11 != null) {
-						tHash_Lookup_row11.endGet();
+					if(tHash_Lookup_SalesOrderDetail != null) {
+						tHash_Lookup_SalesOrderDetail.endGet();
 					}
-					globalMap.remove( "tHash_Lookup_row11" );
+					globalMap.remove( "tHash_Lookup_SalesOrderDetail" );
 
 					
 					
@@ -19537,7 +20440,7 @@ end_Hash.put("tFileInputDelimited_10", System.currentTimeMillis());
 
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row10");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"SalesOrderHeader");
 			  	}
 			  	
  
@@ -19623,7 +20526,7 @@ end_Hash.put("tFileOutputDelimited_3", System.currentTimeMillis());
 			}finally{
 				
 					     			//free memory for "tMap_5"
-					     			globalMap.remove("tHash_Lookup_row11"); 
+					     			globalMap.remove("tHash_Lookup_SalesOrderDetail"); 
 				     			
 				try{
 					
@@ -19724,7 +20627,7 @@ end_Hash.put("tFileOutputDelimited_3", System.currentTimeMillis());
 	
 
 
-public static class row11Struct implements routines.system.IPersistableComparableLookupRow<row11Struct> {
+public static class SalesOrderDetailStruct implements routines.system.IPersistableComparableLookupRow<SalesOrderDetailStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -19761,21 +20664,21 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 					return this.ProductID;
 				}
 				
-			    public Object UnitPrice;
+			    public float UnitPrice;
 
-				public Object getUnitPrice () {
+				public float getUnitPrice () {
 					return this.UnitPrice;
 				}
 				
-			    public Object UnitPriceDiscount;
+			    public float UnitPriceDiscount;
 
-				public Object getUnitPriceDiscount () {
+				public float getUnitPriceDiscount () {
 					return this.UnitPriceDiscount;
 				}
 				
-			    public BigDecimal LineTotal;
+			    public float LineTotal;
 
-				public BigDecimal getLineTotal () {
+				public float getLineTotal () {
 					return this.LineTotal;
 				}
 				
@@ -19812,7 +20715,7 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row11Struct other = (row11Struct) obj;
+		final SalesOrderDetailStruct other = (SalesOrderDetailStruct) obj;
 		
 						if (this.SalesOrderID != other.SalesOrderID)
 							return false;
@@ -19821,7 +20724,7 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 		return true;
     }
 
-	public void copyDataTo(row11Struct other) {
+	public void copyDataTo(SalesOrderDetailStruct other) {
 
 		other.SalesOrderID = this.SalesOrderID;
 	            other.SalesOrderDetailID = this.SalesOrderDetailID;
@@ -19835,7 +20738,7 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 	            
 	}
 
-	public void copyKeysDataTo(row11Struct other) {
+	public void copyKeysDataTo(SalesOrderDetailStruct other) {
 
 		other.SalesOrderID = this.SalesOrderID;
 	            	
@@ -19980,11 +20883,11 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 					
 			            this.ProductID = dis.readInt();
 					
-       			    	this.UnitPrice = (Object) ois.readObject();
+			            this.UnitPrice = dis.readFloat();
 					
-       			    	this.UnitPriceDiscount = (Object) ois.readObject();
+			            this.UnitPriceDiscount = dis.readFloat();
 					
-       			    	this.LineTotal = (BigDecimal) ois.readObject();
+			            this.LineTotal = dis.readFloat();
 					
        			    	this.rowguid = (Object) ois.readObject();
 					
@@ -20014,11 +20917,11 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 					
 			            this.ProductID = objectIn.readInt();
 					
-       			    	this.UnitPrice = (Object) objectIn.readObject();
+			            this.UnitPrice = objectIn.readFloat();
 					
-       			    	this.UnitPriceDiscount = (Object) objectIn.readObject();
+			            this.UnitPriceDiscount = objectIn.readFloat();
 					
-       			    	this.LineTotal = (BigDecimal) objectIn.readObject();
+			            this.LineTotal = objectIn.readFloat();
 					
        			    	this.rowguid = (Object) objectIn.readObject();
 					
@@ -20051,11 +20954,11 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 					
 		            	dos.writeInt(this.ProductID);
 					
-       			    	oos.writeObject(this.UnitPrice);
+		            	dos.writeFloat(this.UnitPrice);
 					
-       			    	oos.writeObject(this.UnitPriceDiscount);
+		            	dos.writeFloat(this.UnitPriceDiscount);
 					
-       			    	oos.writeObject(this.LineTotal);
+		            	dos.writeFloat(this.LineTotal);
 					
        			    	oos.writeObject(this.rowguid);
 					
@@ -20077,11 +20980,11 @@ public static class row11Struct implements routines.system.IPersistableComparabl
 					
 					objectOut.writeInt(this.ProductID);
 					
-       			    	objectOut.writeObject(this.UnitPrice);
+					objectOut.writeFloat(this.UnitPrice);
 					
-       			    	objectOut.writeObject(this.UnitPriceDiscount);
+					objectOut.writeFloat(this.UnitPriceDiscount);
 					
-       			    	objectOut.writeObject(this.LineTotal);
+					objectOut.writeFloat(this.LineTotal);
 					
        			    	objectOut.writeObject(this.rowguid);
 					
@@ -20121,7 +21024,7 @@ public static class row11Struct implements routines.system.IPersistableComparabl
     /**
      * Compare keys
      */
-    public int compareTo(row11Struct other) {
+    public int compareTo(SalesOrderDetailStruct other) {
 
 		int returnValue = -1;
 		
@@ -20181,46 +21084,46 @@ public void tFileInputDelimited_11Process(final java.util.Map<String, Object> gl
 
 
 
-		row11Struct row11 = new row11Struct();
+		SalesOrderDetailStruct SalesOrderDetail = new SalesOrderDetailStruct();
 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row11 begin ] start
+	 * [tAdvancedHash_SalesOrderDetail begin ] start
 	 */
 
 	
 
 	
 		
-		ok_Hash.put("tAdvancedHash_row11", false);
-		start_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
+		ok_Hash.put("tAdvancedHash_SalesOrderDetail", false);
+		start_Hash.put("tAdvancedHash_SalesOrderDetail", System.currentTimeMillis());
 		
 	
-	currentComponent="tAdvancedHash_row11";
+	currentComponent="tAdvancedHash_SalesOrderDetail";
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row11");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"SalesOrderDetail");
 					}
 				
-		int tos_count_tAdvancedHash_row11 = 0;
+		int tos_count_tAdvancedHash_SalesOrderDetail = 0;
 		
 
-			   		// connection name:row11
-			   		// source node:tFileInputDelimited_11 - inputs:(after_tFileInputDelimited_10) outputs:(row11,row11) | target node:tAdvancedHash_row11 - inputs:(row11) outputs:()
-			   		// linked node: tMap_5 - inputs:(row10,row11) outputs:(SalesOrderMain)
+			   		// connection name:SalesOrderDetail
+			   		// source node:tFileInputDelimited_11 - inputs:(after_tFileInputDelimited_10) outputs:(SalesOrderDetail,SalesOrderDetail) | target node:tAdvancedHash_SalesOrderDetail - inputs:(SalesOrderDetail) outputs:()
+			   		// linked node: tMap_5 - inputs:(SalesOrderHeader,SalesOrderDetail) outputs:(SalesOrderMain)
 			   
-			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_row11 = 
+			   		org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE matchingModeEnum_SalesOrderDetail = 
 			   			org.talend.designer.components.lookup.common.ICommonLookup.MATCHING_MODE.ALL_MATCHES;
 			   			
 			   
-	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<row11Struct> tHash_Lookup_row11 =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
-	   						<row11Struct>getLookup(matchingModeEnum_row11);
+	   			org.talend.designer.components.lookup.memory.AdvancedMemoryLookup<SalesOrderDetailStruct> tHash_Lookup_SalesOrderDetail =org.talend.designer.components.lookup.memory.AdvancedMemoryLookup.
+	   						<SalesOrderDetailStruct>getLookup(matchingModeEnum_SalesOrderDetail);
 	   						   
-		   	   	   globalMap.put("tHash_Lookup_row11", tHash_Lookup_row11);
+		   	   	   globalMap.put("tHash_Lookup_SalesOrderDetail", tHash_Lookup_SalesOrderDetail);
 		   	   	   
 				
            
@@ -20230,7 +21133,7 @@ public void tFileInputDelimited_11Process(final java.util.Map<String, Object> gl
 
 
 /**
- * [tAdvancedHash_row11 begin ] stop
+ * [tAdvancedHash_SalesOrderDetail begin ] stop
  */
 
 
@@ -20292,12 +21195,12 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_11!=null && fid_tFileInputDelimited_11.nextRecord()) {
 						rowstate_tFileInputDelimited_11.reset();
 						
-			    						row11 = null;			
+			    						SalesOrderDetail = null;			
 									
-			    						row11 = null;			
+			    						SalesOrderDetail = null;			
 												
 									boolean whetherReject_tFileInputDelimited_11 = false;
-									row11 = new row11Struct();
+									SalesOrderDetail = new SalesOrderDetailStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_11 = 0;
@@ -20311,17 +21214,17 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row11.SalesOrderID = ParserUtils.parseTo_int(temp);
+    								SalesOrderDetail.SalesOrderID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
 globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
 									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"SalesOrderID", "row11", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+										"SalesOrderID", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'SalesOrderID' in 'row11' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'SalesOrderID' in 'SalesOrderDetail' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -20333,17 +21236,17 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.g
 							
 								try {
 								
-    								row11.SalesOrderDetailID = ParserUtils.parseTo_int(temp);
+    								SalesOrderDetail.SalesOrderDetailID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
 globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
 									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"SalesOrderDetailID", "row11", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+										"SalesOrderDetailID", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'SalesOrderDetailID' in 'row11' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'SalesOrderDetailID' in 'SalesOrderDetail' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -20355,17 +21258,17 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.g
 							
 								try {
 								
-    								row11.OrderQty = ParserUtils.parseTo_short(temp);
+    								SalesOrderDetail.OrderQty = ParserUtils.parseTo_short(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
 globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
 									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"OrderQty", "row11", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+										"OrderQty", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'OrderQty' in 'row11' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'OrderQty' in 'SalesOrderDetail' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
@@ -20377,30 +21280,64 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.g
 							
 								try {
 								
-    								row11.ProductID = ParserUtils.parseTo_int(temp);
+    								SalesOrderDetail.ProductID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
 globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
 									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ProductID", "row11", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+										"ProductID", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'ProductID' in 'row11' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'ProductID' in 'SalesOrderDetail' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_11 = 4;
 					
-							row11.UnitPrice = fid_tFileInputDelimited_11.get(columnIndexWithD_tFileInputDelimited_11);
-						
+						temp = fid_tFileInputDelimited_11.get(columnIndexWithD_tFileInputDelimited_11);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    								SalesOrderDetail.UnitPrice = ParserUtils.parseTo_float(temp);
+    							
+    							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
+globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
+									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"UnitPrice", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+								}
+    							
+						} else {						
+							
+								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'UnitPrice' in 'SalesOrderDetail' connection, value is invalid or this column should be nullable or have a default value."));
+							
+						}
+					
 				
 					columnIndexWithD_tFileInputDelimited_11 = 5;
 					
-							row11.UnitPriceDiscount = fid_tFileInputDelimited_11.get(columnIndexWithD_tFileInputDelimited_11);
-						
+						temp = fid_tFileInputDelimited_11.get(columnIndexWithD_tFileInputDelimited_11);
+						if(temp.length() > 0) {
+							
+								try {
+								
+    								SalesOrderDetail.UnitPriceDiscount = ParserUtils.parseTo_float(temp);
+    							
+    							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
+globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
+									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
+										"UnitPriceDiscount", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+								}
+    							
+						} else {						
+							
+								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'UnitPriceDiscount' in 'SalesOrderDetail' connection, value is invalid or this column should be nullable or have a default value."));
+							
+						}
+					
 				
 					columnIndexWithD_tFileInputDelimited_11 = 6;
 					
@@ -20409,26 +21346,24 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.g
 							
 								try {
 								
-    								row11.LineTotal = ParserUtils.parseTo_BigDecimal(temp);
+    								SalesOrderDetail.LineTotal = ParserUtils.parseTo_float(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
 globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
 									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"LineTotal", "row11", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+										"LineTotal", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
 								}
     							
 						} else {						
 							
-								
-									row11.LineTotal = null;
-								
+								rowstate_tFileInputDelimited_11.setException(new RuntimeException("Value is empty for column : 'LineTotal' in 'SalesOrderDetail' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_11 = 7;
 					
-							row11.rowguid = fid_tFileInputDelimited_11.get(columnIndexWithD_tFileInputDelimited_11);
+							SalesOrderDetail.rowguid = fid_tFileInputDelimited_11.get(columnIndexWithD_tFileInputDelimited_11);
 						
 				
 					columnIndexWithD_tFileInputDelimited_11 = 8;
@@ -20438,18 +21373,18 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.g
 							
 								try {
 								
-    									row11.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									SalesOrderDetail.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_11) {
 globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",ex_tFileInputDelimited_11.getMessage());
 									rowstate_tFileInputDelimited_11.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row11", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
+										"ModifiedDate", "SalesOrderDetail", temp, ex_tFileInputDelimited_11), ex_tFileInputDelimited_11));
 								}
     							
 						} else {						
 							
 								
-									row11.ModifiedDate = null;
+									SalesOrderDetail.ModifiedDate = null;
 								
 							
 						}
@@ -20468,7 +21403,7 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_11 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row11 = null;
+			                					SalesOrderDetail = null;
 			                				
 										
 			    					}
@@ -20522,27 +21457,27 @@ globalMap.put("tFileInputDelimited_11_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_11 process_data_begin ] stop
  */
-// Start of branch "row11"
-if(row11 != null) { 
+// Start of branch "SalesOrderDetail"
+if(SalesOrderDetail != null) { 
 
 
 
 	
 	/**
-	 * [tAdvancedHash_row11 main ] start
+	 * [tAdvancedHash_SalesOrderDetail main ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row11";
+	currentComponent="tAdvancedHash_SalesOrderDetail";
 
 	
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row11"
+							,"SalesOrderDetail"
 						
 						);
 					}
@@ -20552,28 +21487,28 @@ if(row11 != null) {
 			   
 			   
 
-					row11Struct row11_HashRow = new row11Struct();
+					SalesOrderDetailStruct SalesOrderDetail_HashRow = new SalesOrderDetailStruct();
 		   	   	   
 				
-				row11_HashRow.SalesOrderID = row11.SalesOrderID;
+				SalesOrderDetail_HashRow.SalesOrderID = SalesOrderDetail.SalesOrderID;
 				
-				row11_HashRow.SalesOrderDetailID = row11.SalesOrderDetailID;
+				SalesOrderDetail_HashRow.SalesOrderDetailID = SalesOrderDetail.SalesOrderDetailID;
 				
-				row11_HashRow.OrderQty = row11.OrderQty;
+				SalesOrderDetail_HashRow.OrderQty = SalesOrderDetail.OrderQty;
 				
-				row11_HashRow.ProductID = row11.ProductID;
+				SalesOrderDetail_HashRow.ProductID = SalesOrderDetail.ProductID;
 				
-				row11_HashRow.UnitPrice = row11.UnitPrice;
+				SalesOrderDetail_HashRow.UnitPrice = SalesOrderDetail.UnitPrice;
 				
-				row11_HashRow.UnitPriceDiscount = row11.UnitPriceDiscount;
+				SalesOrderDetail_HashRow.UnitPriceDiscount = SalesOrderDetail.UnitPriceDiscount;
 				
-				row11_HashRow.LineTotal = row11.LineTotal;
+				SalesOrderDetail_HashRow.LineTotal = SalesOrderDetail.LineTotal;
 				
-				row11_HashRow.rowguid = row11.rowguid;
+				SalesOrderDetail_HashRow.rowguid = SalesOrderDetail.rowguid;
 				
-				row11_HashRow.ModifiedDate = row11.ModifiedDate;
+				SalesOrderDetail_HashRow.ModifiedDate = SalesOrderDetail.ModifiedDate;
 				
-			tHash_Lookup_row11.put(row11_HashRow);
+			tHash_Lookup_SalesOrderDetail.put(SalesOrderDetail_HashRow);
 			
             
 
@@ -20583,21 +21518,21 @@ if(row11 != null) {
  
 
 
-	tos_count_tAdvancedHash_row11++;
+	tos_count_tAdvancedHash_SalesOrderDetail++;
 
 /**
- * [tAdvancedHash_row11 main ] stop
+ * [tAdvancedHash_SalesOrderDetail main ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row11 process_data_begin ] start
+	 * [tAdvancedHash_SalesOrderDetail process_data_begin ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row11";
+	currentComponent="tAdvancedHash_SalesOrderDetail";
 
 	
 
@@ -20606,18 +21541,18 @@ if(row11 != null) {
 
 
 /**
- * [tAdvancedHash_row11 process_data_begin ] stop
+ * [tAdvancedHash_SalesOrderDetail process_data_begin ] stop
  */
 	
 	/**
-	 * [tAdvancedHash_row11 process_data_end ] start
+	 * [tAdvancedHash_SalesOrderDetail process_data_end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row11";
+	currentComponent="tAdvancedHash_SalesOrderDetail";
 
 	
 
@@ -20626,10 +21561,10 @@ if(row11 != null) {
 
 
 /**
- * [tAdvancedHash_row11 process_data_end ] stop
+ * [tAdvancedHash_SalesOrderDetail process_data_end ] stop
  */
 
-} // End of branch "row11"
+} // End of branch "SalesOrderDetail"
 
 
 
@@ -20697,33 +21632,33 @@ end_Hash.put("tFileInputDelimited_11", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row11 end ] start
+	 * [tAdvancedHash_SalesOrderDetail end ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row11";
+	currentComponent="tAdvancedHash_SalesOrderDetail";
 
 	
 
-tHash_Lookup_row11.endPut();
+tHash_Lookup_SalesOrderDetail.endPut();
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row11");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"SalesOrderDetail");
 			  	}
 			  	
  
 
-ok_Hash.put("tAdvancedHash_row11", true);
-end_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
+ok_Hash.put("tAdvancedHash_SalesOrderDetail", true);
+end_Hash.put("tAdvancedHash_SalesOrderDetail", System.currentTimeMillis());
 
 
 
 
 /**
- * [tAdvancedHash_row11 end ] stop
+ * [tAdvancedHash_SalesOrderDetail end ] stop
  */
 
 
@@ -20772,14 +21707,14 @@ end_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
 
 	
 	/**
-	 * [tAdvancedHash_row11 finally ] start
+	 * [tAdvancedHash_SalesOrderDetail finally ] start
 	 */
 
 	
 
 	
 	
-	currentComponent="tAdvancedHash_row11";
+	currentComponent="tAdvancedHash_SalesOrderDetail";
 
 	
 
@@ -20788,7 +21723,7 @@ end_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
 
 
 /**
- * [tAdvancedHash_row11 finally ] stop
+ * [tAdvancedHash_SalesOrderDetail finally ] stop
  */
 
 
@@ -20807,7 +21742,7 @@ end_Hash.put("tAdvancedHash_row11", System.currentTimeMillis());
 	
 
 
-public static class row14Struct implements routines.system.IPersistableRow<row14Struct> {
+public static class AddressFullStruct implements routines.system.IPersistableRow<AddressFullStruct> {
     final static byte[] commonByteArrayLock_LOCAL_PROJECT_HARMONIZED = new byte[0];
     static byte[] commonByteArray_LOCAL_PROJECT_HARMONIZED = new byte[0];
 	protected static final int DEFAULT_HASHCODE = 1;
@@ -20895,7 +21830,7 @@ public static class row14Struct implements routines.system.IPersistableRow<row14
 		if (this == obj) return true;
 		if (obj == null) return false;
 		if (getClass() != obj.getClass()) return false;
-		final row14Struct other = (row14Struct) obj;
+		final AddressFullStruct other = (AddressFullStruct) obj;
 		
 						if (this.AddressID != other.AddressID)
 							return false;
@@ -20904,7 +21839,7 @@ public static class row14Struct implements routines.system.IPersistableRow<row14
 		return true;
     }
 
-	public void copyDataTo(row14Struct other) {
+	public void copyDataTo(AddressFullStruct other) {
 
 		other.AddressID = this.AddressID;
 	            other.AddressLine1 = this.AddressLine1;
@@ -20918,7 +21853,7 @@ public static class row14Struct implements routines.system.IPersistableRow<row14
 	            
 	}
 
-	public void copyKeysDataTo(row14Struct other) {
+	public void copyKeysDataTo(AddressFullStruct other) {
 
 		other.AddressID = this.AddressID;
 	            	
@@ -21232,7 +22167,7 @@ public static class row14Struct implements routines.system.IPersistableRow<row14
     /**
      * Compare keys
      */
-    public int compareTo(row14Struct other) {
+    public int compareTo(AddressFullStruct other) {
 
 		int returnValue = -1;
 		
@@ -21292,7 +22227,7 @@ public void tFileInputDelimited_13Process(final java.util.Map<String, Object> gl
 
 
 
-		row14Struct row14 = new row14Struct();
+		AddressFullStruct AddressFull = new AddressFullStruct();
 
 
 
@@ -21314,7 +22249,7 @@ public void tFileInputDelimited_13Process(final java.util.Map<String, Object> gl
 
 	
 					if(execStat) {
-						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"row14");
+						runStat.updateStatOnConnection(resourceMap,iterateId,0,0,"AddressFull");
 					}
 				
 		int tos_count_tFileOutputDelimited_4 = 0;
@@ -21465,10 +22400,10 @@ globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",e.getMessage());
 					while (fid_tFileInputDelimited_13!=null && fid_tFileInputDelimited_13.nextRecord()) {
 						rowstate_tFileInputDelimited_13.reset();
 						
-			    						row14 = null;			
+			    						AddressFull = null;			
 												
 									boolean whetherReject_tFileInputDelimited_13 = false;
-									row14 = new row14Struct();
+									AddressFull = new AddressFullStruct();
 									try {
 										
 				int columnIndexWithD_tFileInputDelimited_13 = 0;
@@ -21482,54 +22417,54 @@ globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",e.getMessage());
 							
 								try {
 								
-    								row14.AddressID = ParserUtils.parseTo_int(temp);
+    								AddressFull.AddressID = ParserUtils.parseTo_int(temp);
     							
     							} catch(java.lang.Exception ex_tFileInputDelimited_13) {
 globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",ex_tFileInputDelimited_13.getMessage());
 									rowstate_tFileInputDelimited_13.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"AddressID", "row14", temp, ex_tFileInputDelimited_13), ex_tFileInputDelimited_13));
+										"AddressID", "AddressFull", temp, ex_tFileInputDelimited_13), ex_tFileInputDelimited_13));
 								}
     							
 						} else {						
 							
-								rowstate_tFileInputDelimited_13.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'row14' connection, value is invalid or this column should be nullable or have a default value."));
+								rowstate_tFileInputDelimited_13.setException(new RuntimeException("Value is empty for column : 'AddressID' in 'AddressFull' connection, value is invalid or this column should be nullable or have a default value."));
 							
 						}
 					
 				
 					columnIndexWithD_tFileInputDelimited_13 = 1;
 					
-							row14.AddressLine1 = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
+							AddressFull.AddressLine1 = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
 					columnIndexWithD_tFileInputDelimited_13 = 2;
 					
-							row14.AddressLine2 = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
+							AddressFull.AddressLine2 = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
 					columnIndexWithD_tFileInputDelimited_13 = 3;
 					
-							row14.City = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
+							AddressFull.City = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
 					columnIndexWithD_tFileInputDelimited_13 = 4;
 					
-							row14.StateProvince = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
+							AddressFull.StateProvince = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
 					columnIndexWithD_tFileInputDelimited_13 = 5;
 					
-							row14.CountryRegion = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
+							AddressFull.CountryRegion = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
 					columnIndexWithD_tFileInputDelimited_13 = 6;
 					
-							row14.PostalCode = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
+							AddressFull.PostalCode = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
 					columnIndexWithD_tFileInputDelimited_13 = 7;
 					
-							row14.rowguid = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
+							AddressFull.rowguid = fid_tFileInputDelimited_13.get(columnIndexWithD_tFileInputDelimited_13);
 						
 				
 					columnIndexWithD_tFileInputDelimited_13 = 8;
@@ -21539,18 +22474,18 @@ globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",ex_tFileInputDelimited_13.g
 							
 								try {
 								
-    									row14.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
+    									AddressFull.ModifiedDate = ParserUtils.parseTo_Date(temp, "dd-MM-yyyy");
     								
     							} catch(java.lang.Exception ex_tFileInputDelimited_13) {
 globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",ex_tFileInputDelimited_13.getMessage());
 									rowstate_tFileInputDelimited_13.setException(new RuntimeException(String.format("Couldn't parse value for column '%s' in '%s', value is '%s'. Details: %s",
-										"ModifiedDate", "row14", temp, ex_tFileInputDelimited_13), ex_tFileInputDelimited_13));
+										"ModifiedDate", "AddressFull", temp, ex_tFileInputDelimited_13), ex_tFileInputDelimited_13));
 								}
     							
 						} else {						
 							
 								
-									row14.ModifiedDate = null;
+									AddressFull.ModifiedDate = null;
 								
 							
 						}
@@ -21569,7 +22504,7 @@ globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",e.getMessage());
 			        					whetherReject_tFileInputDelimited_13 = true;
 			        					
 			                					System.err.println(e.getMessage());
-			                					row14 = null;
+			                					AddressFull = null;
 			                				
 										
 			    					}
@@ -21623,8 +22558,8 @@ globalMap.put("tFileInputDelimited_13_ERROR_MESSAGE",e.getMessage());
 /**
  * [tFileInputDelimited_13 process_data_begin ] stop
  */
-// Start of branch "row14"
-if(row14 != null) { 
+// Start of branch "AddressFull"
+if(AddressFull != null) { 
 
 
 
@@ -21643,7 +22578,7 @@ if(row14 != null) {
 					if(execStat){
 						runStat.updateStatOnConnection(iterateId,1,1
 						
-							,"row14"
+							,"AddressFull"
 						
 						);
 					}
@@ -21652,54 +22587,54 @@ if(row14 != null) {
 
                     StringBuilder sb_tFileOutputDelimited_4 = new StringBuilder();
                         sb_tFileOutputDelimited_4.append(
-                            row14.AddressID
+                            AddressFull.AddressID
                         );
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.AddressLine1 != null) {
+                            if(AddressFull.AddressLine1 != null) {
                         sb_tFileOutputDelimited_4.append(
-                            row14.AddressLine1
-                        );
-                            }
-                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.AddressLine2 != null) {
-                        sb_tFileOutputDelimited_4.append(
-                            row14.AddressLine2
+                            AddressFull.AddressLine1
                         );
                             }
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.City != null) {
+                            if(AddressFull.AddressLine2 != null) {
                         sb_tFileOutputDelimited_4.append(
-                            row14.City
+                            AddressFull.AddressLine2
                         );
                             }
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.StateProvince != null) {
+                            if(AddressFull.City != null) {
                         sb_tFileOutputDelimited_4.append(
-                            row14.StateProvince
+                            AddressFull.City
                         );
                             }
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.CountryRegion != null) {
+                            if(AddressFull.StateProvince != null) {
                         sb_tFileOutputDelimited_4.append(
-                            row14.CountryRegion
+                            AddressFull.StateProvince
                         );
                             }
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.PostalCode != null) {
+                            if(AddressFull.CountryRegion != null) {
                         sb_tFileOutputDelimited_4.append(
-                            row14.PostalCode
+                            AddressFull.CountryRegion
                         );
                             }
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.rowguid != null) {
+                            if(AddressFull.PostalCode != null) {
                         sb_tFileOutputDelimited_4.append(
-                            row14.rowguid
+                            AddressFull.PostalCode
                         );
                             }
                             sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
-                            if(row14.ModifiedDate != null) {
+                            if(AddressFull.rowguid != null) {
                         sb_tFileOutputDelimited_4.append(
-                            FormatterUtils.format_Date(row14.ModifiedDate, "dd-MM-yyyy")
+                            AddressFull.rowguid
+                        );
+                            }
+                            sb_tFileOutputDelimited_4.append(OUT_DELIM_tFileOutputDelimited_4);
+                            if(AddressFull.ModifiedDate != null) {
+                        sb_tFileOutputDelimited_4.append(
+                            FormatterUtils.format_Date(AddressFull.ModifiedDate, "dd-MM-yyyy")
                         );
                             }
                     sb_tFileOutputDelimited_4.append(OUT_DELIM_ROWSEP_tFileOutputDelimited_4);
@@ -21762,7 +22697,7 @@ if(row14 != null) {
  * [tFileOutputDelimited_4 process_data_end ] stop
  */
 
-} // End of branch "row14"
+} // End of branch "AddressFull"
 
 
 
@@ -21859,7 +22794,7 @@ end_Hash.put("tFileInputDelimited_13", System.currentTimeMillis());
 	
 
 				if(execStat){
-			  		runStat.updateStat(resourceMap,iterateId,2,0,"row14");
+			  		runStat.updateStat(resourceMap,iterateId,2,0,"AddressFull");
 			  	}
 			  	
  
@@ -22408,6 +23343,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     559518 characters generated by Talend Open Studio for Data Integration 
- *     on the 9 de abril de 2022 02:22:27 BRT
+ *     591003 characters generated by Talend Open Studio for Data Integration 
+ *     on the 8 de maio de 2022 19:56:37 BRT
  ************************************************************************************************/
