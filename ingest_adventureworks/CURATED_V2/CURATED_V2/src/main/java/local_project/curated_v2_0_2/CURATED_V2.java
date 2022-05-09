@@ -3405,18 +3405,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 					return this.ProductName;
 				}
 				
-			    public String ProductCategory;
-
-				public String getProductCategory () {
-					return this.ProductCategory;
-				}
-				
-			    public String ProductModel;
-
-				public String getProductModel () {
-					return this.ProductModel;
-				}
-				
 			    public Short OrderQty;
 
 				public Short getOrderQty () {
@@ -3439,18 +3427,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 
 				public BigDecimal getLineTotal () {
 					return this.LineTotal;
-				}
-				
-			    public int CustomerID;
-
-				public int getCustomerID () {
-					return this.CustomerID;
-				}
-				
-			    public String CustomerName;
-
-				public String getCustomerName () {
-					return this.CustomerName;
 				}
 				
 			    public String Store;
@@ -3481,8 +3457,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 	
 							result = prime * result + (int) this.SalesOrderID;
 						
-							result = prime * result + (int) this.CustomerID;
-						
     		this.hashCode = result;
     		this.hashCodeDirty = false;
 		}
@@ -3499,9 +3473,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 						if (this.SalesOrderID != other.SalesOrderID)
 							return false;
 					
-						if (this.CustomerID != other.CustomerID)
-							return false;
-					
 
 		return true;
     }
@@ -3511,14 +3482,10 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 		other.SalesOrderID = this.SalesOrderID;
 	            other.OrderDate = this.OrderDate;
 	            other.ProductName = this.ProductName;
-	            other.ProductCategory = this.ProductCategory;
-	            other.ProductModel = this.ProductModel;
 	            other.OrderQty = this.OrderQty;
 	            other.UnitPrice = this.UnitPrice;
 	            other.UnitPriceDiscount = this.UnitPriceDiscount;
 	            other.LineTotal = this.LineTotal;
-	            other.CustomerID = this.CustomerID;
-	            other.CustomerName = this.CustomerName;
 	            other.Store = this.Store;
 	            other.SalesPerson = this.SalesPerson;
 	            other.AmountForSalesOrder = this.AmountForSalesOrder;
@@ -3528,7 +3495,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 	public void copyKeysDataTo(DataScienseStruct other) {
 
 		other.SalesOrderID = this.SalesOrderID;
-	            	other.CustomerID = this.CustomerID;
 	            	
 	}
 
@@ -3651,10 +3617,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 					
 					this.ProductName = readString(dis);
 					
-					this.ProductCategory = readString(dis);
-					
-					this.ProductModel = readString(dis);
-					
 			            length = dis.readByte();
            				if (length == -1) {
            	    			this.OrderQty = null;
@@ -3667,10 +3629,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 						this.UnitPriceDiscount = (Object) dis.readObject();
 					
 						this.LineTotal = (BigDecimal) dis.readObject();
-					
-			        this.CustomerID = dis.readInt();
-					
-					this.CustomerName = readString(dis);
 					
 					this.Store = readString(dis);
 					
@@ -3709,10 +3667,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 					
 					this.ProductName = readString(dis);
 					
-					this.ProductCategory = readString(dis);
-					
-					this.ProductModel = readString(dis);
-					
 			            length = dis.readByte();
            				if (length == -1) {
            	    			this.OrderQty = null;
@@ -3725,10 +3679,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 						this.UnitPriceDiscount = (Object) dis.readObject();
 					
 						this.LineTotal = (BigDecimal) dis.readObject();
-					
-			        this.CustomerID = dis.readInt();
-					
-					this.CustomerName = readString(dis);
 					
 					this.Store = readString(dis);
 					
@@ -3769,14 +3719,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 				
 						writeString(this.ProductName,dos);
 					
-					// String
-				
-						writeString(this.ProductCategory,dos);
-					
-					// String
-				
-						writeString(this.ProductModel,dos);
-					
 					// Short
 				
 						if(this.OrderQty == null) {
@@ -3797,14 +3739,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 					// BigDecimal
 				
        			    	dos.writeObject(this.LineTotal);
-					
-					// int
-				
-		            	dos.writeInt(this.CustomerID);
-					
-					// String
-				
-						writeString(this.CustomerName,dos);
 					
 					// String
 				
@@ -3841,14 +3775,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 				
 						writeString(this.ProductName,dos);
 					
-					// String
-				
-						writeString(this.ProductCategory,dos);
-					
-					// String
-				
-						writeString(this.ProductModel,dos);
-					
 					// Short
 				
 						if(this.OrderQty == null) {
@@ -3869,14 +3795,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 					// BigDecimal
 				
        			    	dos.writeObject(this.LineTotal);
-					
-					// int
-				
-		            	dos.writeInt(this.CustomerID);
-					
-					// String
-				
-						writeString(this.CustomerName,dos);
 					
 					// String
 				
@@ -3906,14 +3824,10 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 		sb.append("SalesOrderID="+String.valueOf(SalesOrderID));
 		sb.append(",OrderDate="+String.valueOf(OrderDate));
 		sb.append(",ProductName="+ProductName);
-		sb.append(",ProductCategory="+ProductCategory);
-		sb.append(",ProductModel="+ProductModel);
 		sb.append(",OrderQty="+String.valueOf(OrderQty));
 		sb.append(",UnitPrice="+String.valueOf(UnitPrice));
 		sb.append(",UnitPriceDiscount="+String.valueOf(UnitPriceDiscount));
 		sb.append(",LineTotal="+String.valueOf(LineTotal));
-		sb.append(",CustomerID="+String.valueOf(CustomerID));
-		sb.append(",CustomerName="+CustomerName);
 		sb.append(",Store="+Store);
 		sb.append(",SalesPerson="+SalesPerson);
 		sb.append(",AmountForSalesOrder="+String.valueOf(AmountForSalesOrder));
@@ -3930,12 +3844,6 @@ public static class DataScienseStruct implements routines.system.IPersistableRow
 		int returnValue = -1;
 		
 						returnValue = checkNullsAndCompare(this.SalesOrderID, other.SalesOrderID);
-						if(returnValue != 0) {
-							return returnValue;
-						}
-
-					
-						returnValue = checkNullsAndCompare(this.CustomerID, other.CustomerID);
 						if(returnValue != 0) {
 							return returnValue;
 						}
@@ -6788,7 +6696,7 @@ row4Struct row4 = new row4Struct();
 		
 
 String fileName_tFileOutputDelimited_1 = "";
-    fileName_tFileOutputDelimited_1 = (new java.io.File(context.path_cura+"Dataset_DataScience_V2.csv")).getAbsolutePath().replace("\\","/");
+    fileName_tFileOutputDelimited_1 = (new java.io.File(context.path_cura+"Dataset_DataScience_Churn_V2.csv")).getAbsolutePath().replace("\\","/");
     String fullName_tFileOutputDelimited_1 = null;
     String extension_tFileOutputDelimited_1 = null;
     String directory_tFileOutputDelimited_1 = null;
@@ -6846,10 +6754,6 @@ String fileName_tFileOutputDelimited_1 = "";
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("ProductName");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-                                        outtFileOutputDelimited_1.write("ProductCategory");
-                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-                                        outtFileOutputDelimited_1.write("ProductModel");
-                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("OrderQty");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("UnitPrice");
@@ -6857,10 +6761,6 @@ String fileName_tFileOutputDelimited_1 = "";
                                         outtFileOutputDelimited_1.write("UnitPriceDiscount");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("LineTotal");
-                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-                                        outtFileOutputDelimited_1.write("CustomerID");
-                                            outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
-                                        outtFileOutputDelimited_1.write("CustomerName");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
                                         outtFileOutputDelimited_1.write("Store");
                                             outtFileOutputDelimited_1.write(OUT_DELIM_tFileOutputDelimited_1);
@@ -8842,14 +8742,10 @@ ProductsSold = null;
 DataSciense_tmp.SalesOrderID = HSalesOrder.SalesOrderID ;
 DataSciense_tmp.OrderDate = HSalesOrder.OrderDate ;
 DataSciense_tmp.ProductName = HProduct.Name ;
-DataSciense_tmp.ProductCategory = HProduct.ProductCategoryName ;
-DataSciense_tmp.ProductModel = HProduct.ProductModelName ;
 DataSciense_tmp.OrderQty = HSalesOrder.OrderQty ;
 DataSciense_tmp.UnitPrice = HSalesOrder.UnitPrice ;
 DataSciense_tmp.UnitPriceDiscount = HSalesOrder.UnitPriceDiscount ;
 DataSciense_tmp.LineTotal = HSalesOrder.LineTotal ;
-DataSciense_tmp.CustomerID = HCustomer.CustomerID;
-DataSciense_tmp.CustomerName = HCustomer.FirstName+" "+HCustomer.LastName ;
 DataSciense_tmp.Store = HCustomer.CompanyName ;
 DataSciense_tmp.SalesPerson = HCustomer.SalesPerson ;
 DataSciense_tmp.AmountForSalesOrder = HSalesOrder.TotalDue ;
@@ -8972,18 +8868,6 @@ if(DataSciense != null) {
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(DataSciense.ProductCategory != null) {
-                        sb_tFileOutputDelimited_1.append(
-                            DataSciense.ProductCategory
-                        );
-                            }
-                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(DataSciense.ProductModel != null) {
-                        sb_tFileOutputDelimited_1.append(
-                            DataSciense.ProductModel
-                        );
-                            }
-                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
                             if(DataSciense.OrderQty != null) {
                         sb_tFileOutputDelimited_1.append(
                                     FormatterUtils.format_Number(new java.math.BigDecimal(String.valueOf(DataSciense.OrderQty)).toPlainString(), null, ',')
@@ -9005,16 +8889,6 @@ if(DataSciense != null) {
                             if(DataSciense.LineTotal != null) {
                         sb_tFileOutputDelimited_1.append(
                                     FormatterUtils.format_Number(DataSciense.LineTotal.toPlainString(), null, ',')
-                        );
-                            }
-                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                        sb_tFileOutputDelimited_1.append(
-                                    FormatterUtils.format_Number(new java.math.BigDecimal(String.valueOf(DataSciense.CustomerID)).toPlainString(), null, ',')
-                        );
-                            sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
-                            if(DataSciense.CustomerName != null) {
-                        sb_tFileOutputDelimited_1.append(
-                            DataSciense.CustomerName
                         );
                             }
                             sb_tFileOutputDelimited_1.append(OUT_DELIM_tFileOutputDelimited_1);
@@ -16118,6 +15992,6 @@ if (execStat) {
     ResumeUtil resumeUtil = null;
 }
 /************************************************************************************************
- *     418918 characters generated by Talend Open Studio for Data Integration 
- *     on the 9 de maio de 2022 19:48:04 BRT
+ *     414258 characters generated by Talend Open Studio for Data Integration 
+ *     on the 9 de maio de 2022 19:57:55 BRT
  ************************************************************************************************/
